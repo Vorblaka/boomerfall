@@ -4,6 +4,7 @@ class_name shooter
 @export var projectiles_scenes : Array[PackedScene]
 
 @export var joint_scene: PackedScene
+@export var animation_player: AnimationPlayer
 
 var device_ID : int = -1
 var active_projectile : PackedScene
@@ -80,7 +81,11 @@ func shoot() -> void:
 # Do nothing if a projectile has not been assigned yet
 	if !active_projectile:
 		return
-		
+	
+	if animation_player.is_playing() :
+		animation_player.stop()
+	animation_player.play("cannon_shoot")
+	
 # Spawn a projectile on your position and set it as top level
 	var projectile_instance : projectile = active_projectile.instantiate()
 	projectile_instance.top_level = true
