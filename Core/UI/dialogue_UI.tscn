@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvs5hik870vi5"]
+
+[ext_resource type="Script" uid="uid://c0dxbepkfg5wl" path="res://UI/dialogue_ui.gd" id="1_acjtb"]
+[ext_resource type="Texture2D" uid="uid://dxhfohw0tmopr" path="res://art/Speech balloons/white/16.png" id="1_lahhf"]
+
+[node name="DalogueUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_acjtb")
+
+[node name="Balloon" type="MarginContainer" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_right = 44.0
+offset_bottom = 25.0
+
+[node name="BalloonImage" type="NinePatchRect" parent="Balloon"]
+layout_mode = 2
+texture = ExtResource("1_lahhf")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="TypewriterTimer" type="Timer" parent="Balloon/BalloonImage"]
+
+[node name="AdvanceTimer" type="Timer" parent="Balloon/BalloonImage"]
+
+[node name="TextContainer" type="MarginContainer" parent="Balloon"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Text" type="Label" parent="Balloon/TextContainer"]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 3
+text = "       /\"*._         _
+   .-*'`    `*-.._.-'/
+ < * ))     ,       ( 
+   `*-._`._(__.--*\"`.\\
+"
+horizontal_alignment = 1
+autowrap_mode = 3

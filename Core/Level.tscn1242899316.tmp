@@ -1,0 +1,83 @@
+[gd_scene load_steps=10 format=3 uid="uid://d1avguqyivyu5"]
+
+[ext_resource type="Script" uid="uid://boi4jnb41bkja" path="res://Core/level.gd" id="1_3rhfs"]
+[ext_resource type="PackedScene" uid="uid://dkhmbewkcu8xi" path="res://Core/Shooter.tscn" id="2_h7iwn"]
+[ext_resource type="PackedScene" uid="uid://dajmu12uautl7" path="res://Core/Boomer.tscn" id="2_t83br"]
+[ext_resource type="PackedScene" uid="uid://bh51y6atw8mxh" path="res://Core/Projectile.tscn" id="3_h7iwn"]
+[ext_resource type="PackedScene" uid="uid://ddcbjpa207x6p" path="res://Core/GameSystems/player_manager.tscn" id="3_sf6xb"]
+[ext_resource type="PackedScene" uid="uid://db51ul3mew3rq" path="res://Core/UI/main_menu.tscn" id="6_sf6xb"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jfla8"]
+sky_top_color = Color(0.2, 0.16470589, 0.1254902, 1)
+sky_horizon_color = Color(0.19215687, 0.16862746, 0.12156863, 1)
+sky_cover_modulate = Color(0.2, 0.16078432, 0.1254902, 1)
+ground_horizon_color = Color(0.19607843, 0.16470589, 0.1254902, 1)
+
+[sub_resource type="Sky" id="Sky_6s6ic"]
+sky_material = SubResource("ProceduralSkyMaterial_jfla8")
+
+[sub_resource type="Environment" id="Environment_rs3y6"]
+background_mode = 2
+sky = SubResource("Sky_6s6ic")
+
+[node name="Level" type="Node3D" unique_id=1992575775 node_paths=PackedStringArray("player_spawn_pos")]
+script = ExtResource("1_3rhfs")
+player_spawn_pos = [NodePath("PlayerSpawnPosition1"), NodePath("PlayerSpawnPosition2"), NodePath("PlayerSpawnPosition3"), NodePath("PlayerSpawnPosition4")]
+shooter_scene = ExtResource("2_h7iwn")
+
+[node name="PlayerManager" parent="." unique_id=320525641 instance=ExtResource("3_sf6xb")]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1924576834]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 30)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Camera3D" unique_id=129281676]
+environment = SubResource("Environment_rs3y6")
+
+[node name="Giuseppi_Cicala" parent="." unique_id=698165976 instance=ExtResource("2_t83br")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 40, 0)
+
+[node name="Loretta_Dipausa" parent="." unique_id=1876404406 instance=ExtResource("2_t83br")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 40, 0)
+
+[node name="Marco_Di_Fabbrica" parent="." unique_id=875765670 instance=ExtResource("2_t83br")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 40, 0)
+
+[node name="Gianni_Collaterali" parent="." unique_id=892610193 instance=ExtResource("2_t83br")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.06489, 40.027187, 0.018526316)
+
+[node name="Projectile_1" parent="." unique_id=1324296202 instance=ExtResource("3_h7iwn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -50, 0)
+
+[node name="Projectile_2" parent="." unique_id=467453997 instance=ExtResource("3_h7iwn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -50, 0)
+
+[node name="Projectile_3" parent="." unique_id=2137237105 instance=ExtResource("3_h7iwn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -50, 0)
+
+[node name="Projectile_4" parent="." unique_id=155174977 instance=ExtResource("3_h7iwn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, -50, 0)
+
+[node name="GameOverTimer" type="Timer" parent="." unique_id=1891831369]
+wait_time = 5.0
+one_shot = true
+
+[node name="StartGameTimer" type="Timer" parent="." unique_id=1029082669]
+wait_time = 3.0
+one_shot = true
+
+[node name="PlayerSpawnPosition1" type="Node3D" parent="." unique_id=1155819050]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 40, 0)
+
+[node name="PlayerSpawnPosition2" type="Node3D" parent="." unique_id=1469719163]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 40, 0)
+
+[node name="PlayerSpawnPosition3" type="Node3D" parent="." unique_id=1542886335]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 40, 0)
+
+[node name="PlayerSpawnPosition4" type="Node3D" parent="." unique_id=231553114]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, -50, 0)
+
+[node name="MainMenu" parent="." unique_id=317956086 instance=ExtResource("6_sf6xb")]
+
+[connection signal="player_connection_status_changed" from="PlayerManager" to="." method="_on_player_manager_player_connection_status_changed"]
+[connection signal="player_ready_status_changed" from="PlayerManager" to="." method="_on_player_manager_player_ready_status_changed"]
