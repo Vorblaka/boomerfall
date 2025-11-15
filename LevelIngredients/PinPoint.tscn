@@ -1,8 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://djitd2uwxugfp"]
+[gd_scene load_steps=4 format=3 uid="uid://djitd2uwxugfp"]
 
 [ext_resource type="Script" uid="uid://033ixcrjajen" path="res://LevelIngredients/pin_point.gd" id="1_illkc"]
+[ext_resource type="PackedScene" uid="uid://dya01ihtqjiad" path="res://Art/Models/PinPoint/pin_point.fbx" id="2_m68q5"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_g546f"]
+radius = 1.0
 
 [node name="PinPoint" type="StaticBody3D" unique_id=1261599236]
 script = ExtResource("1_illkc")
@@ -17,5 +19,8 @@ node_a = NodePath("..")
 [node name="Timer" type="Timer" parent="." unique_id=726542719]
 wait_time = 3.0
 one_shot = true
+
+[node name="pin_point" parent="." unique_id=296237753 instance=ExtResource("2_m68q5")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

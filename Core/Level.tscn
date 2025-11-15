@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d1avguqyivyu5"]
+[gd_scene load_steps=14 format=3 uid="uid://d1avguqyivyu5"]
 
 [ext_resource type="Script" uid="uid://boi4jnb41bkja" path="res://Core/level.gd" id="1_3rhfs"]
 [ext_resource type="PackedScene" uid="uid://dkhmbewkcu8xi" path="res://Core/Shooter.tscn" id="2_h7iwn"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://b8trii6n5mjbc" path="res://Core/UI/main_menu.gd" id="7_bqa1j"]
 [ext_resource type="PackedScene" uid="uid://cfivpmaoah05x" path="res://LevelIngredients/UpperWall.tscn" id="9_f0br3"]
 [ext_resource type="PackedScene" uid="uid://drg3ce7a7n3j" path="res://Core/UI/game_over.tscn" id="9_o1d26"]
+[ext_resource type="PackedScene" uid="uid://c05vqrqly1mjx" path="res://Gigi_art/TestLevel/ArtLevel.tscn" id="10_o1d26"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jfla8"]
 ground_horizon_color = Color(0.19607843, 0.16470589, 0.1254902, 1)
@@ -30,8 +31,7 @@ boomer_scene = ExtResource("2_t83br")
 [node name="PlayerManager" parent="." unique_id=320525641 instance=ExtResource("3_sf6xb")]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1924576834]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 160.84146)
-projection = 1
+transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 25, 45)
 size = 100.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=129281676]
@@ -50,7 +50,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -15, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -15, 0)
 
 [node name="WallOfDeath" parent="." unique_id=544016448 instance=ExtResource("5_h7iwn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7, 0)
 
 [node name="WorldEnvironment2" type="WorldEnvironment" parent="." unique_id=976409435]
 environment = SubResource("Environment_rs3y6")
@@ -64,16 +64,16 @@ wait_time = 3.0
 one_shot = true
 
 [node name="BoomerSpawnPositionGC" type="Node3D" parent="." unique_id=617925213]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 40, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 35, 0)
 
 [node name="BoomerSpawnPositionLD" type="Node3D" parent="." unique_id=2048766034]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 40, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 35, 0)
 
 [node name="BoomerSpawnPositionMF" type="Node3D" parent="." unique_id=2066314189]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 40, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 35, 0)
 
 [node name="BoomerSpawnPositionGCo" type="Node3D" parent="." unique_id=1141284762]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.06489, 40.027187, 0.018526316)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.06489, 35.027187, 0.018526316)
 
 [node name="MainMenu" parent="." unique_id=503738643 instance=ExtResource("6_sf6xb")]
 script = ExtResource("7_bqa1j")
@@ -89,6 +89,9 @@ NodePath("PinPoint2"): null,
 NodePath("PinPoint3"): null,
 NodePath("PinPoint4"): null
 }
+
+[node name="ArtLevel2" parent="." unique_id=450559254 instance=ExtResource("10_o1d26")]
+transform = Transform3D(-1.42062e-07, 0, -3.25, 0, 4.75, 0, 3.25, 0, -1.42062e-07, 0, -33, 14)
 
 [connection signal="on_timer_started" from="." to="MainMenu" method="_on_level_on_timer_started"]
 [connection signal="on_timer_stopped" from="." to="MainMenu" method="_on_level_on_timer_stopped"]

@@ -1,10 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://dajmu12uautl7"]
+[gd_scene load_steps=10 format=3 uid="uid://dajmu12uautl7"]
 
 [ext_resource type="Script" uid="uid://bhx2l6xtkkve0" path="res://Core/boomer.gd" id="1_gldpe"]
+[ext_resource type="PackedScene" uid="uid://usfpfp6vfav4" path="res://Art/Models/BoomerCharacter/boomer_head.fbx" id="2_t3kdh"]
+[ext_resource type="PackedScene" uid="uid://b0fe2nmaxhxll" path="res://Art/Models/BoomerCharacter/boomer_body.fbx" id="3_8ucla"]
+[ext_resource type="PackedScene" uid="uid://5u6oaqp3d11k" path="res://Art/Models/BoomerCharacter/boomer_hand.fbx" id="4_j7ani"]
+[ext_resource type="PackedScene" uid="uid://dfgpvgufqswob" path="res://Core/Limb.tscn" id="5_8ucla"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_y14eq"]
 
-[node name="FallingCharacter" type="RigidBody3D" unique_id=698165976 groups=["Boomer"]]
+[sub_resource type="SphereShape3D" id="SphereShape3D_j7ani"]
+radius = 0.8
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8ucla"]
+radius = 1.0
+height = 3.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_8ucla"]
+
+[node name="FallingCharacter" type="RigidBody3D" unique_id=698165976]
+collision_layer = 0
+collision_mask = 0
 axis_lock_linear_x = true
 axis_lock_linear_z = true
 mass = 0.3
@@ -14,3 +29,145 @@ script = ExtResource("1_gldpe")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=362181415]
 shape = SubResource("CapsuleShape3D_y14eq")
 debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="RigidBody_head" type="RigidBody3D" parent="." unique_id=1754913826]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1827876, 0)
+collision_layer = 2
+axis_lock_linear_z = true
+
+[node name="boomer_head" parent="RigidBody_head" unique_id=1018768463 instance=ExtResource("2_t3kdh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6828868, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody_head" unique_id=542070143]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7421272, 0)
+shape = SubResource("SphereShape3D_j7ani")
+
+[node name="RigidBody_body" type="RigidBody3D" parent="." unique_id=302819075 groups=["Boomer"]]
+axis_lock_linear_z = true
+
+[node name="boomer_body" parent="RigidBody_body" unique_id=638826202 groups=["Boomer"] instance=ExtResource("3_8ucla")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody_body" unique_id=1871067663 groups=["Boomer"]]
+shape = SubResource("CapsuleShape3D_8ucla")
+
+[node name="RigidBody_lefthand" type="RigidBody3D" parent="." unique_id=205813033]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.6201062)
+collision_layer = 2
+axis_lock_linear_z = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody_lefthand" unique_id=1976960135]
+shape = SubResource("SphereShape3D_8ucla")
+
+[node name="boomer_left_hand" parent="RigidBody_lefthand" unique_id=698843989 instance=ExtResource("4_j7ani")]
+
+[node name="RigidBody_righthand" type="RigidBody3D" parent="." unique_id=167933227]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4163287)
+collision_layer = 2
+axis_lock_linear_z = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody_righthand" unique_id=2080319033]
+shape = SubResource("SphereShape3D_8ucla")
+
+[node name="boomer_right_hand" parent="RigidBody_righthand" unique_id=1389569438 instance=ExtResource("4_j7ani")]
+
+[node name="RigidBody_rightfeet" type="RigidBody3D" parent="." unique_id=1308188921]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.3329403, -1.4247432)
+collision_layer = 2
+axis_lock_linear_z = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody_rightfeet" unique_id=512622207]
+shape = SubResource("SphereShape3D_8ucla")
+
+[node name="boomer_right_feet" parent="RigidBody_rightfeet" unique_id=392283071 instance=ExtResource("4_j7ani")]
+
+[node name="RigidBody_leftfeet" type="RigidBody3D" parent="." unique_id=1955613517]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.3595085, 1.3444687)
+collision_layer = 2
+axis_lock_linear_z = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody_leftfeet" unique_id=1166307568]
+shape = SubResource("SphereShape3D_8ucla")
+
+[node name="boomer_left_feet" parent="RigidBody_leftfeet" unique_id=709667208 instance=ExtResource("4_j7ani")]
+
+[node name="Limb" parent="." unique_id=511996077 instance=ExtResource("5_8ucla")]
+transform = Transform3D(1, 0, 0, 0, 0.42048162, 0.907301, 0, -0.907301, 0.42048162, -2.3841858e-07, 1.1240399, 1.056168)
+
+[node name="RigidBody3D" parent="Limb" index="0" unique_id=1204427802]
+collision_layer = 2
+
+[node name="RigidBody3D2" parent="Limb" index="1" unique_id=220020437]
+collision_layer = 2
+
+[node name="RigidBody3D3" parent="Limb" index="2" unique_id=1457292461]
+collision_layer = 2
+
+[node name="HingeJoint3D0" parent="Limb" index="3" unique_id=914954941]
+node_a = NodePath("../../RigidBody_body")
+params/bias = 0.99
+
+[node name="HingeJoint3D3" parent="Limb" index="6" unique_id=1160985785]
+node_b = NodePath("../../RigidBody_lefthand")
+
+[node name="Limb2" parent="." unique_id=1527348134 instance=ExtResource("5_8ucla")]
+transform = Transform3D(1, 0, 0, 0, 0.43269956, -0.90153825, 0, 0.90153825, 0.43269956, 0, 1.1903038, -0.9779559)
+
+[node name="RigidBody3D" parent="Limb2" index="0" unique_id=1204427802]
+collision_layer = 2
+
+[node name="RigidBody3D2" parent="Limb2" index="1" unique_id=220020437]
+collision_layer = 2
+
+[node name="RigidBody3D3" parent="Limb2" index="2" unique_id=1457292461]
+collision_layer = 2
+
+[node name="HingeJoint3D0" parent="Limb2" index="3" unique_id=914954941]
+node_a = NodePath("../../RigidBody_body")
+
+[node name="HingeJoint3D3" parent="Limb2" index="6" unique_id=1160985785]
+node_b = NodePath("../../RigidBody_righthand")
+
+[node name="Limb3" parent="." unique_id=1588866489 instance=ExtResource("5_8ucla")]
+transform = Transform3D(1, 0, 0, 0, 0.9350857, 0.35442162, 0, -0.35442162, 0.9350857, 0, -1.4802983, 0.7583889)
+
+[node name="RigidBody3D" parent="Limb3" index="0" unique_id=1204427802]
+collision_layer = 2
+
+[node name="RigidBody3D2" parent="Limb3" index="1" unique_id=220020437]
+collision_layer = 2
+
+[node name="RigidBody3D3" parent="Limb3" index="2" unique_id=1457292461]
+collision_layer = 2
+
+[node name="HingeJoint3D0" parent="Limb3" index="3" unique_id=914954941]
+node_a = NodePath("../../RigidBody_body")
+
+[node name="HingeJoint3D3" parent="Limb3" index="6" unique_id=1160985785]
+node_b = NodePath("../../RigidBody_leftfeet")
+
+[node name="Limb4" parent="." unique_id=1319063815 instance=ExtResource("5_8ucla")]
+transform = Transform3D(1, 0, 0, 0, 0.91121644, -0.4119279, 0, 0.4119279, 0.91121644, 0, -1.4911124, -0.7015031)
+
+[node name="RigidBody3D" parent="Limb4" index="0" unique_id=1204427802]
+collision_layer = 2
+
+[node name="RigidBody3D2" parent="Limb4" index="1" unique_id=220020437]
+collision_layer = 2
+
+[node name="RigidBody3D3" parent="Limb4" index="2" unique_id=1457292461]
+collision_layer = 2
+
+[node name="HingeJoint3D0" parent="Limb4" index="3" unique_id=914954941]
+node_a = NodePath("../../RigidBody_body")
+
+[node name="HingeJoint3D3" parent="Limb4" index="6" unique_id=1160985785]
+node_b = NodePath("../../RigidBody_rightfeet")
+
+[node name="HingeJoint3D" type="HingeJoint3D" parent="." unique_id=1804379946]
+node_a = NodePath("../RigidBody_head")
+node_b = NodePath("../RigidBody_body")
+
+[editable path="Limb"]
+[editable path="Limb2"]
+[editable path="Limb3"]
+[editable path="Limb4"]

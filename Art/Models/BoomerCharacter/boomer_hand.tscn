@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b72tal82bx1y5"]
+
+[ext_resource type="PackedScene" uid="uid://5u6oaqp3d11k" path="res://Art/Models/BoomerCharacter/boomer_hand.fbx" id="1_ysnse"]
+[ext_resource type="Material" uid="uid://vy44t0a7s2lc" path="res://Art/Materials/boomer_material.tres" id="2_gwy78"]
+
+[node name="boomer_hand" unique_id=815376459 instance=ExtResource("1_ysnse")]
+
+[node name="LeftHand" parent="." index="0" unique_id=1136473075]
+material_override = ExtResource("2_gwy78")
+material_overlay = ExtResource("2_gwy78")

@@ -29,6 +29,7 @@ func on_shoot(pos: Vector3) -> bool:
 	if(curr_state == State.Inactive):
 		print("Bind 1 shoot")
 		bind1 = laccio_projectiles.pick_random().instantiate()
+		bind1.playerID = playerID
 		bind1.on_shoot(pos)
 		get_tree().root.add_child(bind1) 
 		bind1.top_level = true
@@ -38,6 +39,7 @@ func on_shoot(pos: Vector3) -> bool:
 	elif(curr_state == State.Boomer1):
 		print("Bind 2 shoot")
 		bind2 = laccio_projectiles.pick_random().instantiate()
+		bind2.playerID = playerID
 		bind2.on_shoot(pos)
 		get_tree().root.add_child(bind2)
 		bind2.top_level = true

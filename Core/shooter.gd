@@ -26,7 +26,8 @@ func _ready() -> void:
 	
 	projectile_instance = projectiles_scenes.pick_random().instantiate()
 	get_tree().root.add_child(projectile_instance)
-
+	projectile_instance.playerID = device_ID
+	
 	var marker_nodes = get_tree().get_current_scene().find_children("*", "Marker3D", true)
 	for marker in marker_nodes:
 	# Godot can usually infer and convert the type here if the element is correct
