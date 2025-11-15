@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dkhmbewkcu8xi"]
 
 [ext_resource type="Script" uid="uid://bv5m8nyprir2l" path="res://Core/shooter.gd" id="1_fkil7"]
-[ext_resource type="PackedScene" path="res://Core/Laccio.tscn" id="2_pmse0"]
+[ext_resource type="PackedScene" uid="uid://tdimqyvn2wpb" path="res://Core/Laccio.tscn" id="2_pmse0"]
 [ext_resource type="PackedScene" uid="uid://bh51y6atw8mxh" path="res://Core/Projectile.tscn" id="2_vmq0h"]
 [ext_resource type="PackedScene" uid="uid://dnfc5oo0rpqpp" path="res://Art/Models/Cannon/cannon.fbx" id="4_vmq0h"]
 
@@ -70,6 +70,7 @@ joint_scene = ExtResource("2_pmse0")
 animation_player = NodePath("cannon/AnimationPlayer")
 
 [node name="cannon" parent="." unique_id=704767505 instance=ExtResource("4_vmq0h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="cannon" unique_id=240547341]
 libraries = {
