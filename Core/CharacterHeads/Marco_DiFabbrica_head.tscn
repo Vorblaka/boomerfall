@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxm64rq31kvg"]
+
+[ext_resource type="PackedScene" uid="uid://usfpfp6vfav4" path="res://Art/Models/BoomerCharacter/boomer_head.fbx" id="1_yf787"]
+[ext_resource type="Texture2D" uid="uid://0e8iai60to0f" path="res://Art/Images/Marco_DiFabbrica.jpg" id="2_odkau"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ma0c"]
+albedo_texture = ExtResource("2_odkau")
+uv1_scale = Vector3(0.4, 0.4, 0.4)
+uv1_offset = Vector3(0.18, 0.2, 0)
+
+[node name="boomer_head" unique_id=1960514503 instance=ExtResource("1_yf787")]
+
+[node name="Head" parent="." index="0" unique_id=904217174]
+material_override = SubResource("StandardMaterial3D_2ma0c")

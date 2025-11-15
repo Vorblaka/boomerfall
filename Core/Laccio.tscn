@@ -6,15 +6,15 @@
 [node name="Laccio" type="Node3D" unique_id=389297355]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03817916, 0)
 script = ExtResource("1_e8fy6")
-projectiles_scenes = Array[PackedScene]([ExtResource("2_xhslj")])
+laccio_projectiles = Array[PackedScene]([ExtResource("2_xhslj")])
 
 [node name="Joint" type="Generic6DOFJoint3D" parent="." unique_id=2032756405]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.010979444, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.018694162, 0)
 node_a = NodePath("../Bind1")
 node_b = NodePath("../Bind2")
 
 [node name="Bind1" type="StaticBody3D" parent="." unique_id=5966901]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.50378144, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.507329, 0, 0)
 
 [node name="Bind2" type="StaticBody3D" parent="." unique_id=1413302900]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.62915194, -0.033499658, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.197294, -0.033499658, 0)
