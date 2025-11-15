@@ -4,7 +4,7 @@ enum State {Inactive, Boomer1, Boomer2, Active}
 
 var curr_state : State = State.Inactive
 
-@export var projectiles_scenes : Array[PackedScene]
+@export var laccio_projectiles : Array[PackedScene]
 
 var bind1: Shootable 
 var bind2: Shootable 
@@ -28,7 +28,7 @@ func on_shoot(pos: Vector3) -> bool:
 	print("Laccio")
 	if(curr_state == State.Inactive):
 		print("Bind 1 shoot")
-		bind1 = projectiles_scenes.pick_random().instantiate()
+		bind1 = laccio_projectiles.pick_random().instantiate()
 		bind1.on_shoot(pos)
 		add_child(bind1) 
 		#joint.node_a = bind1.get_path()
@@ -36,13 +36,13 @@ func on_shoot(pos: Vector3) -> bool:
 		return false
 	elif(curr_state == State.Boomer1):
 		print("Bind 2 shoot")
-		bind2 = projectiles_scenes.pick_random().instantiate()
+		bind2 = laccio_projectiles.pick_random().instantiate()
 		bind2.on_shoot(pos)
 		add_child(bind2)
 		 #joint.node_b = bind2.get_path()
 		next_state()
 		return true
-	return true
+	return false
 
 func _process(delta : float) -> void:
 	if(curr_state == State.Active):
