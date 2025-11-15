@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://d22xoeuk8vc41"]
+
+[ext_resource type="PackedScene" uid="uid://usfpfp6vfav4" path="res://Art/Models/BoomerCharacter/boomer_head.fbx" id="1_8djob"]
+[ext_resource type="PackedScene" uid="uid://5u6oaqp3d11k" path="res://Art/Models/BoomerCharacter/boomer_hand.fbx" id="2_my26u"]
+[ext_resource type="PackedScene" uid="uid://b0fe2nmaxhxll" path="res://Art/Models/BoomerCharacter/boomer_body.fbx" id="3_m40se"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_8djob"]
+radius = 4.0
+
+[node name="BoomerCharacter2" type="Node3D" unique_id=510099425]
+
+[node name="boomer_head" parent="." unique_id=832092937 instance=ExtResource("1_8djob")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 3, 0)
+
+[node name="boomer_rhand" parent="." unique_id=815376459 instance=ExtResource("2_my26u")]
+transform = Transform3D(1, 0, 0, 0, 0.7660444, -0.6427875, 0, 0.6427875, 0.7660444, 0, 0, -2.5)
+
+[node name="boomer_lhand" parent="." unique_id=213342872 instance=ExtResource("2_my26u")]
+transform = Transform3D(1, 0, 0, 0, 0.76604444, 0.6427876, 0, -0.6427876, 0.76604444, 0, 0, 2.5)
+
+[node name="boomer_rfoot" parent="." unique_id=49615968 instance=ExtResource("2_my26u")]
+transform = Transform3D(0.99999046, 0, 0.0043633087, 0, 0.9999999, 0, -0.004363309, 0, 0.99999034, 0, -3.5, -1)
+
+[node name="boomer_lfoot" parent="." unique_id=1171221962 instance=ExtResource("2_my26u")]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, -3.5, 1)
+
+[node name="boomer_body" parent="." unique_id=1238547949 instance=ExtResource("3_m40se")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1904979080]
+shape = SubResource("SphereShape3D_8djob")
