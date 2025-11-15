@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://0ql57tguvc88"
-path="res://.godot/imported/xbox_stick_r_right.svg-d6aac780a16f1e56350f691c54d3172d.ctex"
+path="res://.godot/imported/xbox_stick_r_right.svg-537043c7845fcb92be5649fd3c02dc7b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Xbox Series/Vector/xbox_stick_r_right.svg"
-dest_files=["res://.godot/imported/xbox_stick_r_right.svg-d6aac780a16f1e56350f691c54d3172d.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Xbox Series/Vector/xbox_stick_r_right.svg"
+dest_files=["res://.godot/imported/xbox_stick_r_right.svg-537043c7845fcb92be5649fd3c02dc7b.ctex"]
 
 [params]
 

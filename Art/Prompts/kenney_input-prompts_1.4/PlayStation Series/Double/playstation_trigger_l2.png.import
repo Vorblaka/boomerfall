@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://s6roefh2c2t0"
-path="res://.godot/imported/playstation_trigger_l2.png-3f0b4c5ebb822778fb8073e9986218c5.ctex"
+path="res://.godot/imported/playstation_trigger_l2.png-d40421879de243ab960494ed3d66ae70.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/PlayStation Series/Double/playstation_trigger_l2.png"
-dest_files=["res://.godot/imported/playstation_trigger_l2.png-3f0b4c5ebb822778fb8073e9986218c5.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/PlayStation Series/Double/playstation_trigger_l2.png"
+dest_files=["res://.godot/imported/playstation_trigger_l2.png-d40421879de243ab960494ed3d66ae70.ctex"]
 
 [params]
 

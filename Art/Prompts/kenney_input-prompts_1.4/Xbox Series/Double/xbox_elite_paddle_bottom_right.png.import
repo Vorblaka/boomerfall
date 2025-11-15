@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cvmwx61v2c7yi"
-path="res://.godot/imported/xbox_elite_paddle_bottom_right.png-3c301e3034772b7ac90f8b18821e5e5e.ctex"
+path="res://.godot/imported/xbox_elite_paddle_bottom_right.png-3a58eefb366fe842ebc2530ae30512dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Xbox Series/Double/xbox_elite_paddle_bottom_right.png"
-dest_files=["res://.godot/imported/xbox_elite_paddle_bottom_right.png-3c301e3034772b7ac90f8b18821e5e5e.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Xbox Series/Double/xbox_elite_paddle_bottom_right.png"
+dest_files=["res://.godot/imported/xbox_elite_paddle_bottom_right.png-3a58eefb366fe842ebc2530ae30512dc.ctex"]
 
 [params]
 

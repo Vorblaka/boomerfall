@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bfpne8ax5w8q5"
-path="res://.godot/imported/xbox_button_share_outline.svg-fc1c0b24907f3dfdeed57b07c43d5172.ctex"
+path="res://.godot/imported/xbox_button_share_outline.svg-3cbc6e73f5191ebc46b7fddcb6227696.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Xbox Series/Vector/xbox_button_share_outline.svg"
-dest_files=["res://.godot/imported/xbox_button_share_outline.svg-fc1c0b24907f3dfdeed57b07c43d5172.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Xbox Series/Vector/xbox_button_share_outline.svg"
+dest_files=["res://.godot/imported/xbox_button_share_outline.svg-3cbc6e73f5191ebc46b7fddcb6227696.ctex"]
 
 [params]
 

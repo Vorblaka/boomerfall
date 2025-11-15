@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cpd6w75p12myw"
-path="res://.godot/imported/mouse_scroll_vertical.png-8fef60fbb9aabc14d14c09e03dfd9717.ctex"
+path="res://.godot/imported/mouse_scroll_vertical.png-f52f27ffae97f989a801ad91ac237309.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Keyboard & Mouse/Double/mouse_scroll_vertical.png"
-dest_files=["res://.godot/imported/mouse_scroll_vertical.png-8fef60fbb9aabc14d14c09e03dfd9717.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Keyboard & Mouse/Double/mouse_scroll_vertical.png"
+dest_files=["res://.godot/imported/mouse_scroll_vertical.png-f52f27ffae97f989a801ad91ac237309.ctex"]
 
 [params]
 

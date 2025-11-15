@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dy1gke7sqqp4g"
-path="res://.godot/imported/keyboard_escape.svg-a42d7de54c7b7e04c18d881426265f05.ctex"
+path="res://.godot/imported/keyboard_escape.svg-8091fda55e8c7f5fb7476e8d27970ff9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Keyboard & Mouse/Vector/keyboard_escape.svg"
-dest_files=["res://.godot/imported/keyboard_escape.svg-a42d7de54c7b7e04c18d881426265f05.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Keyboard & Mouse/Vector/keyboard_escape.svg"
+dest_files=["res://.godot/imported/keyboard_escape.svg-8091fda55e8c7f5fb7476e8d27970ff9.ctex"]
 
 [params]
 

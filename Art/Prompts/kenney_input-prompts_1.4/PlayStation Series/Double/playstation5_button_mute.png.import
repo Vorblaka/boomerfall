@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c4cpxs2wealq7"
-path="res://.godot/imported/playstation5_button_mute.png-c3b78ee5f857dc3240590499fd83240a.ctex"
+path="res://.godot/imported/playstation5_button_mute.png-4d9d20c654a07a4fdfb4c0a9820f1b95.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/PlayStation Series/Double/playstation5_button_mute.png"
-dest_files=["res://.godot/imported/playstation5_button_mute.png-c3b78ee5f857dc3240590499fd83240a.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/PlayStation Series/Double/playstation5_button_mute.png"
+dest_files=["res://.godot/imported/playstation5_button_mute.png-4d9d20c654a07a4fdfb4c0a9820f1b95.ctex"]
 
 [params]
 

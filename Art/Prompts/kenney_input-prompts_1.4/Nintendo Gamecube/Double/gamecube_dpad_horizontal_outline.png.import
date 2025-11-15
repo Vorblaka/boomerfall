@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bojsdoeon0bij"
-path="res://.godot/imported/gamecube_dpad_horizontal_outline.png-98769519f66c1eb102ccdee5048194e3.ctex"
+path="res://.godot/imported/gamecube_dpad_horizontal_outline.png-c0280a5aa9aae7ab5b05fe2458dcc767.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Nintendo Gamecube/Double/gamecube_dpad_horizontal_outline.png"
-dest_files=["res://.godot/imported/gamecube_dpad_horizontal_outline.png-98769519f66c1eb102ccdee5048194e3.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Nintendo Gamecube/Double/gamecube_dpad_horizontal_outline.png"
+dest_files=["res://.godot/imported/gamecube_dpad_horizontal_outline.png-c0280a5aa9aae7ab5b05fe2458dcc767.ctex"]
 
 [params]
 

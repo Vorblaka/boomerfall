@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bgi8vlfyltur3"
-path="res://.godot/imported/switch_button_minus_outline.png-4471f1c5ce5870352fc3d2bef18bf9b0.ctex"
+path="res://.godot/imported/switch_button_minus_outline.png-71d8b77ef4a63ef425be783ac42b8c3e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Nintendo Switch 2/Double/switch_button_minus_outline.png"
-dest_files=["res://.godot/imported/switch_button_minus_outline.png-4471f1c5ce5870352fc3d2bef18bf9b0.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Nintendo Switch 2/Double/switch_button_minus_outline.png"
+dest_files=["res://.godot/imported/switch_button_minus_outline.png-71d8b77ef4a63ef425be783ac42b8c3e.ctex"]
 
 [params]
 

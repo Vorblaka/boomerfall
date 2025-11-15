@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dfh6nh058oucr"
-path="res://.godot/imported/playstation-series_sheet_default.png-b07a61cf184317128ddc27971c101560.ctex"
+path="res://.godot/imported/playstation-series_sheet_default.png-45140ec9015dee80485ef126fde5b31a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/PlayStation Series/playstation-series_sheet_default.png"
-dest_files=["res://.godot/imported/playstation-series_sheet_default.png-b07a61cf184317128ddc27971c101560.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/PlayStation Series/playstation-series_sheet_default.png"
+dest_files=["res://.godot/imported/playstation-series_sheet_default.png-45140ec9015dee80485ef126fde5b31a.ctex"]
 
 [params]
 

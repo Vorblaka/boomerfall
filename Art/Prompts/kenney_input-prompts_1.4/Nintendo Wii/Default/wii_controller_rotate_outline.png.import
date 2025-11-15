@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://fyxn0jrrbr6k"
-path="res://.godot/imported/wii_controller_rotate_outline.png-359eadcf13941adb16a8b6120a7cd43b.ctex"
+path="res://.godot/imported/wii_controller_rotate_outline.png-a10f403def5e195de40fa768d09cb4e0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Nintendo Wii/Default/wii_controller_rotate_outline.png"
-dest_files=["res://.godot/imported/wii_controller_rotate_outline.png-359eadcf13941adb16a8b6120a7cd43b.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Nintendo Wii/Default/wii_controller_rotate_outline.png"
+dest_files=["res://.godot/imported/wii_controller_rotate_outline.png-a10f403def5e195de40fa768d09cb4e0.ctex"]
 
 [params]
 

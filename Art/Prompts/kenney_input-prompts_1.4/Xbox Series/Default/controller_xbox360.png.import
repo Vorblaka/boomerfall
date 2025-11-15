@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://mwkuh4kcxd52"
-path="res://.godot/imported/controller_xbox360.png-c23a204bafed286f5e610417aff48d88.ctex"
+path="res://.godot/imported/controller_xbox360.png-26cf32b00aa577b81c21616a7a0777cc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Xbox Series/Default/controller_xbox360.png"
-dest_files=["res://.godot/imported/controller_xbox360.png-c23a204bafed286f5e610417aff48d88.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Xbox Series/Default/controller_xbox360.png"
+dest_files=["res://.godot/imported/controller_xbox360.png-26cf32b00aa577b81c21616a7a0777cc.ctex"]
 
 [params]
 

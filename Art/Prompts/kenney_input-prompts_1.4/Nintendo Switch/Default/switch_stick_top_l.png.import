@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d3ic6lpk2jvx5"
-path="res://.godot/imported/switch_stick_top_l.png-16ec0ce3aeed95e5a9853683ac0b2262.ctex"
+path="res://.godot/imported/switch_stick_top_l.png-1e92e8b5e63b68afbeb5576e7640c244.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Nintendo Switch/Default/switch_stick_top_l.png"
-dest_files=["res://.godot/imported/switch_stick_top_l.png-16ec0ce3aeed95e5a9853683ac0b2262.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Nintendo Switch/Default/switch_stick_top_l.png"
+dest_files=["res://.godot/imported/switch_stick_top_l.png-1e92e8b5e63b68afbeb5576e7640c244.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b8rncr38nvdvb"
-path="res://.godot/imported/keyboard_asterisk.png-86bb67c40f1e6501084f3850366f7188.ctex"
+path="res://.godot/imported/keyboard_asterisk.png-60f8652b518ee4faa1872d6374777d50.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Keyboard & Mouse/Default/keyboard_asterisk.png"
-dest_files=["res://.godot/imported/keyboard_asterisk.png-86bb67c40f1e6501084f3850366f7188.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Keyboard & Mouse/Default/keyboard_asterisk.png"
+dest_files=["res://.godot/imported/keyboard_asterisk.png-60f8652b518ee4faa1872d6374777d50.ctex"]
 
 [params]
 

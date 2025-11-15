@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ws3va0mnl7wr"
-path="res://.godot/imported/gamecube_stick_grip_horizontal.svg-ec2324fab5abfe76cfe6b7ca9cda945f.ctex"
+path="res://.godot/imported/gamecube_stick_grip_horizontal.svg-94c772c8df3c7f452e32cbd8371e1808.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Nintendo Gamecube/Vector/gamecube_stick_grip_horizontal.svg"
-dest_files=["res://.godot/imported/gamecube_stick_grip_horizontal.svg-ec2324fab5abfe76cfe6b7ca9cda945f.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Nintendo Gamecube/Vector/gamecube_stick_grip_horizontal.svg"
+dest_files=["res://.godot/imported/gamecube_stick_grip_horizontal.svg-94c772c8df3c7f452e32cbd8371e1808.ctex"]
 
 [params]
 

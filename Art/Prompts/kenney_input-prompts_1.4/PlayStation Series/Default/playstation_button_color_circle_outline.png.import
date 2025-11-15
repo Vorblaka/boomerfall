@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://crksw4ckkgvg2"
-path="res://.godot/imported/playstation_button_color_circle_outline.png-5ac90fd1846fa0e89b10c8ab1fea5927.ctex"
+path="res://.godot/imported/playstation_button_color_circle_outline.png-bffb1ba5af9a20a8b90f25fc3939a6a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/PlayStation Series/Default/playstation_button_color_circle_outline.png"
-dest_files=["res://.godot/imported/playstation_button_color_circle_outline.png-5ac90fd1846fa0e89b10c8ab1fea5927.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/PlayStation Series/Default/playstation_button_color_circle_outline.png"
+dest_files=["res://.godot/imported/playstation_button_color_circle_outline.png-bffb1ba5af9a20a8b90f25fc3939a6a4.ctex"]
 
 [params]
 

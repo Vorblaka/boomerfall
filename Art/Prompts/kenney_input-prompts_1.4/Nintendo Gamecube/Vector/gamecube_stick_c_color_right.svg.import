@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d2gly13xi5d7t"
-path="res://.godot/imported/gamecube_stick_c_color_right.svg-c277c9751845662cc6f59af227128f61.ctex"
+path="res://.godot/imported/gamecube_stick_c_color_right.svg-aa5765f3fbce2c0d906773c433fde6dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Nintendo Gamecube/Vector/gamecube_stick_c_color_right.svg"
-dest_files=["res://.godot/imported/gamecube_stick_c_color_right.svg-c277c9751845662cc6f59af227128f61.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Nintendo Gamecube/Vector/gamecube_stick_c_color_right.svg"
+dest_files=["res://.godot/imported/gamecube_stick_c_color_right.svg-aa5765f3fbce2c0d906773c433fde6dc.ctex"]
 
 [params]
 

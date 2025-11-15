@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://chfri4mreqkpr"
-path="res://.godot/imported/keyboard_capslock_outline.png-edd6e04f257f8d016c5bc66b1d862758.ctex"
+path="res://.godot/imported/keyboard_capslock_outline.png-5b8b06954546fe5351b0168fdb834a6f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Keyboard & Mouse/Default/keyboard_capslock_outline.png"
-dest_files=["res://.godot/imported/keyboard_capslock_outline.png-edd6e04f257f8d016c5bc66b1d862758.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Keyboard & Mouse/Default/keyboard_capslock_outline.png"
+dest_files=["res://.godot/imported/keyboard_capslock_outline.png-5b8b06954546fe5351b0168fdb834a6f.ctex"]
 
 [params]
 

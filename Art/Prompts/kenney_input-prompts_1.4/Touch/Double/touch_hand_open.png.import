@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c7cayd6ug5807"
-path="res://.godot/imported/touch_hand_open.png-3c9d3b158c018d8e50b19c861bcad877.ctex"
+path="res://.godot/imported/touch_hand_open.png-d27a79dfa6909914810853ff644e8c7f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Touch/Double/touch_hand_open.png"
-dest_files=["res://.godot/imported/touch_hand_open.png-3c9d3b158c018d8e50b19c861bcad877.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Touch/Double/touch_hand_open.png"
+dest_files=["res://.godot/imported/touch_hand_open.png-d27a79dfa6909914810853ff644e8c7f.ctex"]
 
 [params]
 

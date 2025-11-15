@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bdjgtjk4rum0x"
-path="res://.godot/imported/playdate_dpad_horizontal_outline.png-b677d98ffe779e69a3c459d518e000d4.ctex"
+path="res://.godot/imported/playdate_dpad_horizontal_outline.png-a8eb1fcfa750ae5d540b807175c66853.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Playdate/Double/playdate_dpad_horizontal_outline.png"
-dest_files=["res://.godot/imported/playdate_dpad_horizontal_outline.png-b677d98ffe779e69a3c459d518e000d4.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Playdate/Double/playdate_dpad_horizontal_outline.png"
+dest_files=["res://.godot/imported/playdate_dpad_horizontal_outline.png-a8eb1fcfa750ae5d540b807175c66853.ctex"]
 
 [params]
 

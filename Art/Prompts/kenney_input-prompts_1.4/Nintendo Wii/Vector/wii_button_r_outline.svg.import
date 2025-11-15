@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://drcjfpk5rykbx"
-path="res://.godot/imported/wii_button_r_outline.svg-a1077b0e1a2420fce154fb9b7d79e12d.ctex"
+path="res://.godot/imported/wii_button_r_outline.svg-54de922cf543c2cd368110bcbbb06a59.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Nintendo Wii/Vector/wii_button_r_outline.svg"
-dest_files=["res://.godot/imported/wii_button_r_outline.svg-a1077b0e1a2420fce154fb9b7d79e12d.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Nintendo Wii/Vector/wii_button_r_outline.svg"
+dest_files=["res://.godot/imported/wii_button_r_outline.svg-54de922cf543c2cd368110bcbbb06a59.ctex"]
 
 [params]
 

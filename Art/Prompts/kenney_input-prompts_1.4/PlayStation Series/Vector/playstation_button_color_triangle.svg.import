@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cy7lqo753rvnd"
-path="res://.godot/imported/playstation_button_color_triangle.svg-570374596ed3d18b53e6890f09db3372.ctex"
+path="res://.godot/imported/playstation_button_color_triangle.svg-0b34d29c5a4800cf75407dfddb8ba98c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/PlayStation Series/Vector/playstation_button_color_triangle.svg"
-dest_files=["res://.godot/imported/playstation_button_color_triangle.svg-570374596ed3d18b53e6890f09db3372.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/PlayStation Series/Vector/playstation_button_color_triangle.svg"
+dest_files=["res://.godot/imported/playstation_button_color_triangle.svg-0b34d29c5a4800cf75407dfddb8ba98c.ctex"]
 
 [params]
 

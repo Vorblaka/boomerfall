@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://pm8vn1oi42xm"
-path="res://.godot/imported/gamecube_controller.png-fb016db201d9ef1adf08428e58e00797.ctex"
+path="res://.godot/imported/gamecube_controller.png-41282ceee802e1eecb320830ac1f6f09.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Nintendo Gamecube/Double/gamecube_controller.png"
-dest_files=["res://.godot/imported/gamecube_controller.png-fb016db201d9ef1adf08428e58e00797.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Nintendo Gamecube/Double/gamecube_controller.png"
+dest_files=["res://.godot/imported/gamecube_controller.png-41282ceee802e1eecb320830ac1f6f09.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://4cf1esw4pjyp"
-path="res://.godot/imported/switch_joycon_right_mouse_outline.png-373d34e80e6ab221a4029d974e69a583.ctex"
+path="res://.godot/imported/switch_joycon_right_mouse_outline.png-f51003a77fd83dc24d17bd0f29b89ffa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Nintendo Switch 2/Default/switch_joycon_right_mouse_outline.png"
-dest_files=["res://.godot/imported/switch_joycon_right_mouse_outline.png-373d34e80e6ab221a4029d974e69a583.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Nintendo Switch 2/Default/switch_joycon_right_mouse_outline.png"
+dest_files=["res://.godot/imported/switch_joycon_right_mouse_outline.png-f51003a77fd83dc24d17bd0f29b89ffa.ctex"]
 
 [params]
 

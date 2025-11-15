@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://yo60eq64wf1n"
-path="res://.godot/imported/steam_dpad_all.svg-553f744558633192f6f5dea40f3bb610.ctex"
+path="res://.godot/imported/steam_dpad_all.svg-cc90a51f2bf073030d760278a04ac93f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Steam Controller/Vector/steam_dpad_all.svg"
-dest_files=["res://.godot/imported/steam_dpad_all.svg-553f744558633192f6f5dea40f3bb610.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Steam Controller/Vector/steam_dpad_all.svg"
+dest_files=["res://.godot/imported/steam_dpad_all.svg-cc90a51f2bf073030d760278a04ac93f.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://by154g12128oj"
-path="res://.godot/imported/playdate_icon_crank_outline.svg-79bcff9eef7f85344590ee26a0b21183.ctex"
+path="res://.godot/imported/playdate_icon_crank_outline.svg-a6ab08a8a7f689db304125e91e7f60d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Playdate/Vector/playdate_icon_crank_outline.svg"
-dest_files=["res://.godot/imported/playdate_icon_crank_outline.svg-79bcff9eef7f85344590ee26a0b21183.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Playdate/Vector/playdate_icon_crank_outline.svg"
+dest_files=["res://.godot/imported/playdate_icon_crank_outline.svg-a6ab08a8a7f689db304125e91e7f60d1.ctex"]
 
 [params]
 

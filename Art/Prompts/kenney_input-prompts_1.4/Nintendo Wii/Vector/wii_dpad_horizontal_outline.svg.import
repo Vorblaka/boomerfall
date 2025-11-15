@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bd4pm338g4tti"
-path="res://.godot/imported/wii_dpad_horizontal_outline.svg-c10cb20304e1776cfef5ee9eea96be20.ctex"
+path="res://.godot/imported/wii_dpad_horizontal_outline.svg-24b3219e21917ee7404d51bd7ed7bab8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Nintendo Wii/Vector/wii_dpad_horizontal_outline.svg"
-dest_files=["res://.godot/imported/wii_dpad_horizontal_outline.svg-c10cb20304e1776cfef5ee9eea96be20.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Nintendo Wii/Vector/wii_dpad_horizontal_outline.svg"
+dest_files=["res://.godot/imported/wii_dpad_horizontal_outline.svg-24b3219e21917ee7404d51bd7ed7bab8.ctex"]
 
 [params]
 

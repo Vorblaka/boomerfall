@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dikhwe2hy0258"
-path="res://.godot/imported/keyboard_apostrophe.svg-e499639509eac0b4b8bccce97e327743.ctex"
+path="res://.godot/imported/keyboard_apostrophe.svg-2c7ea7dc7bbaba7fdb07668a707b3a26.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Keyboard & Mouse/Vector/keyboard_apostrophe.svg"
-dest_files=["res://.godot/imported/keyboard_apostrophe.svg-e499639509eac0b4b8bccce97e327743.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Keyboard & Mouse/Vector/keyboard_apostrophe.svg"
+dest_files=["res://.godot/imported/keyboard_apostrophe.svg-2c7ea7dc7bbaba7fdb07668a707b3a26.ctex"]
 
 [params]
 

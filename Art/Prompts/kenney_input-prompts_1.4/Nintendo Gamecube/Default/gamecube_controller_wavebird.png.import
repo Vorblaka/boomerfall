@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ss631relswms"
-path="res://.godot/imported/gamecube_controller_wavebird.png-d800c5f09dd53d08ff9f7e6553e61f58.ctex"
+path="res://.godot/imported/gamecube_controller_wavebird.png-35bcd27cb634e1c620f23adc02c8f63c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Nintendo Gamecube/Default/gamecube_controller_wavebird.png"
-dest_files=["res://.godot/imported/gamecube_controller_wavebird.png-d800c5f09dd53d08ff9f7e6553e61f58.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Nintendo Gamecube/Default/gamecube_controller_wavebird.png"
+dest_files=["res://.godot/imported/gamecube_controller_wavebird.png-35bcd27cb634e1c620f23adc02c8f63c.ctex"]
 
 [params]
 

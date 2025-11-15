@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://5e2vrydn6rt7"
-path="res://.godot/imported/playstation5_elite_rb.png-aa50efe23db494f7c9e602593bb74ab8.ctex"
+path="res://.godot/imported/playstation5_elite_rb.png-e36500823c377e1e18d43279a86f4652.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/PlayStation Series/Double/playstation5_elite_rb.png"
-dest_files=["res://.godot/imported/playstation5_elite_rb.png-aa50efe23db494f7c9e602593bb74ab8.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/PlayStation Series/Double/playstation5_elite_rb.png"
+dest_files=["res://.godot/imported/playstation5_elite_rb.png-e36500823c377e1e18d43279a86f4652.ctex"]
 
 [params]
 

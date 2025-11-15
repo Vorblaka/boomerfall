@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cwk2bmqdlgf23"
-path="res://.godot/imported/wiiu_button_tv_outline.png-3274fd0498534b344eac564443816569.ctex"
+path="res://.godot/imported/wiiu_button_tv_outline.png-25c3819fc9356f73bf58b422ffb1ccbd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Nintendo WiiU/Double/wiiu_button_tv_outline.png"
-dest_files=["res://.godot/imported/wiiu_button_tv_outline.png-3274fd0498534b344eac564443816569.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Nintendo WiiU/Double/wiiu_button_tv_outline.png"
+dest_files=["res://.godot/imported/wiiu_button_tv_outline.png-25c3819fc9356f73bf58b422ffb1ccbd.ctex"]
 
 [params]
 

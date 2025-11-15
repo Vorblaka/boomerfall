@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://habb7prgouul"
-path="res://.godot/imported/gamecube_trigger_r_outline.svg-c44681033c812f40ff0702b320750037.ctex"
+path="res://.godot/imported/gamecube_trigger_r_outline.svg-e93b7fd4d8690f8e9374819726592ab1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Nintendo Gamecube/Vector/gamecube_trigger_r_outline.svg"
-dest_files=["res://.godot/imported/gamecube_trigger_r_outline.svg-c44681033c812f40ff0702b320750037.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Nintendo Gamecube/Vector/gamecube_trigger_r_outline.svg"
+dest_files=["res://.godot/imported/gamecube_trigger_r_outline.svg-e93b7fd4d8690f8e9374819726592ab1.ctex"]
 
 [params]
 

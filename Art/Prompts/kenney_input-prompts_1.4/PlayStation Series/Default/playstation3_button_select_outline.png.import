@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d06kdvuyaimb0"
-path="res://.godot/imported/playstation3_button_select_outline.png-5f47806dcbbaa57c15f1840664248155.ctex"
+path="res://.godot/imported/playstation3_button_select_outline.png-6b59eaa2fbba7fb82838dc0612a7d161.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/PlayStation Series/Default/playstation3_button_select_outline.png"
-dest_files=["res://.godot/imported/playstation3_button_select_outline.png-5f47806dcbbaa57c15f1840664248155.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/PlayStation Series/Default/playstation3_button_select_outline.png"
+dest_files=["res://.godot/imported/playstation3_button_select_outline.png-6b59eaa2fbba7fb82838dc0612a7d161.ctex"]
 
 [params]
 

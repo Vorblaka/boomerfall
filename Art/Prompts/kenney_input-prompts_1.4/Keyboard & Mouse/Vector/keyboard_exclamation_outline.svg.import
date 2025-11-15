@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c0byw5h2xktbm"
-path="res://.godot/imported/keyboard_exclamation_outline.svg-efc1fd4709cf1f61d72e576bb56d989a.ctex"
+path="res://.godot/imported/keyboard_exclamation_outline.svg-cc94eb8b0bfa5c652d647e9342601ad8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Keyboard & Mouse/Vector/keyboard_exclamation_outline.svg"
-dest_files=["res://.godot/imported/keyboard_exclamation_outline.svg-efc1fd4709cf1f61d72e576bb56d989a.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Keyboard & Mouse/Vector/keyboard_exclamation_outline.svg"
+dest_files=["res://.godot/imported/keyboard_exclamation_outline.svg-cc94eb8b0bfa5c652d647e9342601ad8.ctex"]
 
 [params]
 

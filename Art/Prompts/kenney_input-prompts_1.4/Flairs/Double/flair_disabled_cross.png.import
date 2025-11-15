@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://hmruh48qa2rs"
-path="res://.godot/imported/flair_disabled_cross.png-3ac9cbf9adf7c08a391c8806782eb310.ctex"
+path="res://.godot/imported/flair_disabled_cross.png-01811d91b850d64b3c9917006467386d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Flairs/Double/flair_disabled_cross.png"
-dest_files=["res://.godot/imported/flair_disabled_cross.png-3ac9cbf9adf7c08a391c8806782eb310.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Flairs/Double/flair_disabled_cross.png"
+dest_files=["res://.godot/imported/flair_disabled_cross.png-01811d91b850d64b3c9917006467386d.ctex"]
 
 [params]
 

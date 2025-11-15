@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://pmyfd6cupg0p"
-path="res://.godot/imported/keyboard_r.svg-344d4fddebd413eb52bbf1b3b730a404.ctex"
+path="res://.godot/imported/keyboard_r.svg-d0a8619bc11c87a238b46681b2fed70d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Keyboard & Mouse/Vector/keyboard_r.svg"
-dest_files=["res://.godot/imported/keyboard_r.svg-344d4fddebd413eb52bbf1b3b730a404.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Keyboard & Mouse/Vector/keyboard_r.svg"
+dest_files=["res://.godot/imported/keyboard_r.svg-d0a8619bc11c87a238b46681b2fed70d.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://kgrqiopvl6n"
-path="res://.godot/imported/gamecube_button_z.png-08744f059a556a2276228eb9c8a96e21.ctex"
+path="res://.godot/imported/gamecube_button_z.png-73a29612d394050d65da1a3127e2b39d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Nintendo Gamecube/Default/gamecube_button_z.png"
-dest_files=["res://.godot/imported/gamecube_button_z.png-08744f059a556a2276228eb9c8a96e21.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Nintendo Gamecube/Default/gamecube_button_z.png"
+dest_files=["res://.godot/imported/gamecube_button_z.png-73a29612d394050d65da1a3127e2b39d.ctex"]
 
 [params]
 

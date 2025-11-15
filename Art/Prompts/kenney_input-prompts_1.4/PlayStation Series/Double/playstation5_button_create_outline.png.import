@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cby80kite0gto"
-path="res://.godot/imported/playstation5_button_create_outline.png-4b3f55fb2543a76838feef69246e0562.ctex"
+path="res://.godot/imported/playstation5_button_create_outline.png-5444e1e092862c65e2882252af86c60d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/PlayStation Series/Double/playstation5_button_create_outline.png"
-dest_files=["res://.godot/imported/playstation5_button_create_outline.png-4b3f55fb2543a76838feef69246e0562.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/PlayStation Series/Double/playstation5_button_create_outline.png"
+dest_files=["res://.godot/imported/playstation5_button_create_outline.png-5444e1e092862c65e2882252af86c60d.ctex"]
 
 [params]
 

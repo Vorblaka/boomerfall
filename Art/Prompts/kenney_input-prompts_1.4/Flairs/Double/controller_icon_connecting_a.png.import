@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://6l1wrgpxsrds"
-path="res://.godot/imported/controller_icon_connecting_a.png-c3786572b81e86cdfd94d880424ec1d6.ctex"
+path="res://.godot/imported/controller_icon_connecting_a.png-e3c26b29d0c1599f889734b2a42b757e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Flairs/Double/controller_icon_connecting_a.png"
-dest_files=["res://.godot/imported/controller_icon_connecting_a.png-c3786572b81e86cdfd94d880424ec1d6.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Flairs/Double/controller_icon_connecting_a.png"
+dest_files=["res://.godot/imported/controller_icon_connecting_a.png-e3c26b29d0c1599f889734b2a42b757e.ctex"]
 
 [params]
 

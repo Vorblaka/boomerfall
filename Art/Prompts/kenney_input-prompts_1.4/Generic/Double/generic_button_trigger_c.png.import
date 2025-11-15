@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://1gmnq21he0ch"
-path="res://.godot/imported/generic_button_trigger_c.png-45717c130015f3c548147b96f59342d9.ctex"
+path="res://.godot/imported/generic_button_trigger_c.png-8d865d934bb29be290e3a9c05b7e1ca9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Generic/Double/generic_button_trigger_c.png"
-dest_files=["res://.godot/imported/generic_button_trigger_c.png-45717c130015f3c548147b96f59342d9.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Generic/Double/generic_button_trigger_c.png"
+dest_files=["res://.godot/imported/generic_button_trigger_c.png-8d865d934bb29be290e3a9c05b7e1ca9.ctex"]
 
 [params]
 

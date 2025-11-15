@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bpom5xlbkb0mu"
-path="res://.godot/imported/flair_arrow_1.png-7d5b6870e804fb7ee42e17eb638cbd74.ctex"
+path="res://.godot/imported/flair_arrow_1.png-963e06b63a2695f8a31d73dd3c8b6d15.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Flairs/Double/flair_arrow_1.png"
-dest_files=["res://.godot/imported/flair_arrow_1.png-7d5b6870e804fb7ee42e17eb638cbd74.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Flairs/Double/flair_arrow_1.png"
+dest_files=["res://.godot/imported/flair_arrow_1.png-963e06b63a2695f8a31d73dd3c8b6d15.ctex"]
 
 [params]
 

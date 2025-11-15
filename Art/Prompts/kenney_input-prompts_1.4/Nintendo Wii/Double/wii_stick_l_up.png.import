@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://jdg8jby6job7"
-path="res://.godot/imported/wii_stick_l_up.png-d06449e7117f34d6e07958c803c520d3.ctex"
+path="res://.godot/imported/wii_stick_l_up.png-898669be9b1aacbdd8a699e7f9865cc7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Nintendo Wii/Double/wii_stick_l_up.png"
-dest_files=["res://.godot/imported/wii_stick_l_up.png-d06449e7117f34d6e07958c803c520d3.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Nintendo Wii/Double/wii_stick_l_up.png"
+dest_files=["res://.godot/imported/wii_stick_l_up.png-898669be9b1aacbdd8a699e7f9865cc7.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dvdksv603lglv"
-path="res://.godot/imported/gamecube_button_x_tilted_outline.png-6d2c792000fe52d988ab99da3b115639.ctex"
+path="res://.godot/imported/gamecube_button_x_tilted_outline.png-c6ed8cb8585a6c3666da2108f535d27f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Nintendo Gamecube/Double/gamecube_button_x_tilted_outline.png"
-dest_files=["res://.godot/imported/gamecube_button_x_tilted_outline.png-6d2c792000fe52d988ab99da3b115639.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Nintendo Gamecube/Double/gamecube_button_x_tilted_outline.png"
+dest_files=["res://.godot/imported/gamecube_button_x_tilted_outline.png-c6ed8cb8585a6c3666da2108f535d27f.ctex"]
 
 [params]
 

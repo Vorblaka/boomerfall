@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ch3hg2kbbxlb4"
-path="res://.godot/imported/flair_circle_target_a.svg-729877cf5423ad79347bf514b1f9e930.ctex"
+path="res://.godot/imported/flair_circle_target_a.svg-f7186f6690636449d6b62aa2106c8e03.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Flairs/Vector/flair_circle_target_a.svg"
-dest_files=["res://.godot/imported/flair_circle_target_a.svg-729877cf5423ad79347bf514b1f9e930.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Flairs/Vector/flair_circle_target_a.svg"
+dest_files=["res://.godot/imported/flair_circle_target_a.svg-f7186f6690636449d6b62aa2106c8e03.ctex"]
 
 [params]
 

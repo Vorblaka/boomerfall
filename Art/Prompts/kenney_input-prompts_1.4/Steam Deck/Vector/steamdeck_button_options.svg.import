@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cwclqgxosnc62"
-path="res://.godot/imported/steamdeck_button_options.svg-c942737419f66f2317f041d482e319d0.ctex"
+path="res://.godot/imported/steamdeck_button_options.svg-7d0dcb754fbd1a8c5d94ff47ac351635.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Steam Deck/Vector/steamdeck_button_options.svg"
-dest_files=["res://.godot/imported/steamdeck_button_options.svg-c942737419f66f2317f041d482e319d0.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Steam Deck/Vector/steamdeck_button_options.svg"
+dest_files=["res://.godot/imported/steamdeck_button_options.svg-7d0dcb754fbd1a8c5d94ff47ac351635.ctex"]
 
 [params]
 

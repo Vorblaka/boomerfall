@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b8n00l1ou3y3y"
-path="res://.godot/imported/generic_joystick_red.png-1367f5ade1379ad335388ecc40bd4a60.ctex"
+path="res://.godot/imported/generic_joystick_red.png-cf27b6f935ec11dd5cb07d01c9ef75b8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Generic/Default/generic_joystick_red.png"
-dest_files=["res://.godot/imported/generic_joystick_red.png-1367f5ade1379ad335388ecc40bd4a60.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Generic/Default/generic_joystick_red.png"
+dest_files=["res://.godot/imported/generic_joystick_red.png-cf27b6f935ec11dd5cb07d01c9ef75b8.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://5tpqax73d5jw"
-path="res://.godot/imported/xbox_button_color_a.png-85f288f53aadb8154789442209f278d4.ctex"
+path="res://.godot/imported/xbox_button_color_a.png-39b776a92de10036d77768806fbd48ef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Xbox Series/Double/xbox_button_color_a.png"
-dest_files=["res://.godot/imported/xbox_button_color_a.png-85f288f53aadb8154789442209f278d4.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Xbox Series/Double/xbox_button_color_a.png"
+dest_files=["res://.godot/imported/xbox_button_color_a.png-39b776a92de10036d77768806fbd48ef.ctex"]
 
 [params]
 

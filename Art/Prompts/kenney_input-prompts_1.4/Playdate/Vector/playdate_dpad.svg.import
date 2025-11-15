@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cao00woy5tylg"
-path="res://.godot/imported/playdate_dpad.svg-e8953c633c6f088efad42a1c8766194b.ctex"
+path="res://.godot/imported/playdate_dpad.svg-9c7ad1941ae7d50caf628fad35801fce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Playdate/Vector/playdate_dpad.svg"
-dest_files=["res://.godot/imported/playdate_dpad.svg-e8953c633c6f088efad42a1c8766194b.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Playdate/Vector/playdate_dpad.svg"
+dest_files=["res://.godot/imported/playdate_dpad.svg-9c7ad1941ae7d50caf628fad35801fce.ctex"]
 
 [params]
 

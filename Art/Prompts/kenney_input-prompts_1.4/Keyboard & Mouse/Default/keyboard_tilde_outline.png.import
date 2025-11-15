@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bcu15ndhfxnga"
-path="res://.godot/imported/keyboard_tilde_outline.png-8408edbdf7427afb4c4c817cd6d66675.ctex"
+path="res://.godot/imported/keyboard_tilde_outline.png-07f596e55a8899098dcb7452aa4d53f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Keyboard & Mouse/Default/keyboard_tilde_outline.png"
-dest_files=["res://.godot/imported/keyboard_tilde_outline.png-8408edbdf7427afb4c4c817cd6d66675.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Keyboard & Mouse/Default/keyboard_tilde_outline.png"
+dest_files=["res://.godot/imported/keyboard_tilde_outline.png-07f596e55a8899098dcb7452aa4d53f1.ctex"]
 
 [params]
 

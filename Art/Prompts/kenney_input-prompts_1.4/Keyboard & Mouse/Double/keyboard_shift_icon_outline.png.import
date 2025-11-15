@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cdu0dr4ofwi36"
-path="res://.godot/imported/keyboard_shift_icon_outline.png-84da7bd2a395af70551d684fc5b1bfdd.ctex"
+path="res://.godot/imported/keyboard_shift_icon_outline.png-85fa7cc2c0a29b488a87a5762e263a54.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Keyboard & Mouse/Double/keyboard_shift_icon_outline.png"
-dest_files=["res://.godot/imported/keyboard_shift_icon_outline.png-84da7bd2a395af70551d684fc5b1bfdd.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Keyboard & Mouse/Double/keyboard_shift_icon_outline.png"
+dest_files=["res://.godot/imported/keyboard_shift_icon_outline.png-85fa7cc2c0a29b488a87a5762e263a54.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dc3pc62eljd21"
-path="res://.godot/imported/steam-controller_sheet_double.png-97c2723c929af5df621440aed1cb3bd5.ctex"
+path="res://.godot/imported/steam-controller_sheet_double.png-b6cb649650c99d2a30b8f2634f996dec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Steam Controller/steam-controller_sheet_double.png"
-dest_files=["res://.godot/imported/steam-controller_sheet_double.png-97c2723c929af5df621440aed1cb3bd5.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Steam Controller/steam-controller_sheet_double.png"
+dest_files=["res://.godot/imported/steam-controller_sheet_double.png-b6cb649650c99d2a30b8f2634f996dec.ctex"]
 
 [params]
 

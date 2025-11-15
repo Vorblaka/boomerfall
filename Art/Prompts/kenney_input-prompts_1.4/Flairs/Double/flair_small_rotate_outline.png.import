@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://db4h2rmaquqda"
-path="res://.godot/imported/flair_small_rotate_outline.png-85e6029432a6e6eba328cf923f6c1563.ctex"
+path="res://.godot/imported/flair_small_rotate_outline.png-bf0265a323ebbaa808cf1edcc7ee19f3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Flairs/Double/flair_small_rotate_outline.png"
-dest_files=["res://.godot/imported/flair_small_rotate_outline.png-85e6029432a6e6eba328cf923f6c1563.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Flairs/Double/flair_small_rotate_outline.png"
+dest_files=["res://.godot/imported/flair_small_rotate_outline.png-bf0265a323ebbaa808cf1edcc7ee19f3.ctex"]
 
 [params]
 

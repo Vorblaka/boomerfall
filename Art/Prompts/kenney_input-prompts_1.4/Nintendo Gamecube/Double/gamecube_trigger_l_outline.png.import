@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://jdsagwcr23gj"
-path="res://.godot/imported/gamecube_trigger_l_outline.png-bc13fc1b2aef945076eaf7c6409a70da.ctex"
+path="res://.godot/imported/gamecube_trigger_l_outline.png-ae1bb9a83860f7bbe27d7416dca32a91.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Nintendo Gamecube/Double/gamecube_trigger_l_outline.png"
-dest_files=["res://.godot/imported/gamecube_trigger_l_outline.png-bc13fc1b2aef945076eaf7c6409a70da.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Nintendo Gamecube/Double/gamecube_trigger_l_outline.png"
+dest_files=["res://.godot/imported/gamecube_trigger_l_outline.png-ae1bb9a83860f7bbe27d7416dca32a91.ctex"]
 
 [params]
 

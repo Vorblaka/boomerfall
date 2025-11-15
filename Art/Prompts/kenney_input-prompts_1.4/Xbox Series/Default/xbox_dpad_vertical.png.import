@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://drl38cfotkfau"
-path="res://.godot/imported/xbox_dpad_vertical.png-c709cae0f7c77963f1606a93c5cb35aa.ctex"
+path="res://.godot/imported/xbox_dpad_vertical.png-47fdac3220722ed454004b9602e4d36e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Xbox Series/Default/xbox_dpad_vertical.png"
-dest_files=["res://.godot/imported/xbox_dpad_vertical.png-c709cae0f7c77963f1606a93c5cb35aa.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Xbox Series/Default/xbox_dpad_vertical.png"
+dest_files=["res://.godot/imported/xbox_dpad_vertical.png-47fdac3220722ed454004b9602e4d36e.ctex"]
 
 [params]
 

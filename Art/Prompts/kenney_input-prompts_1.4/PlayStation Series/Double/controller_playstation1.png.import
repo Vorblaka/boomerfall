@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://gkirkhe3laie"
-path="res://.godot/imported/controller_playstation1.png-afaad3ce564a57c176ef0c03e70226e9.ctex"
+path="res://.godot/imported/controller_playstation1.png-3a532cf6399bfb6714519ca48d93a31e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/PlayStation Series/Double/controller_playstation1.png"
-dest_files=["res://.godot/imported/controller_playstation1.png-afaad3ce564a57c176ef0c03e70226e9.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/PlayStation Series/Double/controller_playstation1.png"
+dest_files=["res://.godot/imported/controller_playstation1.png-3a532cf6399bfb6714519ca48d93a31e.ctex"]
 
 [params]
 

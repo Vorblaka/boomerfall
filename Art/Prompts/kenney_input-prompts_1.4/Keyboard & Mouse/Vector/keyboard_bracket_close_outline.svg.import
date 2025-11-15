@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c2q1luwheb3xx"
-path="res://.godot/imported/keyboard_bracket_close_outline.svg-40623716cb1cb9cdb54de233aa11b1cf.ctex"
+path="res://.godot/imported/keyboard_bracket_close_outline.svg-7ca2710dd3098f3fe95debfb0c39fbf1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Prompts/kenney_input-prompts_1.4/Keyboard & Mouse/Vector/keyboard_bracket_close_outline.svg"
-dest_files=["res://.godot/imported/keyboard_bracket_close_outline.svg-40623716cb1cb9cdb54de233aa11b1cf.ctex"]
+source_file="res://Art/Prompts/kenney_input-prompts_1.4/Keyboard & Mouse/Vector/keyboard_bracket_close_outline.svg"
+dest_files=["res://.godot/imported/keyboard_bracket_close_outline.svg-7ca2710dd3098f3fe95debfb0c39fbf1.ctex"]
 
 [params]
 
