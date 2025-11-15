@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dfgpvgufqswob"]
+[gd_scene load_steps=4 format=3 uid="uid://dfgpvgufqswob"]
+
+[ext_resource type="Material" uid="uid://bwkov2u23j76i" path="res://Art/Materials/limb_material.tres" id="1_ixj1m"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ixj1m"]
 radius = 0.1
@@ -16,6 +18,7 @@ height = 0.6
 shape = SubResource("CapsuleShape3D_ixj1m")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D" unique_id=841348381]
+material_override = ExtResource("1_ixj1m")
 mesh = SubResource("CapsuleMesh_ixj1m")
 
 [node name="RigidBody3D2" type="RigidBody3D" parent="." unique_id=220020437]
@@ -25,6 +28,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.60336804, 0)
 shape = SubResource("CapsuleShape3D_ixj1m")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D2" unique_id=514485575]
+material_override = ExtResource("1_ixj1m")
 mesh = SubResource("CapsuleMesh_ixj1m")
 
 [node name="RigidBody3D3" type="RigidBody3D" parent="." unique_id=1457292461]
@@ -34,6 +38,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2082084, 0)
 shape = SubResource("CapsuleShape3D_ixj1m")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D3" unique_id=2025645722]
+material_override = ExtResource("1_ixj1m")
 mesh = SubResource("CapsuleMesh_ixj1m")
 
 [node name="HingeJoint3D0" type="HingeJoint3D" parent="." unique_id=914954941]

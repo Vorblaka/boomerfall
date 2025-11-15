@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://y2v3eoxx2amw"]
+
+[ext_resource type="PackedScene" uid="uid://usfpfp6vfav4" path="res://Art/Models/BoomerCharacter/boomer_head.fbx" id="1_4w5ab"]
+[ext_resource type="Material" uid="uid://vy44t0a7s2lc" path="res://Art/Materials/boomer_material.tres" id="2_vwwmo"]
+
+[node name="boomer_head" unique_id=832092937 instance=ExtResource("1_4w5ab")]
+
+[node name="Head" parent="." index="0" unique_id=583942549]
+material_override = ExtResource("2_vwwmo")

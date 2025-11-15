@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cjgmygb470j7d"]
+
+[ext_resource type="Texture2D" uid="uid://brcp6yg54nirc" path="res://Art/Models/Cannon/rough-normal.jpg" id="1_ycryh"]
+
+[resource]
+albedo_color = Color(0.22479922, 0.58363545, 9.62615e-07, 1)
+metallic = 0.4
+metallic_specular = 0.45
+roughness = 0.12
+normal_enabled = true
+normal_scale = -0.4
+normal_texture = ExtResource("1_ycryh")

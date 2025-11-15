@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://vy44t0a7s2lc"]
+
+[ext_resource type="Shader" uid="uid://s4lteg8r8qvc" path="res://Art/Shaders/boomer_material.gdshader" id="1_s0wtf"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_s0wtf")
+shader_parameter/alb_wood = Color(0.564, 0.356, 0.192, 1)
+shader_parameter/alb_gap = Color(0.353, 0.176, 0.07, 1)
+shader_parameter/plank_length = 5.505
+shader_parameter/scale = 19.0
