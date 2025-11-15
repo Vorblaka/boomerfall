@@ -5,7 +5,7 @@ class_name level
 @onready var start_game_timer: Timer = $StartGameTimer
 @onready var main_menu: CanvasLayer = $MainMenu
 
-@export var player_spawn_pos : Array[Node3D] = []
+@export var player_spawn_pos : Array[Marker3D] = []
 @export var boomer_spawn_pos : Array[Node3D] = []
 
 @export var shooter_scene : PackedScene
@@ -30,6 +30,7 @@ func _spawn_player_characters():
 			shooter_instance.device_ID = counter
 			shooter_instance.position = player_spawn_pos[counter].position
 			player_state.player_instance = shooter_instance
+			add_child(shooter_instance)
 			
 			var boomer_instance : boomer = boomer_scene.instantiate()
 			assert(counter >= 0 and counter < GameInstance.boomer_names.size())
