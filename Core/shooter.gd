@@ -25,7 +25,6 @@ func _ready() -> void:
 	shoot_action_string = "Player_Shoot_%d" % device_ID
 	
 	projectile_instance = projectiles_scenes.pick_random().instantiate()
-	projectile_instance.top_level = true
 
 	var marker_nodes = get_tree().get_current_scene().find_children("*", "Marker3D", true)
 	for marker in marker_nodes:
@@ -70,12 +69,11 @@ func _physics_process(_delta: float) -> void:
 		Input.action_release(move_right_action_string)
 
 func shoot() -> void:
-# Do nothing if a projectile has not been assigned yet
+	if animation_player.is_playing() :
+		animation_player.stop()
+	animation_player.play("cannon_shoot")
+	
 	if (projectile_instance.on_shoot(global_position + Vector3(0,muzzle_offset,0))):
-		if animation_player.is_playing() :
-			animation_player.stop()
-		animation_player.play("cannon_shoot")
-
-		projectile_instance = projectiles_scenes.pick_random().instantiate()
 		projectile_instance.top_level = true
 		add_child(projectile_instance)
+		projectile_instance = projectiles_scenes.pick_random().instantiate()
