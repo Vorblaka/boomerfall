@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1avguqyivyu5"]
+
+[ext_resource type="PackedScene" uid="uid://dajmu12uautl7" path="res://Core/falling_character.tscn" id="1_6s6ic"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jfla8"]
+
+[sub_resource type="Sky" id="Sky_6s6ic"]
+sky_material = SubResource("ProceduralSkyMaterial_jfla8")
+
+[sub_resource type="Environment" id="Environment_rs3y6"]
+background_mode = 2
+sky = SubResource("Sky_6s6ic")
+
+[node name="Level" type="Node3D" unique_id=1992575775]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1924576834]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.891141, 7.3402724)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Camera3D" unique_id=129281676]
+environment = SubResource("Environment_rs3y6")
+
+[node name="FallingCharacter1" parent="." unique_id=698165976 instance=ExtResource("1_6s6ic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="FallingCharacter2" parent="." unique_id=1876404406 instance=ExtResource("1_6s6ic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="FallingCharacter3" parent="." unique_id=875765670 instance=ExtResource("1_6s6ic")]
+
+[node name="FallingCharacter4" parent="." unique_id=892610193 instance=ExtResource("1_6s6ic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)

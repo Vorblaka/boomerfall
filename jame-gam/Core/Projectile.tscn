@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bh51y6atw8mxh"]
+
+[ext_resource type="Script" uid="uid://b76g0c852u1w7" path="res://Core/projectile.gd" id="1_13ccr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f3wkg"]
+
+[node name="Projectile" type="RigidBody3D" unique_id=1324296202]
+axis_lock_linear_x = true
+axis_lock_linear_z = true
+gravity_scale = -1.0
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_13ccr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=797240168]
+shape = SubResource("BoxShape3D_f3wkg")
+debug_color = Color(0.92156863, 0, 0.6862745, 1)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
