@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://csca3flx47soa"]
+
+[ext_resource type="PackedScene" uid="uid://usfpfp6vfav4" path="res://Art/Models/BoomerCharacter/boomer_head.fbx" id="1_8wtds"]
+[ext_resource type="Texture2D" uid="uid://co6fa6xw0novi" path="res://Art/Images/Prof.png" id="2_bd1se"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qst4x"]
+albedo_texture = ExtResource("2_bd1se")
+uv1_scale = Vector3(0.95, 0.95, 0.95)
+uv1_offset = Vector3(0.003, 0.015, 0)
+
+[node name="boomer_head" unique_id=1960514503 instance=ExtResource("1_8wtds")]
+
+[node name="Head" parent="." index="0" unique_id=904217174]
+material_override = SubResource("StandardMaterial3D_qst4x")

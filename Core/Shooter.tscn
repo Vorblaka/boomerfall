@@ -62,11 +62,10 @@ _data = {
 &"cannon_shoot": SubResource("Animation_vmq0h")
 }
 
-[node name="Shooter" type="Node3D" unique_id=1728028125 node_paths=PackedStringArray("animation_player")]
+[node name="Shooter3" type="Node3D" unique_id=1728028125 node_paths=PackedStringArray("animation_player")]
 transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
 script = ExtResource("1_fkil7")
-projectiles_scenes = Array[PackedScene]([ExtResource("2_vmq0h")])
-joint_scene = ExtResource("2_pmse0")
+projectiles_scenes = Array[PackedScene]([ExtResource("2_vmq0h"), ExtResource("2_pmse0")])
 animation_player = NodePath("cannon/AnimationPlayer")
 
 [node name="cannon" parent="." unique_id=704767505 instance=ExtResource("4_vmq0h")]
