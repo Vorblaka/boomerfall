@@ -41,7 +41,7 @@ func _input(_event: InputEvent) -> void:
 	if device_ID == -1:
 		push_error("Device if not initialized!")
 		return
-		
+	
 	# Shooting input
 	if Input.is_action_just_pressed(shoot_action_string):
 		shoot()

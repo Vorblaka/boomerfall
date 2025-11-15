@@ -9,7 +9,12 @@ func attach(body : PhysicsBody3D, location : Vector3) -> void:
 	joint.node_b = body.get_path()
 	delay.start()
 	body.add_to_group("Connected")
-	if get_tree().get_nodes_in_group("Connected").size() == 4 :
+	
+	var my_lambda = func (ps: GameInstance.PlayerState):
+		return ps.bConnected
+	
+	var active_players_in_lobby = GameInstance.player_states.filter(my_lambda).size()
+	if get_tree().get_nodes_in_group("Connected").size() == active_players_in_lobby:
 		GameInstance.game_win.emit()
 
 func _on_timer_timeout() -> void:

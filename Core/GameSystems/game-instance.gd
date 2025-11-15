@@ -4,8 +4,15 @@ class PlayerState:
 	var bReady : bool = false
 	var bConnected : bool = false
 	var bWinner : bool = false
-	var player_instance : shooter
-	var boomer_instance : boomer
+	var player_instance : shooter = null
+	var boomer_instance : boomer = null
+	
+	func reset() -> void:
+		bReady = false
+		bConnected = false
+		bWinner = false
+		player_instance = null
+		boomer_instance = null
 
 var player_states : Array[PlayerState]
 
@@ -26,6 +33,8 @@ var boomer_names : Array[String] = [
 	"Gianni_Collaterali"
 ]
 
+# Single player victory
 signal game_ended
-signal game_win
-signal character_death
+# Group victory
+signal game_win 
+signal character_death(player_idx : int)

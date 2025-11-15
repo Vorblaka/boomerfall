@@ -4,6 +4,7 @@ class_name level
 @onready var game_over_timer: Timer = $GameOverTimer
 @onready var start_game_timer: Timer = $StartGameTimer
 @onready var main_menu: CanvasLayer = $MainMenu
+@onready var game_over_ui : GameOver = $GameOver
 
 @export var player_spawn_pos : Array[Marker3D] = []
 @export var boomer_spawn_pos : Array[Node3D] = []
@@ -15,6 +16,34 @@ signal on_timer_started
 signal on_timer_stopped
 signal on_game_started
 
+func _ready() -> void:
+	GameInstance.game_ended.connect(_game_ended_callback)
+	GameInstance.game_win.connect(_all_boomers_connected_callback)
+	GameInstance.character_death.connect(_character_death_callback)
+
+
+func _move_to_game_over_state() -> void:
+		GameInstance.game_state = GameInstance.EGameStates.GAME_OVER
+		game_over_ui.show()
+		game_over_timer.start()
+
+func _all_boomers_connected_callback() -> void:
+	if GameInstance.game_state == GameInstance.EGameStates.GAMEPLAY:
+		for state in GameInstance.player_states:
+			state.bWinner = true;
+		_move_to_game_over_state()
+
+func _game_ended_callback() -> void:
+	if GameInstance.game_state == GameInstance.EGameStates.GAMEPLAY:
+		for state in GameInstance.player_states:
+			if state.boomer_instance != null:
+				state.bWinner = true
+		_move_to_game_over_state()
+
+func _character_death_callback(_player_idx : int) -> void:
+	if GameInstance.game_state == GameInstance.EGameStates.GAMEPLAY:
+		GameInstance.player_states[_player_idx].player_instance.queue_free() # Kill player node
+		GameInstance.player_states[_player_idx].boomer_instance = null
 
 func _stop_timer():
 	start_game_timer.stop()
@@ -36,6 +65,7 @@ func _spawn_player_characters():
 			assert(counter >= 0 and counter < GameInstance.boomer_names.size())
 			boomer_instance.set_name(GameInstance.boomer_names[counter])
 			boomer_instance.position = boomer_spawn_pos[counter].position
+			boomer_instance.player_idx = counter
 			player_state.boomer_instance = boomer_instance
 			add_child(boomer_instance)
 		counter += 1
@@ -70,18 +100,23 @@ func _on_player_manager_player_connection_status_changed(_player_index: Variant)
 	_stop_timer()
 	_check_and_start_game()
 
-
 func _unhandled_input(event):
 	if event is InputEventKey:
 		if event.pressed and event.keycode == KEY_ESCAPE:
 			get_tree().quit()
 
+func _input(event):
+	if event.is_action_pressed("Cheat_AutoWin_P0"):
+		print("Cheat: Win player 0")
+		GameInstance.game_ended.emit()
+	elif event.is_action_pressed("Cheat_AutoWin_All"):
+		print("Cheat: Win all players")
+		GameInstance.game_win.emit()
 
 func _on_game_over_timer_timeout() -> void:
 	GameInstance.game_state = GameInstance.EGameStates.PLAYER_SELECTION
 	for state in GameInstance.player_states:
 		if state:
-			state.bReady = false
-			state.bWinner = false
-			state.player_instance = null
+			# reset state
+			state.reset()
 	get_tree().reload_current_scene()
