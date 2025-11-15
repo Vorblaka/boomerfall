@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://d1avguqyivyu5"]
+[gd_scene load_steps=9 format=3 uid="uid://d1avguqyivyu5"]
 
 [ext_resource type="Script" uid="uid://boi4jnb41bkja" path="res://Core/level.gd" id="1_3rhfs"]
 [ext_resource type="PackedScene" uid="uid://dkhmbewkcu8xi" path="res://Core/Shooter.tscn" id="2_h7iwn"]
 [ext_resource type="PackedScene" uid="uid://dajmu12uautl7" path="res://Core/Boomer.tscn" id="2_t83br"]
 [ext_resource type="PackedScene" uid="uid://bh51y6atw8mxh" path="res://Core/Projectile.tscn" id="3_h7iwn"]
+[ext_resource type="PackedScene" uid="uid://dg8q7a6t1ygwl" path="res://LevelIngredients/WallOfDeath.tscn" id="5_h7iwn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jfla8"]
 ground_horizon_color = Color(0.19607843, 0.16470589, 0.1254902, 1)
@@ -60,3 +61,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.84536505, 0, 0)
 
 [node name="PlayerLane4" type="Marker3D" parent="." unique_id=812138364]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6762695, 0, 0)
+[node name="WallOfDeath" parent="." unique_id=544016448 instance=ExtResource("5_h7iwn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=129281676]
+environment = SubResource("Environment_rs3y6")
