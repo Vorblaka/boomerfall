@@ -1,23 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://drg3ce7a7n3j"]
+[gd_scene load_steps=2 format=3 uid="uid://drg3ce7a7n3j"]
 
-[ext_resource type="Script" uid="uid://d1nerhw72c36p" path="res://UI/game_over.gd" id="1_jawqf"]
-[ext_resource type="Texture2D" uid="uid://cia0lqwgkqhtd" path="res://art/Pixel-Like/Daphne/standard/Preview.png" id="2_3y5qq"]
+[ext_resource type="Script" uid="uid://d1nerhw72c36p" path="res://Core/UI/game_over.gd" id="1_jawqf"]
 
-[node name="GameOver" type="CanvasLayer"]
+[node name="GameOver" type="CanvasLayer" unique_id=1425105468]
 script = ExtResource("1_jawqf")
 
-[node name="WinnerTexture" type="TextureRect" parent="."]
-offset_left = 449.0
-offset_top = 130.0
-offset_right = 1452.0
-offset_bottom = 854.5
-pivot_offset = Vector2(501.5, 362.25)
-texture = ExtResource("2_3y5qq")
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=294633677]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="GameOverLabel" type="Label" parent="."]
-offset_left = 876.0
-offset_top = 472.5
-offset_right = 1044.0
-offset_bottom = 539.5
+[node name="GameOverLabel" type="Label" parent="PanelContainer" unique_id=2029212134]
+layout_mode = 2
+size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 48
 text = "Winner"
+metadata/_edit_use_anchors_ = true

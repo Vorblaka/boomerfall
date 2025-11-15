@@ -22,7 +22,8 @@ func _setup_player_joined():
 
 func _on_player_connection_status_changed(i_player_index):
 	if i_player_index == player_index:
-		if GameInstance.player_states[player_index].bConnected:
+		var player_state = GameInstance.player_states[player_index]
+		if player_state.bConnected:
 			_setup_player_joined()
 		else:
 			player_icon.modulate = Color(0.5, 0.5, 0.5, 1)
@@ -34,7 +35,8 @@ func _on_player_connection_status_changed(i_player_index):
 			
 func _on_player_ready_status_changed(i_player_index):
 	if i_player_index == player_index and player_index >= 0 and player_index < GameInstance.player_states.size():
-		if GameInstance.player_states[player_index].bReady:
+		var player_state = GameInstance.player_states[player_index]
+		if player_state.bReady:
 			player_icon.modulate = Color(1, 1, 1, 1)
 			player_icon_confirmed.show()
 			cancel.show()
@@ -42,7 +44,7 @@ func _on_player_ready_status_changed(i_player_index):
 			disconnect_container.hide()
 			ready_container.hide()
 			join.hide()
-		elif GameInstance.player_states[player_index].bConnected:
+		elif player_state.bConnected:
 			_setup_player_joined()
 
 

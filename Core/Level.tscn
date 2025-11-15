@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d1avguqyivyu5"]
+[gd_scene load_steps=14 format=3 uid="uid://d1avguqyivyu5"]
 
 [ext_resource type="Script" uid="uid://boi4jnb41bkja" path="res://Core/level.gd" id="1_3rhfs"]
 [ext_resource type="PackedScene" uid="uid://dkhmbewkcu8xi" path="res://Core/Shooter.tscn" id="2_h7iwn"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://db51ul3mew3rq" path="res://Core/UI/main_menu.tscn" id="6_sf6xb"]
 [ext_resource type="Script" uid="uid://b8trii6n5mjbc" path="res://Core/UI/main_menu.gd" id="7_bqa1j"]
 [ext_resource type="PackedScene" uid="uid://cfivpmaoah05x" path="res://LevelIngredients/UpperWall.tscn" id="9_f0br3"]
+[ext_resource type="PackedScene" uid="uid://drg3ce7a7n3j" path="res://Core/UI/game_over.tscn" id="9_o1d26"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jfla8"]
 ground_horizon_color = Color(0.19607843, 0.16470589, 0.1254902, 1)
@@ -101,6 +102,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.06489, 40.027187, 0.01852
 
 [node name="MainMenu" parent="." unique_id=503738643 instance=ExtResource("6_sf6xb")]
 script = ExtResource("7_bqa1j")
+
+[node name="GameOver" parent="." unique_id=1425105468 instance=ExtResource("9_o1d26")]
+visible = false
 
 [node name="UpperWall" parent="." unique_id=325169204 node_paths=PackedStringArray("pin_points") instance=ExtResource("9_f0br3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 42, 0)
