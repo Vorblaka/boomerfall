@@ -10,7 +10,15 @@ var muzzle_offset : float = 1.0
 var lane_positions : Array[Vector3]
 var lane_index : int = -1
 
+var move_left_action_string : String
+var move_right_action_string : String
+var shoot_action_string : String
+
 func _ready() -> void:
+	move_left_action_string = "Player_MoveLeft_%d" % device_ID
+	move_right_action_string = "Player_MoveRight_%d" % device_ID	
+	shoot_action_string = "Player_Shoot_%d" % device_ID
+	
 	active_projectile = projectiles_scenes.pick_random()
 
 	var marker_nodes = get_tree().get_current_scene().find_children("*", "Marker3D", true)
@@ -31,21 +39,20 @@ func _input(event: InputEvent) -> void:
 		push_error("Input not registered or pressed on a different device!")
 		return
 		
-# Shooting input
-	if Input.is_action_just_pressed("shoot"):
+	# Shooting input
+	if Input.is_action_just_pressed(shoot_action_string):
 		shoot()
 
 func _physics_process(delta: float) -> void:
-	#we do the movement here cause analog movement cause double trigger in _input function
-	
-	if Input.is_action_just_pressed("move_left"):
+	#we do the movement here cause analog movement cause double trigger in _input function	
+	if Input.is_action_just_pressed(move_left_action_string):
 		# todo: playtest continuos movement input
 		# position.x -= movement_speed * get_process_delta_time()
 		
 		# discrete movement input
 		lane_index = (lane_index - 1) % lane_positions.size()
 		global_position = lane_positions[lane_index]
-	if Input.is_action_just_pressed("move_right"):
+	if Input.is_action_just_pressed(move_right_action_string):
 		# todo: playtest continuos movement input
 		# Continuos movement input
 		#position.x += movement_speed * get_process_delta_time()
@@ -53,7 +60,6 @@ func _physics_process(delta: float) -> void:
 		# discrete movement input
 		lane_index = (lane_index + 1) % lane_positions.size()
 		global_position = lane_positions[lane_index]
-
 
 func shoot() -> void:
 # Do nothing if a projectile has not been assigned yet

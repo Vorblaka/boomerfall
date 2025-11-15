@@ -21,7 +21,7 @@ sky = SubResource("Sky_6s6ic")
 
 [node name="Level" type="Node3D" unique_id=1992575775 node_paths=PackedStringArray("player_spawn_pos", "boomer_spawn_pos")]
 script = ExtResource("1_3rhfs")
-player_spawn_pos = [NodePath("PlayerSpawnPositionGCo"), NodePath("PlayerSpawnPositionMF"), NodePath("PlayerSpawnPositionLD"), NodePath("PlayerSpawnPositionGC")]
+player_spawn_pos = [NodePath("PlayerLane1"), NodePath("PlayerLane2"), NodePath("PlayerLane3"), NodePath("PlayerLane4")]
 boomer_spawn_pos = [NodePath("BoomerSpawnPositionGCo"), NodePath("BoomerSpawnPositionMF"), NodePath("BoomerSpawnPositionLD"), NodePath("BoomerSpawnPositionGC")]
 shooter_scene = ExtResource("2_h7iwn")
 boomer_scene = ExtResource("2_t83br")
@@ -86,18 +86,6 @@ one_shot = true
 wait_time = 3.0
 one_shot = true
 
-[node name="PlayerSpawnPositionGC" type="Node3D" parent="." unique_id=1155819050]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -50, 0)
-
-[node name="PlayerSpawnPositionLD" type="Node3D" parent="." unique_id=1469719163]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -50, 0)
-
-[node name="PlayerSpawnPositionMF" type="Node3D" parent="." unique_id=1542886335]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -50, 0)
-
-[node name="PlayerSpawnPositionGCo" type="Node3D" parent="." unique_id=231553114]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, -50, 0)
-
 [node name="BoomerSpawnPositionGC" type="Node3D" parent="." unique_id=617925213]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 40, 0)
 
@@ -109,8 +97,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 40, 0)
 
 [node name="BoomerSpawnPositionGCo" type="Node3D" parent="." unique_id=1141284762]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.06489, 40.027187, 0.018526316)
-
-[node name="Shooter" parent="." unique_id=1728028125 instance=ExtResource("2_h7iwn")]
 
 [node name="MainMenu" parent="." unique_id=503738643 instance=ExtResource("6_sf6xb")]
 script = ExtResource("7_bqa1j")
