@@ -5,7 +5,7 @@
 
 [sub_resource type="SphereMesh" id="SphereMesh_0u8oa"]
 
-[node name="ArtLevel2" type="Node2D" unique_id=662788363]
+[node name="ArtLevel2" type="Node3D" unique_id=450559254]
 
 [node name="ArcadeMachine_base" parent="." unique_id=928019477 instance=ExtResource("1_56blr")]
 
