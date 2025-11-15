@@ -3,19 +3,20 @@ extends Node
 class PlayerState:
 	var bReady : bool = false
 	var bConnected : bool = false
-	var bWinner : bool = false
+	var bDead : bool = false
 	var player_instance : shooter = null
 	var boomer_instance : boomer = null
 	
 	func reset() -> void:
 		bReady = false
 		bConnected = false
-		bWinner = false
+		bDead = false
 		player_instance = null
 		boomer_instance = null
 
 # TODO: set number to 2
 const min_num_players : int = 1
+const boomer_group_name : String = "Boomer"
 
 var active_players_in_lobby : int
 
@@ -39,7 +40,7 @@ var boomer_names : Array[String] = [
 ]
 
 # Single player victory
-signal game_ended
+# signal game_ended
 # Group victory
 signal game_win 
 signal character_death(player_idx : int)
