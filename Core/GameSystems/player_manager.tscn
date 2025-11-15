@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddcbjpa207x6p"]
+
+[ext_resource type="Script" uid="uid://bpix7pb6q3hl5" path="res://Core/GameSystems/player_manager.gd" id="1_8ffcp"]
+[ext_resource type="PackedScene" uid="uid://dajmu12uautl7" path="res://Core/Boomer.tscn" id="2_kwcle"]
+
+[node name="PlayerManager" type="Node" unique_id=320525641]
+script = ExtResource("1_8ffcp")
+player_scene = ExtResource("2_kwcle")

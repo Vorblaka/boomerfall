@@ -1,0 +1,150 @@
+[gd_scene load_steps=8 format=3 uid="uid://5kf018ceg5fe"]
+
+[ext_resource type="Texture2D" uid="uid://baxybk8x45tje" path="res://icon.svg" id="1_iixtp"]
+[ext_resource type="Script" uid="uid://dqm81d1m6u0dy" path="res://Core/UI/player_controller_icon.gd" id="1_to7gi"]
+[ext_resource type="Texture2D" uid="uid://c8vyoxb6vtbmf" path="res://Art/Prompts/check.png" id="3_6q7lj"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_j4vop"]
+load_path = "res://.godot/imported/xbox_button_start_outline.png-d56a3a18b576c5cbc7f9efd2c3d1b89e.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_562vy"]
+load_path = "res://.godot/imported/xbox_button_color_b_outline.png-bb493b12e4b4612b2421a6ef2e928b92.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jmn3q"]
+load_path = "res://.godot/imported/xbox_button_color_a_outline.png-dabeac0dc7dcd5c7feade3310ecfaf67.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_w2r46"]
+load_path = "res://.godot/imported/xbox_button_color_b_outline.png-bb493b12e4b4612b2421a6ef2e928b92.ctex"
+
+[node name="PlayerControllerIcon" type="VBoxContainer" unique_id=1879306754]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(128, 128)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+script = ExtResource("1_to7gi")
+
+[node name="OuterColor" type="ColorRect" parent="." unique_id=825968135]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+
+[node name="InnerColor" type="ColorRect" parent="OuterColor" unique_id=59478231]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -108.0
+offset_top = -108.0
+offset_right = 108.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.39215687)
+
+[node name="CenterContainer" type="CenterContainer" parent="OuterColor/InnerColor" unique_id=1078563067]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -960.0
+offset_top = 10.0
+offset_right = 960.0
+offset_bottom = 138.0
+grow_horizontal = 2
+
+[node name="PlayerIcon" type="TextureRect" parent="OuterColor/InnerColor/CenterContainer" unique_id=1590750585]
+modulate = Color(0.48235294, 0.48235294, 0.48235294, 1)
+layout_mode = 2
+texture = ExtResource("1_iixtp")
+stretch_mode = 3
+
+[node name="PlayerIconConfirmed" type="TextureRect" parent="OuterColor/InnerColor/CenterContainer" unique_id=1578501104]
+visible = false
+layout_mode = 2
+texture = ExtResource("3_6q7lj")
+stretch_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OuterColor/InnerColor" unique_id=1184155590]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -960.0
+offset_top = -64.0
+offset_right = 960.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Join" type="HBoxContainer" parent="OuterColor/InnerColor/VBoxContainer" unique_id=1542230693]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="JoinIcon" type="TextureRect" parent="OuterColor/InnerColor/VBoxContainer/Join" unique_id=579125641]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+texture = SubResource("CompressedTexture2D_j4vop")
+expand_mode = 3
+
+[node name="JoinLabel" type="Label" parent="OuterColor/InnerColor/VBoxContainer/Join" unique_id=1873382938]
+layout_mode = 2
+text = "Join"
+
+[node name="Cancel" type="HBoxContainer" parent="OuterColor/InnerColor/VBoxContainer" unique_id=170603294]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="CancelIcon" type="TextureRect" parent="OuterColor/InnerColor/VBoxContainer/Cancel" unique_id=1618376624]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = SubResource("CompressedTexture2D_562vy")
+expand_mode = 3
+
+[node name="CancelLabel" type="Label" parent="OuterColor/InnerColor/VBoxContainer/Cancel" unique_id=1725451629]
+layout_mode = 2
+text = "Cancel"
+
+[node name="Ready" type="HBoxContainer" parent="OuterColor/InnerColor/VBoxContainer" unique_id=142056136]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ReadyIcon" type="TextureRect" parent="OuterColor/InnerColor/VBoxContainer/Ready" unique_id=2031850755]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = SubResource("CompressedTexture2D_jmn3q")
+expand_mode = 3
+
+[node name="ReadyLabel" type="Label" parent="OuterColor/InnerColor/VBoxContainer/Ready" unique_id=482539408]
+layout_mode = 2
+text = "Confirm"
+
+[node name="Disconnect" type="HBoxContainer" parent="OuterColor/InnerColor/VBoxContainer" unique_id=819340890]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="DisconnectIcon" type="TextureRect" parent="OuterColor/InnerColor/VBoxContainer/Disconnect" unique_id=1094147653]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = SubResource("CompressedTexture2D_w2r46")
+expand_mode = 3
+
+[node name="DisconnectLabel" type="Label" parent="OuterColor/InnerColor/VBoxContainer/Disconnect" unique_id=1040151672]
+layout_mode = 2
+text = "Disconnect"

@@ -1,10 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://d1avguqyivyu5"]
+[gd_scene load_steps=12 format=3 uid="uid://d1avguqyivyu5"]
 
 [ext_resource type="Script" uid="uid://boi4jnb41bkja" path="res://Core/level.gd" id="1_3rhfs"]
 [ext_resource type="PackedScene" uid="uid://dkhmbewkcu8xi" path="res://Core/Shooter.tscn" id="2_h7iwn"]
 [ext_resource type="PackedScene" uid="uid://dajmu12uautl7" path="res://Core/Boomer.tscn" id="2_t83br"]
 [ext_resource type="PackedScene" uid="uid://bh51y6atw8mxh" path="res://Core/Projectile.tscn" id="3_h7iwn"]
+[ext_resource type="PackedScene" uid="uid://ddcbjpa207x6p" path="res://Core/GameSystems/player_manager.tscn" id="3_sf6xb"]
 [ext_resource type="PackedScene" uid="uid://dg8q7a6t1ygwl" path="res://LevelIngredients/WallOfDeath.tscn" id="5_h7iwn"]
+[ext_resource type="PackedScene" uid="uid://db51ul3mew3rq" path="res://Core/UI/main_menu.tscn" id="6_sf6xb"]
+[ext_resource type="Script" uid="uid://b8trii6n5mjbc" path="res://Core/UI/main_menu.gd" id="7_bqa1j"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jfla8"]
 ground_horizon_color = Color(0.19607843, 0.16470589, 0.1254902, 1)
@@ -16,12 +19,19 @@ sky_material = SubResource("ProceduralSkyMaterial_jfla8")
 background_mode = 2
 sky = SubResource("Sky_6s6ic")
 
-[node name="Level" type="Node3D" unique_id=1992575775]
+[node name="Level" type="Node3D" unique_id=1992575775 node_paths=PackedStringArray("player_spawn_pos", "boomer_spawn_pos")]
 script = ExtResource("1_3rhfs")
+player_spawn_pos = [NodePath("PlayerSpawnPositionGCo"), NodePath("PlayerSpawnPositionMF"), NodePath("PlayerSpawnPositionLD"), NodePath("PlayerSpawnPositionGC")]
+boomer_spawn_pos = [NodePath("BoomerSpawnPositionGCo"), NodePath("BoomerSpawnPositionMF"), NodePath("BoomerSpawnPositionLD"), NodePath("BoomerSpawnPositionGC")]
 shooter_scene = ExtResource("2_h7iwn")
+boomer_scene = ExtResource("2_t83br")
+
+[node name="PlayerManager" parent="." unique_id=320525641 instance=ExtResource("3_sf6xb")]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1924576834]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 30)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 160.84146)
+projection = 1
+size = 100.0
 
 [node name="Giuseppi_Cicala" parent="." unique_id=698165976 instance=ExtResource("2_t83br")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 40, 0)
@@ -33,7 +43,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 40, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 40, 0)
 
 [node name="Gianni_Collaterali" parent="." unique_id=892610193 instance=ExtResource("2_t83br")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 40, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.06489, 40.027187, 0.018526316)
 
 [node name="Projectile_1" parent="." unique_id=1324296202 instance=ExtResource("3_h7iwn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -50, 0)
@@ -61,8 +71,54 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.84536505, 0, 0)
 
 [node name="PlayerLane4" type="Marker3D" parent="." unique_id=812138364]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6762695, 0, 0)
+
 [node name="WallOfDeath" parent="." unique_id=544016448 instance=ExtResource("5_h7iwn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15, 0)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=129281676]
+[node name="WorldEnvironment2" type="WorldEnvironment" parent="." unique_id=1351191338]
 environment = SubResource("Environment_rs3y6")
+
+[node name="GameOverTimer" type="Timer" parent="." unique_id=1891831369]
+wait_time = 5.0
+one_shot = true
+
+[node name="StartGameTimer" type="Timer" parent="." unique_id=1029082669]
+wait_time = 3.0
+one_shot = true
+
+[node name="PlayerSpawnPositionGC" type="Node3D" parent="." unique_id=1155819050]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -50, 0)
+
+[node name="PlayerSpawnPositionLD" type="Node3D" parent="." unique_id=1469719163]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -50, 0)
+
+[node name="PlayerSpawnPositionMF" type="Node3D" parent="." unique_id=1542886335]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -50, 0)
+
+[node name="PlayerSpawnPositionGCo" type="Node3D" parent="." unique_id=231553114]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, -50, 0)
+
+[node name="BoomerSpawnPositionGC" type="Node3D" parent="." unique_id=617925213]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 40, 0)
+
+[node name="BoomerSpawnPositionLD" type="Node3D" parent="." unique_id=2048766034]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 40, 0)
+
+[node name="BoomerSpawnPositionMF" type="Node3D" parent="." unique_id=2066314189]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 40, 0)
+
+[node name="BoomerSpawnPositionGCo" type="Node3D" parent="." unique_id=1141284762]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.06489, 40.027187, 0.018526316)
+
+[node name="Shooter" parent="." unique_id=1728028125 instance=ExtResource("2_h7iwn")]
+
+[node name="MainMenu" parent="." unique_id=503738643 instance=ExtResource("6_sf6xb")]
+script = ExtResource("7_bqa1j")
+
+[connection signal="on_timer_started" from="." to="MainMenu" method="_on_level_on_timer_started"]
+[connection signal="on_timer_stopped" from="." to="MainMenu" method="_on_level_on_timer_stopped"]
+[connection signal="player_connection_status_changed" from="PlayerManager" to="." method="_on_player_manager_player_connection_status_changed"]
+[connection signal="player_ready_status_changed" from="PlayerManager" to="." method="_on_player_manager_player_ready_status_changed"]
+[connection signal="timeout" from="GameOverTimer" to="." method="_on_game_over_timer_timeout"]
+[connection signal="timeout" from="StartGameTimer" to="." method="_on_start_game_timer_timeout"]
+[connection signal="timeout" from="StartGameTimer" to="MainMenu" method="_on_start_game_timer_timeout"]
