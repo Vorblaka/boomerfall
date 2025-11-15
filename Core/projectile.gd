@@ -2,7 +2,7 @@ extends Shootable
 class_name projectile
 
 var impulse_scale : float = 100
-var impulse_scale : float = 5
+
 @onready var sprite_3d: Sprite3D = $Sprite3D
 
 func _on_body_entered(body: Node) -> void:
