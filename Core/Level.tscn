@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d1avguqyivyu5"]
+[gd_scene load_steps=13 format=3 uid="uid://d1avguqyivyu5"]
 
 [ext_resource type="Script" uid="uid://boi4jnb41bkja" path="res://Core/level.gd" id="1_3rhfs"]
 [ext_resource type="PackedScene" uid="uid://dkhmbewkcu8xi" path="res://Core/Shooter.tscn" id="2_h7iwn"]
@@ -33,18 +33,6 @@ boomer_scene = ExtResource("2_t83br")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 160.84146)
 projection = 1
 size = 100.0
-
-[node name="Giuseppi_Cicala" parent="." unique_id=698165976 instance=ExtResource("2_t83br")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 40, 0)
-
-[node name="Loretta_Dipausa" parent="." unique_id=1876404406 instance=ExtResource("2_t83br")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 40, 0)
-
-[node name="Marco_Di_Fabbrica" parent="." unique_id=875765670 instance=ExtResource("2_t83br")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 40, 0)
-
-[node name="Gianni_Collaterali" parent="." unique_id=892610193 instance=ExtResource("2_t83br")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.06489, 40.027187, 0.018526316)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=129281676]
 environment = SubResource("Environment_rs3y6")
@@ -96,10 +84,10 @@ visible = false
 [node name="UpperWall" parent="." unique_id=325169204 node_paths=PackedStringArray("pin_points") instance=ExtResource("9_f0br3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 42, 0)
 pin_points = {
-NodePath("PinPoint1"): NodePath("../Giuseppi_Cicala"),
-NodePath("PinPoint2"): NodePath("../Loretta_Dipausa"),
-NodePath("PinPoint3"): NodePath("../Marco_Di_Fabbrica"),
-NodePath("PinPoint4"): NodePath("../Gianni_Collaterali")
+NodePath("PinPoint1"): null,
+NodePath("PinPoint2"): null,
+NodePath("PinPoint3"): null,
+NodePath("PinPoint4"): null
 }
 
 [connection signal="on_timer_started" from="." to="MainMenu" method="_on_level_on_timer_started"]

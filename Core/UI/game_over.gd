@@ -25,11 +25,17 @@ func _show_secret_win():
 	secret_win_label.show()
 
 func _show_standard_win():
+	var winner_idx = 0
+	for ps in GameInstance.player_states:
+		if !ps.bDead:
+			break
+		winner_idx += 1
+	standard_win_label.text = GameInstance.boomer_names[winner_idx]
 	standard_win_label.show()
 	secret_win_label.hide()
 
-func _ready() -> void:
-	var winner_count : int = GameInstance.player_states.filter(func (ps : GameInstance.PlayerState): return ps.bWinner).size()
+func show_winner() -> void:
+	var winner_count : int = GameInstance.player_states.filter(func (ps : GameInstance.PlayerState): return !ps.bDead).size()
 	if winner_count == GameInstance.active_players_in_lobby:
 		print("Secret win")
 		_show_secret_win()
