@@ -1,7 +1,7 @@
 extends Shootable
 class_name projectile
 
-var impulse_scale : float = 5
+var impulse_scale : float = 100
 
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("Boomer"):

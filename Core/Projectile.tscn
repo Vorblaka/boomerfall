@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://rj15wn2r7bgq" path="res://Art/Prompts/kenney_input-prompts_1.4/Flairs/Vector/controller_generic.svg" id="2_2h8om"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_f3wkg"]
+size = Vector3(8, 8, 8)
 
 [node name="Projectile" type="Area3D" unique_id=1453670748]
 script = ExtResource("1_13ccr")

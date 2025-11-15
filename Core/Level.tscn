@@ -64,16 +64,16 @@ wait_time = 3.0
 one_shot = true
 
 [node name="BoomerSpawnPositionGC" type="Node3D" parent="." unique_id=617925213]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 40, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 35, 0)
 
 [node name="BoomerSpawnPositionLD" type="Node3D" parent="." unique_id=2048766034]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 40, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 35, 0)
 
 [node name="BoomerSpawnPositionMF" type="Node3D" parent="." unique_id=2066314189]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 40, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 35, 0)
 
 [node name="BoomerSpawnPositionGCo" type="Node3D" parent="." unique_id=1141284762]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.06489, 40.027187, 0.018526316)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.06489, 35.027187, 0.018526316)
 
 [node name="MainMenu" parent="." unique_id=503738643 instance=ExtResource("6_sf6xb")]
 script = ExtResource("7_bqa1j")
