@@ -3,6 +3,9 @@ class_name shooter
 
 @export var projectiles_scenes : Array[PackedScene]
 
+@export var joint_scene: PackedScene
+@export var animation_player: AnimationPlayer
+
 var device_ID : int = -1
 var active_projectile : PackedScene
 var movement_speed : float = 25
@@ -69,6 +72,10 @@ func _physics_process(_delta: float) -> void:
 func shoot() -> void:
 # Do nothing if a projectile has not been assigned yet
 	if (projectile_instance.on_shoot(global_position + Vector3(0,muzzle_offset,0))):
+		if animation_player.is_playing() :
+			animation_player.stop()
+		animation_player.play("cannon_shoot")
+
 		projectile_instance = projectiles_scenes.pick_random().instantiate()
 		projectile_instance.top_level = true
 		add_child(projectile_instance)
