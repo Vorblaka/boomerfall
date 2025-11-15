@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bh51y6atw8mxh"]
 
 [ext_resource type="Script" uid="uid://b76g0c852u1w7" path="res://Core/projectile.gd" id="1_13ccr"]
-[ext_resource type="Texture2D" uid="uid://baxybk8x45tje" path="res://icon.svg" id="2_2h8om"]
+[ext_resource type="Texture2D" uid="uid://rj15wn2r7bgq" path="res://Art/Prompts/kenney_input-prompts_1.4/Flairs/Vector/controller_generic.svg" id="2_2h8om"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_f3wkg"]
 

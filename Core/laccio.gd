@@ -4,13 +4,13 @@ enum State {Inactive, Boomer1, Boomer2, Active}
 
 var curr_state : State = State.Inactive
 
-@export var projectiles_scenes : Array[PackedScene]
+@export var laccio_projectiles : Array[PackedScene]
 
-@onready var bind1: Shootable = $Bind1
-@onready var bind2: Shootable = $Bind2
+var bind1: Shootable 
+var bind2: Shootable 
 
-@onready var joint: Generic6DOFJoint3D = $Joint
-
+@onready var joint: Generic6DOFJoint3D = $Joint	
+	
 func next_state() -> bool:
 	if(curr_state == State.Inactive):
 		curr_state = State.Boomer1
@@ -25,40 +25,28 @@ func next_state() -> bool:
 		return true
 
 func on_shoot(pos: Vector3) -> bool:
-	global_position = pos
+	print("Laccio")
 	if(curr_state == State.Inactive):
-		bind1 = projectiles_scenes.pick_random().instantiate()
-		bind1.on_shoot(global_position)
-		return false
-	if(curr_state == State.Boomer1):
-		bind2 = projectiles_scenes.pick_random().instantiate()
-		bind2.on_shoot(global_position)
-		return true
-	return true
-	
-# return false if state is active, true otherwise and bind boomer encountered (or any body)
-func process(body: Node) -> bool:
-	if(curr_state == State.Boomer1):
-		joint.node_a = body.get_path()
-		movement_speed = 0.
-		return true
-	elif(curr_state == State.Boomer2):
-		joint.node_b = body.get_path()
-		movement_speed = 0.
-		return true
-	else: 
-		return false
-	
-func _on_body_entered(body: Node) -> void:
-	if process(body):
+		print("Bind 1 shoot")
+		bind1 = laccio_projectiles.pick_random().instantiate()
+		bind1.on_shoot(pos)
+		add_child(bind1) 
+		#joint.node_a = bind1.get_path()
 		next_state()
-	else:
-		pass
+		return false
+	elif(curr_state == State.Boomer1):
+		print("Bind 2 shoot")
+		bind2 = laccio_projectiles.pick_random().instantiate()
+		bind2.on_shoot(pos)
+		add_child(bind2)
+		 #joint.node_b = bind2.get_path()
+		next_state()
+		return true
+	return false
 
 func _process(delta : float) -> void:
-	if(curr_state != State.Active):
-		position.y += movement_speed*delta;
-	else:
+	if(curr_state == State.Active):
+		return
 		get_node(joint.node_a).apply_central_impulse(Vector3(0,1,0))
 		get_node(joint.node_b).apply_central_impulse(Vector3(0,-1,0))
 		

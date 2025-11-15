@@ -20,3 +20,11 @@ size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 48
 text = "Winner"
 metadata/_edit_use_anchors_ = true
+
+[node name="SecretWin" type="Label" parent="PanelContainer" unique_id=1256955752]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 48
+text = "Secret win"
+metadata/_edit_use_anchors_ = true

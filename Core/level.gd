@@ -17,33 +17,29 @@ signal on_timer_stopped
 signal on_game_started
 
 func _ready() -> void:
-	GameInstance.game_ended.connect(_game_ended_callback)
 	GameInstance.game_win.connect(_all_boomers_connected_callback)
 	GameInstance.character_death.connect(_character_death_callback)
 
 
 func _move_to_game_over_state() -> void:
 		GameInstance.game_state = GameInstance.EGameStates.GAME_OVER
+		game_over_ui.show_winner()
 		game_over_ui.show()
 		game_over_timer.start()
 
 func _all_boomers_connected_callback() -> void:
 	if GameInstance.game_state == GameInstance.EGameStates.GAMEPLAY:
-		for state in GameInstance.player_states:
-			state.bWinner = true;
-		_move_to_game_over_state()
-
-func _game_ended_callback() -> void:
-	if GameInstance.game_state == GameInstance.EGameStates.GAMEPLAY:
-		for state in GameInstance.player_states:
-			if state.boomer_instance != null:
-				state.bWinner = true
+		# All players must be alive
+		assert(GameInstance.player_states.filter(func (ps: GameInstance.PlayerState): return !ps.bDead).size() == GameInstance.active_players_in_lobby)
 		_move_to_game_over_state()
 
 func _character_death_callback(_player_idx : int) -> void:
 	if GameInstance.game_state == GameInstance.EGameStates.GAMEPLAY:
-		GameInstance.player_states[_player_idx].player_instance.queue_free() # Kill player node
-		GameInstance.player_states[_player_idx].boomer_instance = null
+		GameInstance.player_states[_player_idx].bDead = true
+		var alive_counter = GameInstance.player_states.filter(func (ps : GameInstance.PlayerState): return !ps.bDead).size()
+		if alive_counter == 1:
+			# Game over
+			_move_to_game_over_state()
 
 func _stop_timer():
 	start_game_timer.stop()
@@ -66,6 +62,7 @@ func _spawn_player_characters():
 			boomer_instance.set_name(GameInstance.boomer_names[counter])
 			boomer_instance.position = boomer_spawn_pos[counter].position
 			boomer_instance.player_idx = counter
+			boomer_instance.add_to_group(GameInstance.boomer_group_name)
 			player_state.boomer_instance = boomer_instance
 			add_child(boomer_instance)
 		counter += 1
@@ -73,6 +70,7 @@ func _spawn_player_characters():
 func _on_start_game_timer_timeout() -> void:
 	GameInstance.game_state = GameInstance.EGameStates.GAMEPLAY
 	main_menu.hide()
+	GameInstance.active_players_in_lobby = GameInstance.player_states.filter(func(ps : GameInstance.PlayerState): return ps.bReady).size()
 	print("Game started")
 	_spawn_player_characters()
 	on_game_started.emit()
@@ -86,7 +84,7 @@ func _check_and_start_game():
 			else:
 				return;
 		
-	if !GameInstance.player_states.is_empty() and player_ready_count > 1:
+	if !GameInstance.player_states.is_empty() and player_ready_count >= GameInstance.min_num_players:
 		# All ready, start timer
 		start_game_timer.start()
 		on_timer_started.emit()
