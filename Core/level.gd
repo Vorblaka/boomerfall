@@ -65,6 +65,7 @@ func _spawn_player_characters():
 			boomer_instance.add_to_group(GameInstance.boomer_group_name)
 			player_state.boomer_instance = boomer_instance
 			add_child(boomer_instance)
+			player_state.boomer_instance.set_boomer_head(counter)
 		counter += 1
 
 func _on_start_game_timer_timeout() -> void:
