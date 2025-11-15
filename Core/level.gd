@@ -73,6 +73,7 @@ func _spawn_player_characters():
 func _on_start_game_timer_timeout() -> void:
 	GameInstance.game_state = GameInstance.EGameStates.GAMEPLAY
 	main_menu.hide()
+	GameInstance.active_players_in_lobby = GameInstance.player_states.filter(func(ps : GameInstance.PlayerState): return ps.bReady).size()
 	print("Game started")
 	_spawn_player_characters()
 	on_game_started.emit()
@@ -86,7 +87,7 @@ func _check_and_start_game():
 			else:
 				return;
 		
-	if !GameInstance.player_states.is_empty() and player_ready_count > 1:
+	if !GameInstance.player_states.is_empty() and player_ready_count >= GameInstance.min_num_players:
 		# All ready, start timer
 		start_game_timer.start()
 		on_timer_started.emit()

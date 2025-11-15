@@ -14,6 +14,11 @@ class PlayerState:
 		player_instance = null
 		boomer_instance = null
 
+# TODO: set number to 2
+const min_num_players : int = 1
+
+var active_players_in_lobby : int
+
 var player_states : Array[PlayerState]
 
 enum EGameStates { PLAYER_SELECTION, GAMEPLAY, GAME_OVER }
