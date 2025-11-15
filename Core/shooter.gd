@@ -45,29 +45,35 @@ func _input(_event: InputEvent) -> void:
 		push_error("Device if not initialized!")
 		return
 	
-	# Shooting input
-	if Input.is_action_just_pressed(shoot_action_string):
-		shoot()
+	var active_input : bool = GameInstance.game_state == GameInstance.EGameStates.GAMEPLAY
+	if active_input:
+		# Shooting input
+		if Input.is_action_just_pressed(shoot_action_string):
+			shoot()
 
 func _physics_process(_delta: float) -> void:
-	#we do the movement here cause analog movement cause double trigger in _input function	
-	if Input.is_action_just_pressed(move_left_action_string):
-		# todo: playtest continuos movement input
-		# position.x -= movement_speed * get_process_delta_time()
-		
-		# discrete movement input
-		lane_index = (lane_index - 1) % lane_positions.size()
-		global_position = lane_positions[lane_index]
-	if Input.is_action_just_pressed(move_right_action_string):
-		# todo: playtest continuos movement input
-		# Continuos movement input
-		#position.x += movement_speed * get_process_delta_time()
-		
-		# discrete movement input
-		lane_index = (lane_index + 1) % lane_positions.size()
-		global_position = lane_positions[lane_index]
-		# TODo
-		Input.action_release(move_right_action_string)
+	
+	var active_input : bool = GameInstance.game_state == GameInstance.EGameStates.GAMEPLAY
+	
+	if active_input:
+		#we do the movement here cause analog movement cause double trigger in _input function	
+		if Input.is_action_just_pressed(move_left_action_string):
+			# todo: playtest continuos movement input
+			# position.x -= movement_speed * get_process_delta_time()
+			
+			# discrete movement input
+			lane_index = (lane_index - 1) % lane_positions.size()
+			global_position = lane_positions[lane_index]
+		if Input.is_action_just_pressed(move_right_action_string):
+			# todo: playtest continuos movement input
+			# Continuos movement input
+			#position.x += movement_speed * get_process_delta_time()
+			
+			# discrete movement input
+			lane_index = (lane_index + 1) % lane_positions.size()
+			global_position = lane_positions[lane_index]
+			# TODo
+			Input.action_release(move_right_action_string)
 
 func shoot() -> void:
 # Do nothing if a projectile has not been assigned yet
