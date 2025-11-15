@@ -25,6 +25,7 @@ func _ready() -> void:
 	shoot_action_string = "Player_Shoot_%d" % device_ID
 	
 	projectile_instance = projectiles_scenes.pick_random().instantiate()
+	get_tree().root.add_child(projectile_instance)
 
 	var marker_nodes = get_tree().get_current_scene().find_children("*", "Marker3D", true)
 	for marker in marker_nodes:
@@ -47,7 +48,7 @@ func _input(_event: InputEvent) -> void:
 	var active_input : bool = GameInstance.game_state == GameInstance.EGameStates.GAMEPLAY
 	if active_input:
 		# Shooting input
-		if Input.is_action_just_pressed(shoot_action_string):
+		if Input.is_action_just_released(shoot_action_string):
 			shoot()
 
 func _physics_process(_delta: float) -> void:
@@ -78,10 +79,10 @@ func shoot() -> void:
 	if animation_player.is_playing() :
 		animation_player.stop()
 	animation_player.play("cannon_shoot")
-	
 	if (projectile_instance.on_shoot(global_position + Vector3(0,muzzle_offset,0))):
-		projectile_instance.top_level = true
-		add_child(projectile_instance)
+		
 		projectile_instance = projectiles_scenes.pick_random().instantiate()
 		projectile_instance = projectiles_scenes[1].instantiate()
+		get_tree().root.add_child(projectile_instance)
+		
 		projectile_instance.playerID = device_ID

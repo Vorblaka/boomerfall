@@ -30,7 +30,8 @@ func on_shoot(pos: Vector3) -> bool:
 		print("Bind 1 shoot")
 		bind1 = laccio_projectiles.pick_random().instantiate()
 		bind1.on_shoot(pos)
-		add_child(bind1) 
+		get_tree().root.add_child(bind1) 
+		bind1.top_level = true
 		#joint.node_a = bind1.get_path()
 		next_state()
 		return false
@@ -38,7 +39,8 @@ func on_shoot(pos: Vector3) -> bool:
 		print("Bind 2 shoot")
 		bind2 = laccio_projectiles.pick_random().instantiate()
 		bind2.on_shoot(pos)
-		add_child(bind2)
+		get_tree().root.add_child(bind2)
+		bind2.top_level = true
 		 #joint.node_b = bind2.get_path()
 		next_state()
 		return true
