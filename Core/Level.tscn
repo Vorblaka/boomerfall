@@ -1,9 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://d1avguqyivyu5"]
+[gd_scene load_steps=12 format=3 uid="uid://d1avguqyivyu5"]
 
 [ext_resource type="Script" uid="uid://boi4jnb41bkja" path="res://Core/level.gd" id="1_3rhfs"]
 [ext_resource type="PackedScene" uid="uid://dkhmbewkcu8xi" path="res://Core/Shooter.tscn" id="2_h7iwn"]
 [ext_resource type="PackedScene" uid="uid://dajmu12uautl7" path="res://Core/Boomer.tscn" id="2_t83br"]
-[ext_resource type="PackedScene" uid="uid://bh51y6atw8mxh" path="res://Core/Projectile.tscn" id="3_h7iwn"]
 [ext_resource type="PackedScene" uid="uid://ddcbjpa207x6p" path="res://Core/GameSystems/player_manager.tscn" id="3_sf6xb"]
 [ext_resource type="PackedScene" uid="uid://dg8q7a6t1ygwl" path="res://LevelIngredients/WallOfDeath.tscn" id="5_h7iwn"]
 [ext_resource type="PackedScene" uid="uid://db51ul3mew3rq" path="res://Core/UI/main_menu.tscn" id="6_sf6xb"]
@@ -46,18 +45,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 40, 0)
 
 [node name="Gianni_Collaterali" parent="." unique_id=892610193 instance=ExtResource("2_t83br")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.06489, 40.027187, 0.018526316)
-
-[node name="Projectile_1" parent="." unique_id=1324296202 instance=ExtResource("3_h7iwn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -50, 0)
-
-[node name="Projectile_2" parent="." unique_id=467453997 instance=ExtResource("3_h7iwn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -50, 0)
-
-[node name="Projectile_3" parent="." unique_id=2137237105 instance=ExtResource("3_h7iwn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -50, 0)
-
-[node name="Projectile_4" parent="." unique_id=155174977 instance=ExtResource("3_h7iwn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, -50, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=129281676]
 environment = SubResource("Environment_rs3y6")
