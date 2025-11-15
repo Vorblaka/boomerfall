@@ -25,7 +25,7 @@ func _ready() -> void:
 	shoot_action_string = "Player_Shoot_%d" % device_ID
 	
 	projectile_instance = projectiles_scenes.pick_random().instantiate()
-
+	projectile_instance.playerID = device_ID
 	var marker_nodes = get_tree().get_current_scene().find_children("*", "Marker3D", true)
 	for marker in marker_nodes:
 	# Godot can usually infer and convert the type here if the element is correct
