@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bvy867hecm4uv"
-path="res://.godot/imported/ArcadeMachine_base.glb-91ecd420ee144764b3851fa4598cb812.scn"
+path="res://.godot/imported/ArcadeMachine_base.glb-1a6641b54b151317b865c7cba3efb70c.scn"
 
 [deps]
 
-source_file="res://Core/Gigi_art/art/ArcadeMachine_base.glb"
-dest_files=["res://.godot/imported/ArcadeMachine_base.glb-91ecd420ee144764b3851fa4598cb812.scn"]
+source_file="res://Gigi_art/art/ArcadeMachine_base.glb"
+dest_files=["res://.godot/imported/ArcadeMachine_base.glb-1a6641b54b151317b865c7cba3efb70c.scn"]
 
 [params]
 
