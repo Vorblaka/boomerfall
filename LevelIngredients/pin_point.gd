@@ -8,7 +8,10 @@ func attach(body : PhysicsBody3D, location : Vector3) -> void:
 	global_position = location
 	joint.node_b = body.get_path()
 	delay.start()
+	body.add_to_group("Connected")
+	if get_tree().get_nodes_in_group("Connected").size() == 4 :
+		GameInstance.game_win.emit()
 
 func _on_timer_timeout() -> void:
+	get_node(joint.node_b).remove_from_group("Connected")
 	joint.node_b = ""
-	

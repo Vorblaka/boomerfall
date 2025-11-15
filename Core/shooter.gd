@@ -36,17 +36,17 @@ func _ready() -> void:
 		lane_index = device_ID
 		global_position = lane_positions[device_ID]
 
-func _input(event: InputEvent) -> void:
-# Do nothing if this is notregistered or the input is pressed on a different device
-	if event.device != device_ID || device_ID == -1:
-		push_error("Input not registered or pressed on a different device!")
+func _input(_event: InputEvent) -> void:
+	# Do nothing if this is notregistered or the input is pressed on a different device
+	if device_ID == -1:
+		push_error("Device if not initialized!")
 		return
 		
 	# Shooting input
 	if Input.is_action_just_pressed(shoot_action_string):
 		shoot()
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	#we do the movement here cause analog movement cause double trigger in _input function	
 	if Input.is_action_just_pressed(move_left_action_string):
 		# todo: playtest continuos movement input

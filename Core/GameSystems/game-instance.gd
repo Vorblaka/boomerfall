@@ -25,3 +25,7 @@ var boomer_names : Array[String] = [
 	"Marco_Di_Fabbrica",
 	"Gianni_Collaterali"
 ]
+
+signal game_ended
+signal game_win
+signal character_death
