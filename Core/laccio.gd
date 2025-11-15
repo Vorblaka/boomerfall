@@ -29,6 +29,7 @@ func on_shoot(pos: Vector3) -> bool:
 	if(curr_state == State.Inactive):
 		print("Bind 1 shoot")
 		bind1 = laccio_projectiles.pick_random().instantiate()
+		bind1.playerID = playerID
 		bind1.on_shoot(pos)
 		add_child(bind1) 
 		#joint.node_a = bind1.get_path()
@@ -37,6 +38,7 @@ func on_shoot(pos: Vector3) -> bool:
 	elif(curr_state == State.Boomer1):
 		print("Bind 2 shoot")
 		bind2 = laccio_projectiles.pick_random().instantiate()
+		bind2.playerID = playerID
 		bind2.on_shoot(pos)
 		add_child(bind2)
 		 #joint.node_b = bind2.get_path()
