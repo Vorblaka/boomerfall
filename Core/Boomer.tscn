@@ -4,7 +4,7 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_y14eq"]
 
-[node name="FallingCharacter" type="RigidBody3D" unique_id=698165976]
+[node name="FallingCharacter" type="RigidBody3D" unique_id=698165976 groups=["Boomer"]]
 axis_lock_linear_x = true
 axis_lock_linear_z = true
 mass = 0.3

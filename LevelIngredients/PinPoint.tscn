@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://djitd2uwxugfp"]
+
+[ext_resource type="Script" uid="uid://033ixcrjajen" path="res://LevelIngredients/pin_point.gd" id="1_illkc"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_g546f"]
+
+[node name="PinPoint" type="StaticBody3D" unique_id=1261599236]
+script = ExtResource("1_illkc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=151870164]
+shape = SubResource("SphereShape3D_g546f")
+debug_color = Color(0, 0.64705884, 0.2627451, 1)
+
+[node name="PinJoint3D" type="PinJoint3D" parent="." unique_id=1922914533]
+node_a = NodePath("..")
+
+[node name="Timer" type="Timer" parent="." unique_id=726542719]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

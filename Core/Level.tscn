@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://d1avguqyivyu5"]
+[gd_scene load_steps=10 format=3 uid="uid://d1avguqyivyu5"]
 
 [ext_resource type="Script" uid="uid://boi4jnb41bkja" path="res://Core/level.gd" id="1_3rhfs"]
 [ext_resource type="PackedScene" uid="uid://dkhmbewkcu8xi" path="res://Core/Shooter.tscn" id="2_h7iwn"]
 [ext_resource type="PackedScene" uid="uid://dajmu12uautl7" path="res://Core/Boomer.tscn" id="2_t83br"]
 [ext_resource type="PackedScene" uid="uid://bh51y6atw8mxh" path="res://Core/Projectile.tscn" id="3_h7iwn"]
 [ext_resource type="PackedScene" uid="uid://dg8q7a6t1ygwl" path="res://LevelIngredients/WallOfDeath.tscn" id="5_h7iwn"]
+[ext_resource type="PackedScene" uid="uid://cfivpmaoah05x" path="res://LevelIngredients/UpperWall.tscn" id="6_sf6xb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jfla8"]
 
@@ -23,16 +24,16 @@ shooter_scene = ExtResource("2_h7iwn")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 30)
 
 [node name="Giuseppi_Cicala" parent="." unique_id=698165976 instance=ExtResource("2_t83br")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 40, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 30, 0)
 
 [node name="Loretta_Dipausa" parent="." unique_id=1876404406 instance=ExtResource("2_t83br")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 40, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 30, 0)
 
 [node name="Marco_Di_Fabbrica" parent="." unique_id=875765670 instance=ExtResource("2_t83br")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 40, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 30, 0)
 
 [node name="Gianni_Collaterali" parent="." unique_id=892610193 instance=ExtResource("2_t83br")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 40, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 30, 0)
 
 [node name="Projectile_1" parent="." unique_id=1324296202 instance=ExtResource("3_h7iwn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -50, 0)
@@ -51,3 +52,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=129281676]
 environment = SubResource("Environment_rs3y6")
+
+[node name="UpperWall" parent="." unique_id=325169204 node_paths=PackedStringArray("pin_points") instance=ExtResource("6_sf6xb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 33, 0)
+pin_points = {
+NodePath("PinPoint1"): NodePath("../Giuseppi_Cicala"),
+NodePath("PinPoint2"): NodePath("../Loretta_Dipausa"),
+NodePath("PinPoint3"): NodePath("../Marco_Di_Fabbrica"),
+NodePath("PinPoint4"): NodePath("../Gianni_Collaterali")
+}
+
+[editable path="UpperWall"]
