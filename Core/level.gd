@@ -5,8 +5,9 @@ class_name level
 var players : Dictionary[int, shooter]
 
 # Register new players and assign them a device
-func _input(event: InputEvent) -> void:
+func _input( event: InputEvent) -> void:
 	var device_ID : int = event.device
+	print("Device:", event.device, "| Key event:", event.as_text())
 	if !players.get(device_ID) and event.is_action_pressed("start"):
 		var shooter_instance : shooter = shooter_scene.instantiate()
 		shooter_instance.set_name("player" + str(device_ID))
