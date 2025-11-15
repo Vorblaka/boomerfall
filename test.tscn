@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkj4tnk1xrfyg"]
+
+[ext_resource type="PackedScene" uid="uid://dajmu12uautl7" path="res://Core/Boomer.tscn" id="1_37kl0"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mf4mk"]
+
+[sub_resource type="Sky" id="Sky_37kl0"]
+sky_material = SubResource("ProceduralSkyMaterial_mf4mk")
+
+[sub_resource type="Environment" id="Environment_8uh7m"]
+background_mode = 2
+sky = SubResource("Sky_37kl0")
+
+[node name="Node3D" type="Node3D" unique_id=2091256017]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2073904692]
+environment = SubResource("Environment_8uh7m")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=507457888]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0169075, -2.265, 64.54154)
+
+[node name="FallingCharacter" parent="." unique_id=698165976 instance=ExtResource("1_37kl0")]
+transform = Transform3D(-0.014956913, 0, -0.99988806, 0, 1, 0, 0.99988806, 0, -0.014956913, 0, 37.89248, 0)

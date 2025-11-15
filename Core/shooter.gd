@@ -83,3 +83,5 @@ func shoot() -> void:
 		projectile_instance.top_level = true
 		add_child(projectile_instance)
 		projectile_instance = projectiles_scenes.pick_random().instantiate()
+		projectile_instance = projectiles_scenes[1].instantiate()
+		projectile_instance.playerID = device_ID

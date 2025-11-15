@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d1avguqyivyu5"]
+[gd_scene load_steps=14 format=3 uid="uid://d1avguqyivyu5"]
 
 [ext_resource type="Script" uid="uid://boi4jnb41bkja" path="res://Core/level.gd" id="1_3rhfs"]
 [ext_resource type="PackedScene" uid="uid://dkhmbewkcu8xi" path="res://Core/Shooter.tscn" id="2_h7iwn"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://b8trii6n5mjbc" path="res://Core/UI/main_menu.gd" id="7_bqa1j"]
 [ext_resource type="PackedScene" uid="uid://cfivpmaoah05x" path="res://LevelIngredients/UpperWall.tscn" id="9_f0br3"]
 [ext_resource type="PackedScene" uid="uid://drg3ce7a7n3j" path="res://Core/UI/game_over.tscn" id="9_o1d26"]
+[ext_resource type="PackedScene" uid="uid://c05vqrqly1mjx" path="res://Gigi_art/TestLevel/ArtLevel.tscn" id="10_o1d26"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jfla8"]
 ground_horizon_color = Color(0.19607843, 0.16470589, 0.1254902, 1)
@@ -30,8 +31,7 @@ boomer_scene = ExtResource("2_t83br")
 [node name="PlayerManager" parent="." unique_id=320525641 instance=ExtResource("3_sf6xb")]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1924576834]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 160.84146)
-projection = 1
+transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 20, 40)
 size = 100.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=129281676]
@@ -89,6 +89,9 @@ NodePath("PinPoint2"): null,
 NodePath("PinPoint3"): null,
 NodePath("PinPoint4"): null
 }
+
+[node name="ArtLevel2" parent="." unique_id=450559254 instance=ExtResource("10_o1d26")]
+transform = Transform3D(-1.42062e-07, 0, -3.25, 0, 4.75, 0, 3.25, 0, -1.42062e-07, 0, -33, 0)
 
 [connection signal="on_timer_started" from="." to="MainMenu" method="_on_level_on_timer_started"]
 [connection signal="on_timer_stopped" from="." to="MainMenu" method="_on_level_on_timer_stopped"]

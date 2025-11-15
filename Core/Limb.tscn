@@ -1,0 +1,69 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfgpvgufqswob"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ixj1m"]
+radius = 0.1
+height = 0.6
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ixj1m"]
+radius = 0.1
+height = 0.6
+
+[node name="Limb" type="Node3D" unique_id=511996077]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1204427802]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=1813580862]
+shape = SubResource("CapsuleShape3D_ixj1m")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D" unique_id=841348381]
+mesh = SubResource("CapsuleMesh_ixj1m")
+
+[node name="RigidBody3D2" type="RigidBody3D" parent="." unique_id=220020437]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.60336804, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D2" unique_id=106071179]
+shape = SubResource("CapsuleShape3D_ixj1m")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D2" unique_id=514485575]
+mesh = SubResource("CapsuleMesh_ixj1m")
+
+[node name="RigidBody3D3" type="RigidBody3D" parent="." unique_id=1457292461]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2082084, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D3" unique_id=1225925512]
+shape = SubResource("CapsuleShape3D_ixj1m")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D3" unique_id=2025645722]
+mesh = SubResource("CapsuleMesh_ixj1m")
+
+[node name="HingeJoint3D0" type="HingeJoint3D" parent="." unique_id=914954941]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.30290717, 0)
+node_b = NodePath("../RigidBody3D")
+angular_limit/enable = true
+angular_limit/upper = 1.3962634
+angular_limit/lower = -1.3962634
+
+[node name="HingeJoint3D1" type="HingeJoint3D" parent="." unique_id=42422812]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.30772412, 0)
+node_a = NodePath("../RigidBody3D")
+node_b = NodePath("../RigidBody3D2")
+angular_limit/enable = true
+angular_limit/upper = 1.3962634
+angular_limit/lower = -1.3962634
+
+[node name="HingeJoint3D2" type="HingeJoint3D" parent="." unique_id=460293214]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.92007065, 0)
+node_a = NodePath("../RigidBody3D2")
+node_b = NodePath("../RigidBody3D3")
+angular_limit/enable = true
+angular_limit/upper = 1.3962634
+angular_limit/lower = -1.3962634
+
+[node name="HingeJoint3D3" type="HingeJoint3D" parent="." unique_id=1160985785]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5151178, 0)
+node_a = NodePath("../RigidBody3D3")
+angular_limit/enable = true
+angular_limit/upper = 1.3962634
+angular_limit/lower = -1.3962634
