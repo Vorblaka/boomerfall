@@ -28,8 +28,16 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 # Do nothing if this is notregistered or the input is pressed on a different device
 	if event.device != device_ID || device_ID == -1:
+		push_error("Input not registered or pressed on a different device!")
 		return
 		
+# Shooting input
+	if Input.is_action_just_pressed("shoot"):
+		shoot()
+
+func _physics_process(delta: float) -> void:
+	#we do the movement here cause analog movement cause double trigger in _input function
+	
 	if Input.is_action_just_pressed("move_left"):
 		# todo: playtest continuos movement input
 		# position.x -= movement_speed * get_process_delta_time()
@@ -37,7 +45,6 @@ func _input(event: InputEvent) -> void:
 		# discrete movement input
 		lane_index = (lane_index - 1) % lane_positions.size()
 		global_position = lane_positions[lane_index]
-		Input.action_release("move_left")
 	if Input.is_action_just_pressed("move_right"):
 		# todo: playtest continuos movement input
 		# Continuos movement input
@@ -46,10 +53,7 @@ func _input(event: InputEvent) -> void:
 		# discrete movement input
 		lane_index = (lane_index + 1) % lane_positions.size()
 		global_position = lane_positions[lane_index]
-		Input.action_release("move_right")
-# Shooting input
-	if Input.is_action_just_pressed("shoot"):
-		shoot()
+
 
 func shoot() -> void:
 # Do nothing if a projectile has not been assigned yet
