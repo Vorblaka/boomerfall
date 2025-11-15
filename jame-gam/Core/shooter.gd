@@ -6,7 +6,10 @@ class_name shooter
 var device_ID : int = -1
 var active_projectile : PackedScene
 var movement_speed : float = 25
-var muzzle_offset : float = 5.0
+var muzzle_offset : float = 1.0
+
+func _ready() -> void:
+	active_projectile = projectiles_scenes.pick_random()
 
 func _input(event: InputEvent) -> void:
 # Do nothing if this is notregistered or the input is pressed on a different device
@@ -31,8 +34,8 @@ func shoot() -> void:
 # Spawn a projectile on your position and set it as top level
 	var projectile_instance : projectile = active_projectile.instantiate()
 	projectile_instance.top_level = true
-	projectile_instance.global_position.y = global_position.y + muzzle_offset
 	add_child(projectile_instance)
+	projectile_instance.global_position.y = global_position.y + muzzle_offset
 	
 # Set a new random projectile
 	active_projectile = projectiles_scenes.pick_random()
