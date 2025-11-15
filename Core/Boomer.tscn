@@ -17,7 +17,9 @@ height = 3.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_8ucla"]
 
-[node name="FallingCharacter" type="RigidBody3D" unique_id=698165976 groups=["Boomer"]]
+[node name="FallingCharacter" type="RigidBody3D" unique_id=698165976]
+collision_layer = 0
+collision_mask = 0
 axis_lock_linear_x = true
 axis_lock_linear_z = true
 mass = 0.3
@@ -31,6 +33,7 @@ debug_color = Color(0, 0.6, 0.69803923, 1)
 [node name="RigidBody_head" type="RigidBody3D" parent="." unique_id=1754913826]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1827876, 0)
 collision_layer = 2
+axis_lock_linear_z = true
 
 [node name="boomer_head" parent="RigidBody_head" unique_id=1018768463 instance=ExtResource("2_t3kdh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6828868, 0)
@@ -39,17 +42,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6828868, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7421272, 0)
 shape = SubResource("SphereShape3D_j7ani")
 
-[node name="RigidBody_body" type="RigidBody3D" parent="." unique_id=302819075]
-collision_layer = 2
+[node name="RigidBody_body" type="RigidBody3D" parent="." unique_id=302819075 groups=["Boomer"]]
+axis_lock_linear_z = true
 
-[node name="boomer_body" parent="RigidBody_body" unique_id=638826202 instance=ExtResource("3_8ucla")]
+[node name="boomer_body" parent="RigidBody_body" unique_id=638826202 groups=["Boomer"] instance=ExtResource("3_8ucla")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody_body" unique_id=1871067663]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody_body" unique_id=1871067663 groups=["Boomer"]]
 shape = SubResource("CapsuleShape3D_8ucla")
 
 [node name="RigidBody_lefthand" type="RigidBody3D" parent="." unique_id=205813033]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.6201062)
 collision_layer = 2
+axis_lock_linear_z = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody_lefthand" unique_id=1976960135]
 shape = SubResource("SphereShape3D_8ucla")
@@ -59,6 +63,7 @@ shape = SubResource("SphereShape3D_8ucla")
 [node name="RigidBody_righthand" type="RigidBody3D" parent="." unique_id=167933227]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4163287)
 collision_layer = 2
+axis_lock_linear_z = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody_righthand" unique_id=2080319033]
 shape = SubResource("SphereShape3D_8ucla")
@@ -68,6 +73,7 @@ shape = SubResource("SphereShape3D_8ucla")
 [node name="RigidBody_rightfeet" type="RigidBody3D" parent="." unique_id=1308188921]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.3329403, -1.4247432)
 collision_layer = 2
+axis_lock_linear_z = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody_rightfeet" unique_id=512622207]
 shape = SubResource("SphereShape3D_8ucla")
@@ -77,6 +83,7 @@ shape = SubResource("SphereShape3D_8ucla")
 [node name="RigidBody_leftfeet" type="RigidBody3D" parent="." unique_id=1955613517]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.3595085, 1.3444687)
 collision_layer = 2
+axis_lock_linear_z = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody_leftfeet" unique_id=1166307568]
 shape = SubResource("SphereShape3D_8ucla")
