@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://bwme1itgs45s7"]
+
+[node name="Shootable" type="Node3D" unique_id=236638270 groups=["Shootable"]]

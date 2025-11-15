@@ -1,12 +1,16 @@
-extends Area3D
+extends Shootable
 class_name projectile
 
 var impulse_scale : float = 50
-var movement_speed : float = 10
 
 func _on_body_entered(body: Node) -> void:
 	body.apply_central_impulse(Vector3(0,impulse_scale,0))
 	queue_free()
 
 func _process(delta: float) -> void:
-	position.y = delta * movement_speed
+	position.y += delta * movement_speed
+
+func on_shoot(inPosition: Vector3) -> bool:
+	position = inPosition
+	movement_speed = 20.
+	return true
