@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://uhbovppa6wmj"]
+
+[ext_resource type="Script" uid="uid://dfcdjjex1mxgi" path="res://Core/RaggioSantoShootable.gd" id="1_6xlog"]
+[ext_resource type="Shader" uid="uid://bmm2xenh8mcg7" path="res://Core/RaggioSanto.gdshader" id="1_ybj67"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_6xlog"]
+top_radius = 6.0
+bottom_radius = 9.0
+height = 100.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7uuk3"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("1_ybj67")
+shader_parameter/ray_length = 50.0
+shader_parameter/width_scale = 0.05
+shader_parameter/center_intensity = 5.0
+shader_parameter/ray_color = Color(0.9, 0.1, 0.1, 1)
+shader_parameter/active_time = 0.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_6xlog"]
+margin = 10.0
+height = 26.467
+radius = 12.0
+
+[node name="RaggioSanto" type="Node3D" unique_id=1500501032]
+script = ExtResource("1_6xlog")
+
+[node name="RaggioSantoMesh" type="MeshInstance3D" parent="." unique_id=420916844 groups=["Shootable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 0)
+mesh = SubResource("CylinderMesh_6xlog")
+surface_material_override/0 = SubResource("ShaderMaterial_7uuk3")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=233520230]
+
+[node name="impact" type="CollisionShape3D" parent="Area3D" unique_id=1136881127 groups=["Shootable"]]
+shape = SubResource("CylinderShape3D_6xlog")
+debug_color = Color(0.92156863, 0, 0.6862745, 1)

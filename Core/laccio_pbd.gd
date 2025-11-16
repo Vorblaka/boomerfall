@@ -24,12 +24,40 @@ var start_body: Node3D
 var end_body: Node3D
 var total_points: int
 
+var bStartAttached : bool = false
+var bEndAttached : bool = false
+
 enum State {Inactive, Boomer1, Boomer2, Active}
 
 var curr_state : State = State.Inactive
 
 # You can use a dedicated sphere/cube scene for visuals
 const VISUAL_SCENE = preload("res://Core/LaccioSfera.tscn")
+
+func _on_start_particle_body_entered(body: Node3D):
+	var b = body as boomer
+	if(b == null): return
+	# Only attach if we aren't already attached
+	if(!bStartAttached):
+		bStartAttached = true
+		start_body = b.random_body_part()
+		if (start_body != null):
+			positions[0] = start_body.global_position
+		b.apply_central_impulse(Vector3(0,200,0))
+		start_body_velocity = Vector3(0,0,0)
+
+
+func _on_end_particle_body_entered(body: Node3D):
+	var b = body as boomer
+	if(b == null): return
+	# Only attach if we aren't already attached
+	if(!bEndAttached):
+		bEndAttached = true
+		end_body = b.random_body_part()
+		if (end_body != null):
+			positions[total_points-1] = end_body.global_position
+		b.apply_central_impulse(Vector3(0,200,0))
+		end_body_velocity = Vector3(0,0,0)
 
 func _ready():
 	total_points = num_segments + 1
@@ -44,12 +72,18 @@ func _ready():
 		print("PBDString: Start or End body paths are not valid.")
 		set_process(false)
 		return
-		
 	
+	set_physics_process(true)
+	
+	# 2. Initialize particle positions and visuals
+	_initialize_particles()	
+	
+	visuals[0].connect("body_entered", Callable(self, "_on_start_particle_body_entered"))
+	visuals[total_points-1].connect("body_entered", Callable(self, "_on_end_particle_body_entered"))
 
 func _initialize_particles():
 	var start_pos = start_body.global_position
-	var end_pos = end_body.global_position + Vector3(1,1,1)
+	var end_pos = end_body.global_position + Vector3(0,-1,-1)
 	var direction = (end_pos - start_pos).normalized()
 	
 	for i in range(total_points):
@@ -60,35 +94,30 @@ func _initialize_particles():
 		
 		# Instantiate and add visualizer sphere
 		var visual = VISUAL_SCENE.instantiate()
-		visual.global_position = p
 		add_child(visual)
+		visual.global_position = p
 		visuals.append(visual)
 
 
 func _physics_process(delta):
 	if(curr_state == State.Inactive):
 		return
-	# 1. External Forces (Integration)
-	if(curr_state >= State.Boomer1):
-		positions[0] += start_body_velocity * delta
-	else: 
-		positions[0] =start_body.global_position
 		
-	if(curr_state >= State.Boomer2):
+	if(curr_state >= State.Boomer1 && !bStartAttached):
+		positions[0] += start_body_velocity * delta
+	else:
+		positions[0] = start_body.global_position
+	
+	if(curr_state >= State.Boomer2 && !bEndAttached):
 		positions[total_points-1] += end_body_velocity * delta
-	else: 
-		positions[total_points-1] += end_body.global_position
+	else:
+		positions[total_points-1] = end_body.global_position
 	
 	_apply_external_forces(delta)
 	
-	# 2. Resolve Constraints (The PBD Magic)
 	for i in range(constraint_iterations):
 		_resolve_distance_constraints()
 		
-	# 3. Apply Boundary Conditions (Attachment to Rigid Bodies)
-	#_apply_attachment_constraints()
-	
-	# 4. Update Visuals
 	_update_visuals()
 	
 
@@ -106,7 +135,7 @@ func _apply_external_forces(delta):
 		var old_pos = prev_positions[i]
 		
 		# Calculate velocity and apply damping
-		if (curr_state >= State.Boomer1 && i == 0) || (curr_state >= State.Boomer2 && i == 0): 
+		if (i == 0) || (i == total_points-1): 
 			positions[i] = current_pos
 			continue
 		var velocity = (current_pos - old_pos) * damping
@@ -171,26 +200,35 @@ func next_state() -> bool:
 	else: 
 		return true
 
-
 func init() -> void:
 	start_body = get_parent_node_3d()
 	end_body = get_parent_node_3d()
-	
-	# 2. Initialize particle positions and visuals
-	_initialize_particles()
-
 
 func on_shoot(position: Vector3) -> bool:
 	if curr_state == State.Inactive:
 		init()
 		positions[0] = position
-		start_body_velocity = Vector3(0,20,0)
+		positions[total_points-1] = position
+		start_body_velocity = Vector3(0,25,0)
 		next_state()
 		return false
 	elif curr_state == State.Boomer1:
 		positions[total_points-1] = position
-		end_body_velocity = Vector3(0,20,0)
+		end_body_velocity = Vector3(0,30,0)
 		next_state()
 		return true
 	return true
 		
+
+func _process(delta : float) -> void:
+	if(start_body == null) || (end_body == null):
+		queue_free()
+	
+	if(curr_state == State.Inactive):
+		for i in range(total_points):
+			positions[i] = global_position
+	elif(curr_state == State.Boomer1):
+		positions[total_points-1] = global_position
+	elif(curr_state == State.Active):
+		positions[0] = start_body.global_position
+		positions[total_points-1] = end_body.global_position
