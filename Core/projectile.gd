@@ -21,6 +21,6 @@ func _ready() -> void:
 
 func on_shoot(inPosition: Vector3) -> bool:
 	print("Projectile shoot\n")
-	position = inPosition
+	global_position = inPosition
 	movement_speed = 20.
 	return true
