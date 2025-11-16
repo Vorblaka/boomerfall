@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d1avguqyivyu5"]
+[gd_scene load_steps=16 format=3 uid="uid://d1avguqyivyu5"]
 
 [ext_resource type="Script" uid="uid://boi4jnb41bkja" path="res://Core/level.gd" id="1_3rhfs"]
 [ext_resource type="PackedScene" uid="uid://dkhmbewkcu8xi" path="res://Core/Shooter.tscn" id="2_h7iwn"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://b8trii6n5mjbc" path="res://Core/UI/main_menu.gd" id="7_bqa1j"]
 [ext_resource type="PackedScene" uid="uid://cfivpmaoah05x" path="res://LevelIngredients/UpperWall.tscn" id="9_f0br3"]
 [ext_resource type="PackedScene" uid="uid://drg3ce7a7n3j" path="res://Core/UI/game_over.tscn" id="9_o1d26"]
+[ext_resource type="AudioStream" uid="uid://t3ufbyavwx5k" path="res://Art/Sound/SFX/voice-message.mp3" id="10_2dtv2"]
 [ext_resource type="PackedScene" uid="uid://c05vqrqly1mjx" path="res://Gigi_art/TestLevel/ArtLevel.tscn" id="10_o1d26"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jfla8"]
@@ -31,7 +32,7 @@ boomer_scene = ExtResource("2_t83br")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1680302371]
 stream = ExtResource("4_b8wnr")
-volume_db = -8.679
+volume_db = -6.0
 autoplay = true
 bus = &"Music"
 
@@ -87,6 +88,7 @@ script = ExtResource("7_bqa1j")
 
 [node name="GameOver" parent="." unique_id=1425105468 instance=ExtResource("9_o1d26")]
 visible = false
+secrect_stream = ExtResource("10_2dtv2")
 
 [node name="UpperWall" parent="." unique_id=325169204 instance=ExtResource("9_f0br3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 42, 0)

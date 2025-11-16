@@ -10,5 +10,6 @@ func _on_body_entered(body: Node3D) -> void:
 		if b:
 			assert(b.player_idx >= 0 and b.player_idx < GameInstance.player_states.size())
 			GameInstance.player_states[b.player_idx].player_instance.queue_free() # Kill shooter
-			GameInstance.character_death.emit(b.player_idx)
+			GameInstance.character_death.emit(b.player_idx)	
 		body.queue_free() # Kill character
+		%AudioStreamPlayer.play()

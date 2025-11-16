@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var standard_win_label: Label = $PanelContainer/GameOverLabel
 
 @export var stream_array : Array[AudioStreamMP3]
+@export var secrect_stream : AudioStreamMP3
 
 #func show_winner() -> void:
 	#var idx: int = 0
@@ -25,6 +26,10 @@ extends CanvasLayer
 func _show_secret_win():
 	standard_win_label.hide()
 	secret_win_label.show()
+	%AudioStreamPlayer.stream = secrect_stream
+	%AudioStreamPlayer.seek(1)
+	%AudioStreamPlayer.pitch_scale = 0.9
+	%AudioStreamPlayer.play()
 
 func _show_standard_win():
 	var winner_idx = 0
