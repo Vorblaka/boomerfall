@@ -11,7 +11,7 @@ var boomer_heads : Array[PackedScene] = [
 var player_idx : int
 
 @onready var head_node : Node3D = $RigidBody_head/boomer_head
-@onready var body_node : MeshInstance3D = $RigidBody_head/boomer_body
+@onready var body_node : MeshInstance3D = $boomer_body/boomer_body
 @onready var body_parts : Array[RigidBody3D] = [
 	$RigidBody_lefthand,
 	$RigidBody_righthand,
