@@ -23,6 +23,9 @@ var projectile_instance : Shootable
 @export var timer_threshold : float = 1
 var timer_counter : float = 1
 
+var tween_movement : Tween
+var is_moving : bool = false
+
 func _process(delta : float) -> void:
 	if timer_counter < timer_threshold:
 		timer_counter += delta
@@ -63,6 +66,20 @@ func _input(_event: InputEvent) -> void:
 			if(shoot()):
 				select_rnd_projectile()
 
+func move_tweened(target_position : Vector3):
+	if tween_movement != null and tween_movement.is_running():
+		tween_movement.stop()
+	is_moving = true
+	print("is moving true")
+	tween_movement = create_tween()
+	tween_movement.set_ease(Tween.EASE_IN_OUT)
+	tween_movement.set_trans(Tween.TRANS_SPRING)
+	tween_movement.tween_property(self, "position", target_position, .5)
+	tween_movement.tween_callback(func() : 
+		is_moving = false 
+		print("is moving false")
+	)
+
 func _physics_process(_delta: float) -> void:
 	
 	var active_input : bool = GameInstance.game_state == GameInstance.EGameStates.GAMEPLAY
@@ -75,7 +92,8 @@ func _physics_process(_delta: float) -> void:
 			
 			# discrete movement input
 			lane_index = (lane_index - 1) % lane_positions.size()
-			global_position = lane_positions[lane_index]
+			move_tweened(lane_positions[lane_index])
+			
 		if Input.is_action_just_pressed(move_right_action_string):
 			# todo: playtest continuos movement input
 			# Continuos movement input
@@ -83,7 +101,8 @@ func _physics_process(_delta: float) -> void:
 			
 			# discrete movement input
 			lane_index = (lane_index + 1) % lane_positions.size()
-			global_position = lane_positions[lane_index]
+			move_tweened(lane_positions[lane_index])
+			
 			# TODo
 			Input.action_release(move_right_action_string)
 

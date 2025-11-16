@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://c05vqrqly1mjx"]
+[gd_scene load_steps=4 format=3 uid="uid://c05vqrqly1mjx"]
 
-[ext_resource type="PackedScene" uid="uid://bvy867hecm4uv" path="res://Gigi_art/art/ArcadeMachine_base.glb" id="1_56blr"]
 [ext_resource type="PackedScene" uid="uid://bg7yvxl3t7aad" path="res://Gigi_art/art/Pipe.glb" id="2_0u8oa"]
-[ext_resource type="PackedScene" uid="uid://fjypkio6mhmu" path="res://Gigi_art/art/ArcadeMachine_screen.glb" id="3_j1abd"]
+[ext_resource type="PackedScene" uid="uid://bbxnh4km5s0rl" path="res://Gigi_art/ArtScenes/arcade_machine_cabin.tscn" id="3_pdxri"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_0u8oa"]
 
@@ -30,7 +29,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0.3414917)
 [node name="Pipe6" parent="." unique_id=390601508 instance=ExtResource("2_0u8oa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 6.3414917)
 
-[node name="ArcadeMachine_base2" parent="." unique_id=1941942562 instance=ExtResource("1_56blr")]
-
-[node name="ArcadeMachine_screen" parent="." unique_id=1128417109 instance=ExtResource("3_j1abd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 38.983997)
+[node name="Arcade_Machine_cabin" parent="." unique_id=1945819704 instance=ExtResource("3_pdxri")]
