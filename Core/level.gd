@@ -30,7 +30,9 @@ func _move_to_game_over_state() -> void:
 func _all_boomers_connected_callback() -> void:
 	if GameInstance.game_state == GameInstance.EGameStates.GAMEPLAY:
 		# All players must be alive
-		assert(GameInstance.player_states.filter(func (ps: GameInstance.PlayerState): return !ps.bDead).size() == GameInstance.active_players_in_lobby)
+		var a = GameInstance.player_states.filter(func (ps: GameInstance.PlayerState): return !ps.bDead)
+		var b = GameInstance.active_players_in_lobby
+		assert(a.size() == b)
 		_move_to_game_over_state()
 
 func _character_death_callback(_player_idx : int) -> void:
