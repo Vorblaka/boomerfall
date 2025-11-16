@@ -108,7 +108,7 @@ func shoot() -> void:
 
 func select_rnd_projectile() -> void:
 	#todo should be-> projectiles_scenes.pick_random().instantiate()
-	projectile_instance = projectiles_scenes[0].instantiate()
+	projectile_instance = projectiles_scenes.pick_random().instantiate()
 	projectile_instance.position = Vector3(0,3,0)
 	projectile_instance.set_disable_scale(true)
 	add_child(projectile_instance)
