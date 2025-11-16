@@ -67,6 +67,10 @@ func _spawn_player_characters():
 			boomer_instance.add_to_group(GameInstance.boomer_group_name)
 			player_state.boomer_instance = boomer_instance
 			add_child(boomer_instance)
+			
+			var player_color = shooter_instance.get_color()
+			boomer_instance.set_color(player_color)
+			
 			player_state.boomer_instance.set_boomer_head(counter)
 		counter += 1
 

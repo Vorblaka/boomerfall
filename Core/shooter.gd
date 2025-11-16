@@ -129,3 +129,10 @@ func select_rnd_projectile() -> void:
 	projectile_instance.position = Vector3(0,3,0)
 	projectile_instance.set_disable_scale(true)
 	add_child(projectile_instance)
+	
+	
+	
+func get_color() -> Color:
+	if cannon and cannon.sphere and cannon.sphere.material_override:
+		return cannon.sphere.material_override.albedo_color
+	return Color.WHITE
