@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://bh51y6atw8mxh" path="res://Core/Projectile.tscn" id="2_xhslj"]
 
 [node name="Laccio" type="Node3D" unique_id=389297355]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03817916, 0)
 script = ExtResource("1_e8fy6")
 laccio_projectiles = Array[PackedScene]([ExtResource("2_xhslj")])
 
