@@ -25,8 +25,9 @@ func _ready() -> void:
 	shoot_action_string = "Player_Shoot_%d" % device_ID
 	
 	projectile_instance = projectiles_scenes.pick_random().instantiate()
-	get_tree().root.add_child(projectile_instance)
+	
 	projectile_instance.playerID = device_ID
+	get_tree().root.add_child(projectile_instance)
 	
 	var marker_nodes = get_tree().get_current_scene().find_children("*", "Marker3D", true)
 	for marker in marker_nodes:
