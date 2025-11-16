@@ -4,20 +4,21 @@
 [ext_resource type="Texture2D" uid="uid://c1yrt0tr148cx" path="res://Art/Images/Explosive.jpg" id="2_2h8om"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_f3wkg"]
-size = Vector3(8, 8, 8)
+size = Vector3(3, 3, 3)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0yyd7"]
 albedo_texture = ExtResource("2_2h8om")
 
-[node name="Projectile2" type="Area3D" unique_id=1453670748]
+[node name="Projectile2" type="Area3D" unique_id=1453670748 groups=["Shootable"]]
 script = ExtResource("1_13ccr")
+impulse_scale = 200.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=797240168]
 shape = SubResource("BoxShape3D_f3wkg")
 debug_color = Color(0.92156863, 0, 0.6862745, 1)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1686927676]
-size = Vector3(7.9, 7.9, 7.9)
+size = Vector3(2.9, 2.9, 2.9)
 material = SubResource("StandardMaterial3D_0yyd7")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

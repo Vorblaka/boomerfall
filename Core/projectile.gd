@@ -1,7 +1,7 @@
 extends Shootable
 class_name projectile
 
-var impulse_scale : float = 100
+@export var impulse_scale : float = 100
 
 @onready var sprite_3d: Sprite3D = $Sprite3D
 
@@ -21,6 +21,6 @@ func _ready() -> void:
 
 func on_shoot(inPosition: Vector3) -> bool:
 	print("Projectile shoot\n")
-	position = inPosition
+	global_position = inPosition
 	movement_speed = 20.
 	return true

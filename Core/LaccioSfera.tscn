@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ds4o1kvsw2r3c"]
+
+[node name="LaccioSfera" type="Node3D" unique_id=792454606]
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=1243429396]
+radius = 0.205

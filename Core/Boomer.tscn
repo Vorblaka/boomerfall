@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dajmu12uautl7"]
+[gd_scene load_steps=9 format=3 uid="uid://dajmu12uautl7"]
 
 [ext_resource type="Script" uid="uid://bhx2l6xtkkve0" path="res://Core/boomer.gd" id="1_gldpe"]
 [ext_resource type="PackedScene" uid="uid://usfpfp6vfav4" path="res://Art/Models/BoomerCharacter/boomer_head.fbx" id="2_t3kdh"]
@@ -7,32 +7,39 @@
 [ext_resource type="PackedScene" uid="uid://dfgpvgufqswob" path="res://Core/Limb.tscn" id="5_8ucla"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_y14eq"]
+radius = 1.0
+height = 2.9
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_j7ani"]
 radius = 0.8
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8ucla"]
-radius = 1.0
-height = 3.0
-
 [sub_resource type="SphereShape3D" id="SphereShape3D_8ucla"]
 
-[node name="FallingCharacter" type="RigidBody3D" unique_id=698165976]
-collision_layer = 0
-collision_mask = 0
+[node name="FallingCharacter" type="RigidBody3D" unique_id=698165976 groups=["Boomer"]]
+transform = Transform3D(0.016667146, 0, -0.9998611, 0, 1, 0, 0.9998611, 0, 0.016667146, 0, 0, 0)
 axis_lock_linear_x = true
 axis_lock_linear_z = true
-mass = 0.3
 lock_rotation = true
 script = ExtResource("1_gldpe")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=362181415]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.103090346, 0, 0)
 shape = SubResource("CapsuleShape3D_y14eq")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
+[node name="boomer_body" parent="." unique_id=638826202 groups=["Boomer"] instance=ExtResource("3_8ucla")]
+
+[node name="HingeJoint3D" type="HingeJoint3D" parent="." unique_id=1804379946]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5016382, 0)
+node_a = NodePath("../RigidBody_head")
+node_b = NodePath("..")
+params/bias = 0.99
+angular_limit/enable = true
+angular_limit/upper = 1.2217305
+angular_limit/lower = -1.2217305
+
 [node name="RigidBody_head" type="RigidBody3D" parent="." unique_id=1754913826]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1827876, 0)
-collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.18882638, 0)
 axis_lock_linear_z = true
 
 [node name="boomer_head" parent="RigidBody_head" unique_id=1018768463 instance=ExtResource("2_t3kdh")]
@@ -42,17 +49,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6828868, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7421272, 0)
 shape = SubResource("SphereShape3D_j7ani")
 
-[node name="RigidBody_body" type="RigidBody3D" parent="." unique_id=302819075 groups=["Boomer"]]
-axis_lock_linear_z = true
-
-[node name="boomer_body" parent="RigidBody_body" unique_id=638826202 groups=["Boomer"] instance=ExtResource("3_8ucla")]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody_body" unique_id=1871067663 groups=["Boomer"]]
-shape = SubResource("CapsuleShape3D_8ucla")
-
 [node name="RigidBody_lefthand" type="RigidBody3D" parent="." unique_id=205813033]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.6201062)
-collision_layer = 2
 axis_lock_linear_z = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody_lefthand" unique_id=1976960135]
@@ -62,7 +60,6 @@ shape = SubResource("SphereShape3D_8ucla")
 
 [node name="RigidBody_righthand" type="RigidBody3D" parent="." unique_id=167933227]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4163287)
-collision_layer = 2
 axis_lock_linear_z = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody_righthand" unique_id=2080319033]
@@ -72,7 +69,6 @@ shape = SubResource("SphereShape3D_8ucla")
 
 [node name="RigidBody_rightfeet" type="RigidBody3D" parent="." unique_id=1308188921]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.3329403, -1.4247432)
-collision_layer = 2
 axis_lock_linear_z = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody_rightfeet" unique_id=512622207]
@@ -82,7 +78,6 @@ shape = SubResource("SphereShape3D_8ucla")
 
 [node name="RigidBody_leftfeet" type="RigidBody3D" parent="." unique_id=1955613517]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.3595085, 1.3444687)
-collision_layer = 2
 axis_lock_linear_z = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody_leftfeet" unique_id=1166307568]
@@ -103,11 +98,23 @@ collision_layer = 2
 collision_layer = 2
 
 [node name="HingeJoint3D0" parent="Limb" index="3" unique_id=914954941]
-node_a = NodePath("../../RigidBody_body")
+node_a = NodePath("../..")
 params/bias = 0.99
+angular_limit/upper = 3.1415927
+angular_limit/lower = -3.1415927
+
+[node name="HingeJoint3D1" parent="Limb" index="4" unique_id=42422812]
+angular_limit/upper = 1.7453293
+angular_limit/lower = -1.7453293
+
+[node name="HingeJoint3D2" parent="Limb" index="5" unique_id=460293214]
+angular_limit/upper = 1.7453293
+angular_limit/lower = -1.7453293
 
 [node name="HingeJoint3D3" parent="Limb" index="6" unique_id=1160985785]
 node_b = NodePath("../../RigidBody_lefthand")
+angular_limit/upper = 3.1415927
+angular_limit/lower = -3.1415927
 
 [node name="Limb2" parent="." unique_id=1527348134 instance=ExtResource("5_8ucla")]
 transform = Transform3D(1, 0, 0, 0, 0.43269956, -0.90153825, 0, 0.90153825, 0.43269956, 0, 1.1903038, -0.9779559)
@@ -122,10 +129,22 @@ collision_layer = 2
 collision_layer = 2
 
 [node name="HingeJoint3D0" parent="Limb2" index="3" unique_id=914954941]
-node_a = NodePath("../../RigidBody_body")
+node_a = NodePath("../..")
+angular_limit/upper = 3.1415927
+angular_limit/lower = -3.1415927
+
+[node name="HingeJoint3D1" parent="Limb2" index="4" unique_id=42422812]
+angular_limit/upper = 1.7453293
+angular_limit/lower = -1.7453293
+
+[node name="HingeJoint3D2" parent="Limb2" index="5" unique_id=460293214]
+angular_limit/upper = 1.7453293
+angular_limit/lower = -1.7453293
 
 [node name="HingeJoint3D3" parent="Limb2" index="6" unique_id=1160985785]
 node_b = NodePath("../../RigidBody_righthand")
+angular_limit/upper = 3.1415927
+angular_limit/lower = -3.1415927
 
 [node name="Limb3" parent="." unique_id=1588866489 instance=ExtResource("5_8ucla")]
 transform = Transform3D(1, 0, 0, 0, 0.9350857, 0.35442162, 0, -0.35442162, 0.9350857, 0, -1.4802983, 0.7583889)
@@ -140,10 +159,22 @@ collision_layer = 2
 collision_layer = 2
 
 [node name="HingeJoint3D0" parent="Limb3" index="3" unique_id=914954941]
-node_a = NodePath("../../RigidBody_body")
+node_a = NodePath("../..")
+angular_limit/upper = 3.1415927
+angular_limit/lower = -3.1415927
+
+[node name="HingeJoint3D1" parent="Limb3" index="4" unique_id=42422812]
+angular_limit/upper = 1.7453293
+angular_limit/lower = -1.7453293
+
+[node name="HingeJoint3D2" parent="Limb3" index="5" unique_id=460293214]
+angular_limit/upper = 1.7453293
+angular_limit/lower = -1.7453293
 
 [node name="HingeJoint3D3" parent="Limb3" index="6" unique_id=1160985785]
 node_b = NodePath("../../RigidBody_leftfeet")
+angular_limit/upper = 3.1415927
+angular_limit/lower = -3.1415927
 
 [node name="Limb4" parent="." unique_id=1319063815 instance=ExtResource("5_8ucla")]
 transform = Transform3D(1, 0, 0, 0, 0.91121644, -0.4119279, 0, 0.4119279, 0.91121644, 0, -1.4911124, -0.7015031)
@@ -158,14 +189,22 @@ collision_layer = 2
 collision_layer = 2
 
 [node name="HingeJoint3D0" parent="Limb4" index="3" unique_id=914954941]
-node_a = NodePath("../../RigidBody_body")
+node_a = NodePath("../..")
+angular_limit/upper = 3.1415927
+angular_limit/lower = -3.1415927
+
+[node name="HingeJoint3D1" parent="Limb4" index="4" unique_id=42422812]
+angular_limit/upper = 1.7453293
+angular_limit/lower = -1.7453293
+
+[node name="HingeJoint3D2" parent="Limb4" index="5" unique_id=460293214]
+angular_limit/upper = 1.7453293
+angular_limit/lower = -1.7453293
 
 [node name="HingeJoint3D3" parent="Limb4" index="6" unique_id=1160985785]
 node_b = NodePath("../../RigidBody_rightfeet")
-
-[node name="HingeJoint3D" type="HingeJoint3D" parent="." unique_id=1804379946]
-node_a = NodePath("../RigidBody_head")
-node_b = NodePath("../RigidBody_body")
+angular_limit/upper = 3.1415927
+angular_limit/lower = -3.1415927
 
 [editable path="Limb"]
 [editable path="Limb2"]

@@ -1,0 +1,299 @@
+[gd_scene load_steps=23 format=4 uid="uid://bbxnh4km5s0rl"]
+
+[ext_resource type="PackedScene" uid="uid://djecoeg4vrtd8" path="res://Gigi_art/art/Arcade_Machine_back.glb" id="1_cp04u"]
+[ext_resource type="Shader" uid="uid://c125mfwqbxius" path="res://Gigi_art/art/ArcadeMachine_screen_Effect.gdshader" id="2_p4sv4"]
+[ext_resource type="PackedScene" uid="uid://bs5ob7o573avh" path="res://Gigi_art/art/Arcade_Machine_Base/Arcade_Machine_base.glb" id="3_8nglx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6ckdj"]
+render_priority = 0
+shader = ExtResource("2_p4sv4")
+shader_parameter/background_color = Color(0.02, 0.04, 0.12, 1)
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/density = 1.3
+shader_parameter/layer_parascale = 4
+shader_parameter/star_speed = Vector2(0, 0)
+shader_parameter/star_wave = Vector2(0, 0)
+shader_parameter/star_size = 3.0
+shader_parameter/star_rotate_speed = 0.5
+shader_parameter/twinkle_effect = 0.6
+shader_parameter/twinkle_speed = 0.3
+shader_parameter/pixelate_enabled = false
+shader_parameter/pixelate_count = 1000.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1pflp"]
+resource_name = "AtariMachine.001"
+cull_mode = 2
+metallic = 1.0
+metallic_texture_channel = 2
+roughness_texture_channel = 1
+emission_enabled = true
+normal_enabled = true
+ao_enabled = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_b70h8"]
+_surfaces = [{
+"aabb": AABB(-0.9515408, -0.7955313, 0.17027904, 1.5619941, 1.5151893, 0.09627299),
+"format": 34359742465,
+"index_count": 21,
+"index_data": PackedByteArray("AAABAAIAAQADAAIABAADAAEABAABAAUAAwAEAAYABgAEAAcACAAHAAQA"),
+"name": "AtariMachine.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 9,
+"vertex_data": PackedByteArray("Lphzv4bpIj+CeYg+rL4bP4I7OD/ycEs+8Rtyv1xRHT8+Fls+Knxxv9DPDz+Mc0Q+rL4bP+SMRb/ycEs+qkYcPxAV1byhXS4+Knxxv2QmPr+Mc0Q+8Rtyv/CnS78+Fls+3iwaP7B3S79mNII+")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_unqri"]
+resource_name = "Arcade_Machine_Bottom_defaultMaterial_008"
+_surfaces = [{
+"aabb": AABB(-0.9515408, -0.7955313, 0.17027904, 1.5619941, 1.5151893, 0.09627299),
+"attribute_data": PackedByteArray("hPXvPuR8mT7n4vc+1ECTPpUs7z6kPZY++n0jP6Iqtj7tnB4/oP+2Phb4Ij9u/Lk+mIf0Po3PWD+w4uw+ev9bP5kp9T54Ylo/mIf0PpwaND+P4uw+nuowP5kp9T6xhzI/PsvrPiV1Rj8="),
+"format": 34359742487,
+"index_count": 21,
+"index_data": PackedByteArray("AAABAAIAAwAEAAUABgAHAAgACQAHAAYABwAJAAoACgAJAAsABwAKAAwA"),
+"material": SubResource("StandardMaterial3D_1pflp"),
+"name": "AtariMachine.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 13,
+"vertex_data": PackedByteArray("Lphzv4bpIj+CeYg+rL4bP4I7OD/ycEs+8Rtyv1xRHT8+Fls+3iwaP7B3S79mNII+8Rtyv/CnS78+Fls+rL4bP+SMRb/ycEs+Knxxv2QmPr+Mc0Q+rL4bP+SMRb/ycEs+8Rtyv/CnS78+Fls+Knxxv9DPDz+Mc0Q+rL4bP4I7OD/ycEs+8Rtyv1xRHT8+Fls+qkYcPxAV1byhXS4+/oabKpnz1TrmYOM7zNCtTuWEIkIa9Lo6pn6e2bD8kD9bsva17M+zYaVsjb/a3sM2CIEqlWIIAUPXYYCYVg4GVtaFIrvmCpM/q4IIbPgGZ0JxY4NmIwg/LHiIL0bpDyNE/38/f9QIlDs=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_b70h8")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_agxtx"]
+resource_name = "AtariMachine.001"
+cull_mode = 2
+metallic = 1.0
+metallic_texture_channel = 2
+roughness_texture_channel = 1
+emission_enabled = true
+normal_enabled = true
+ao_enabled = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_mele3"]
+_surfaces = [{
+"aabb": AABB(-1.0605859, 0.6363758, 0.19867304, 1.668964, 0.08328223, 1.1567969),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
+"name": "AtariMachine.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("bez/////AAC5EAAABQ8AAAAAAADQ6QAA/////wAAAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ioob5"]
+resource_name = "Arcade_Machine_left_defaultMaterial_003"
+_surfaces = [{
+"aabb": AABB(-1.0605859, 0.6363758, 0.19867304, 1.668964, 0.08328223, 1.1567969),
+"attribute_data": PackedByteArray("+3vSafp3vkwOeNNm8HugSQ=="),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
+"material": SubResource("StandardMaterial3D_agxtx"),
+"name": "AtariMachine.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("bez/////HTG5EAAABQ+WQAAAAADQ6eY//////wAAK0umGVuKKgPZeA8E6XjqISGW")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_mele3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d7s44"]
+resource_name = "AtariMachine.001"
+cull_mode = 2
+metallic = 1.0
+metallic_texture_channel = 2
+roughness_texture_channel = 1
+emission_enabled = true
+normal_enabled = true
+ao_enabled = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_rs21i"]
+_surfaces = [{
+"aabb": AABB(-1.0663719, -0.7955313, 0.21395203, 1.668619, 0.0007362366, 1.093746),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
+"name": "AtariMachine.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AABfAP//AAD/////cQkAAE3u//8w/gAAgRIAAAAAAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_fh1es"]
+resource_name = "Arcade_Machine_right_defaultMaterial_002"
+_surfaces = [{
+"aabb": AABB(-1.0663719, -0.7955313, 0.21395203, 1.668619, 0.0007362366, 1.093746),
+"attribute_data": PackedByteArray("uJ4yPn2jFFuAo64+nJ5/Ww=="),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
+"material": SubResource("StandardMaterial3D_d7s44"),
+"name": "AtariMachine.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AABfAP//bCT/////cQkkQE3u//8w/uc/gRIAAAAA01tq6mx5sP7AgCr/r4D94/dt")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_rs21i")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ew1l"]
+resource_name = "AtariMachine.001"
+cull_mode = 2
+metallic = 1.0
+metallic_texture_channel = 2
+roughness_texture_channel = 1
+emission_enabled = true
+normal_enabled = true
+ao_enabled = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_63whv"]
+_surfaces = [{
+"aabb": AABB(-1.0663719, -0.7955302, 1.255238, 1.553287, 1.5151882, 0.12385595),
+"format": 34896613377,
+"index_count": 21,
+"index_data": PackedByteArray("AAABAAIAAwAAAAIAAwAEAAAAAwAFAAQABQADAAYABgADAAcAAwAIAAcA"),
+"name": "AtariMachine.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 9,
+"vertex_data": PackedByteArray("/P7//yrPAAD0AOzxAAAAAAAAO+5tbAAAAAAAAG1sAACQ/pH2vv4AAGL+A4L//wAAkP51Db7+AAD8/gcEKs8AAP//HwB9XAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_14o36"]
+resource_name = "Arcade_Machine_top_defaultMaterial_005"
+_surfaces = [{
+"aabb": AABB(-1.0663719, -0.7955302, 1.255238, 1.553287, 1.5151882, 0.12385595),
+"attribute_data": PackedByteArray("+3vSaQ5402axd2touJ4yPoCjrj4Co8s8s3rxKtZ+TAGzeuQCUn/+AlJ/6hZSf9cq1n6JLA=="),
+"format": 34896613399,
+"index_count": 21,
+"index_data": PackedByteArray("AAABAAIAAwAEAAUABgAHAAgABgAJAAcABgAKAAkACgAGAAsACwAGAAwA"),
+"material": SubResource("StandardMaterial3D_5ew1l"),
+"name": "AtariMachine.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 13,
+"vertex_data": PackedByteArray("/P7//yrPWS70AOzxAABrMAAAO+5tbNkgAAAAAG1slyz//x8AfVwOMPz+BwQqz5olAAAAAG1sdBv8/v//Ks9CDwAAO+5tbPsbkP6R9r7+rABi/gOC//8KAJD+dQ2+/qAD/P4HBCrP/Q4GIcyLCAU2d3sGBnMjz6pscf+dgOL5eZEM7aF9dRWThBEG8Wls+kuI+wKdep76KYNG+euX")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_63whv")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p4jjq"]
+render_priority = 0
+shader = ExtResource("2_p4sv4")
+shader_parameter/background_color = Color(0.02, 0.04, 0.12, 1)
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/density = 1.3
+shader_parameter/layer_parascale = 4
+shader_parameter/star_speed = Vector2(0, 0)
+shader_parameter/star_wave = Vector2(0, 0)
+shader_parameter/star_size = 3.0
+shader_parameter/star_rotate_speed = 0.5
+shader_parameter/twinkle_effect = 0.6
+shader_parameter/twinkle_speed = 0.3
+shader_parameter/pixelate_enabled = false
+shader_parameter/pixelate_count = 1000.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8nglx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n0v53"]
+resource_name = "AtariMachine"
+cull_mode = 2
+metallic = 1.0
+metallic_texture_channel = 2
+roughness_texture_channel = 1
+emission_enabled = true
+normal_enabled = true
+ao_enabled = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_g5tgx"]
+_surfaces = [{
+"aabb": AABB(0.1949786, -0.8240725, 0.15402886, 0.13386887, 1.5376176, 1.2088674),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEAAQADAAQABQADAAAABQAAAAYAAwAHAAgAAwAJAAcAAwAFAAkABwAJAAoACQAFAAsACwAFAAwACQALAA0A"),
+"name": "AtariMachine",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 14,
+"vertex_data": PackedByteArray("Egcl/P36AAAAAP9///8AADcC2/Le/wAAEgfZA/36AAA3AiMN3v8AAFTv///LEQAAxhL//z3vAABU7wAAyxEAAMYSAAA97wAA//8jDRABAAAQ+9kDAwYAAP//2/IQAQAAEPsl/AMGAAD3/v9/AAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_fgi1y"]
+resource_name = "ArcadeMachine_screen_defaultMaterial_007"
+_surfaces = [{
+"aabb": AABB(0.1949786, -0.8240725, 0.15402886, 0.13386887, 1.5376176, 1.2088674),
+"attribute_data": PackedByteArray("8/KvZvfXjGfu8IZn+7yvZgC/hmfJ85g+yfOqZCW8mD4lvKpkAL+3O/u8kTzu8Lc78/KRPPfXijs="),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEAAQADAAQABQADAAAABQAAAAYAAwAHAAgAAwAJAAcAAwAFAAkABwAJAAoACQAFAAsACwAFAAwACQALAA0A"),
+"material": SubResource("StandardMaterial3D_n0v53"),
+"name": "AtariMachine",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 14,
+"vertex_data": PackedByteArray("Egcl/P36Mi0AAP9///8zLTcC2/Le/zItEgfZA/36KC03AiMN3v8lLVTv///LET0txhL//z3vNy1U7wAAyxEsLcYSAAA97ykt//8jDRABNS0Q+9kDAwYzLf//2/IQAUAtEPsl/AMGPy33/v9/AAAzLRIpHSkSKRIpEykgKRopDSkcKQ8pCykcKQ4pHykXKQYpGikJKREpBikTKQYpCSkVKQkpFikSKRIp")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_g5tgx")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u3dpj"]
+render_priority = 0
+shader = ExtResource("2_p4sv4")
+shader_parameter/background_color = Color(0.02, 0.04, 0.12, 1)
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/density = 1.3
+shader_parameter/layer_parascale = 4
+shader_parameter/star_speed = Vector2(0, 0)
+shader_parameter/star_wave = Vector2(0, 0)
+shader_parameter/star_size = 3.0
+shader_parameter/star_rotate_speed = 0.5
+shader_parameter/twinkle_effect = 0.6
+shader_parameter/twinkle_speed = 0.3
+shader_parameter/pixelate_enabled = false
+shader_parameter/pixelate_count = 1000.0
+
+[node name="Arcade_Machine_cabin" unique_id=1945819704 instance=ExtResource("1_cp04u")]
+
+[node name="Arcade_Machine_back_001" parent="." index="0" unique_id=2070254539]
+material_override = SubResource("ShaderMaterial_6ckdj")
+
+[node name="Arcade_Machine_Bottom_003" type="MeshInstance3D" parent="." index="1" unique_id=327389293]
+transform = Transform3D(19.70797, 0, 0, 0, -7.611086e-06, 20.363491, 0, -21.282137, -7.2825524e-06, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_6ckdj")
+mesh = SubResource("ArrayMesh_unqri")
+
+[node name="Arcade_Machine_left_003" type="MeshInstance3D" parent="." index="2" unique_id=1869160748]
+transform = Transform3D(19.70797, 0, 0, 0, -7.611086e-06, 20.363491, 0, -21.282137, -7.2825524e-06, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_6ckdj")
+mesh = SubResource("ArrayMesh_ioob5")
+
+[node name="Arcade_Machine_right002" type="MeshInstance3D" parent="." index="3" unique_id=130359325]
+transform = Transform3D(19.70797, 0, 0, 0, -7.611086e-06, 20.363491, 0, -21.282137, -7.2825524e-06, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_6ckdj")
+mesh = SubResource("ArrayMesh_fh1es")
+
+[node name="Arcade_Machine_top002" type="MeshInstance3D" parent="." index="4" unique_id=2015931400]
+transform = Transform3D(19.70797, 0, 0, 0, -7.611086e-06, 20.363491, 0, -21.282137, -7.2825524e-06, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_6ckdj")
+mesh = SubResource("ArrayMesh_14o36")
+
+[node name="Arcade_Machine_base" parent="." index="5" unique_id=974707275 instance=ExtResource("3_8nglx")]
+
+[node name="Arcade_Machine_screen" type="MeshInstance3D" parent="." index="6" unique_id=422879031]
+transform = Transform3D(19.707972, 0, 0, 0, 0, 20.36349, 0, -21.282135, 0, 0, 0, 42.470234)
+material_override = SubResource("ShaderMaterial_p4jjq")
+material_overlay = SubResource("ShaderMaterial_8nglx")
+mesh = SubResource("ArrayMesh_fgi1y")
+surface_material_override/0 = SubResource("ShaderMaterial_u3dpj")

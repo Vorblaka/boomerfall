@@ -20,7 +20,7 @@ var shoot_action_string : String
 
 var projectile_instance : Shootable
 
-var timer_threshold : float = 1
+@export var timer_threshold : float = 1
 var timer_counter : float = 1
 
 var tween_movement : Tween
@@ -35,12 +35,9 @@ func _ready() -> void:
 	move_right_action_string = "Player_MoveRight_%d" % device_ID	
 	shoot_action_string = "Player_Shoot_%d" % device_ID
 	
+	timer_counter = timer_threshold
+	
 	cannon.set_material_for_player_index(device_ID)
-	
-	projectile_instance = projectiles_scenes.pick_random().instantiate()
-	
-	projectile_instance.playerID = device_ID
-	get_tree().root.add_child(projectile_instance)
 	
 	var marker_nodes = get_tree().get_current_scene().find_children("*", "Marker3D", true)
 	for marker in marker_nodes:
@@ -53,6 +50,8 @@ func _ready() -> void:
 	else:
 		lane_index = device_ID
 		global_position = lane_positions[device_ID]
+	
+	select_rnd_projectile()
 
 func _input(_event: InputEvent) -> void:
 	# Do nothing if this is notregistered or the input is pressed on a different device
@@ -64,7 +63,8 @@ func _input(_event: InputEvent) -> void:
 	if active_input:
 		# Shooting input
 		if Input.is_action_just_released(shoot_action_string):
-			shoot()
+			if(shoot()):
+				select_rnd_projectile()
 
 func move_tweened(target_position : Vector3):
 	if tween_movement != null and tween_movement.is_running():
@@ -106,16 +106,27 @@ func _physics_process(_delta: float) -> void:
 			# TODo
 			Input.action_release(move_right_action_string)
 
-func shoot() -> void:
-	if timer_counter >= timer_threshold and !is_moving and projectile_instance.on_shoot(global_position + Vector3(0,muzzle_offset,0)):
+func shoot() -> bool:
+	if (timer_counter >= timer_threshold and !is_moving and projectile_instance.on_shoot(global_position + Vector3(0,muzzle_offset,0))):
+		
 		timer_counter = 0
 		
 		if animation_player.is_playing() :
 			animation_player.stop()
 		animation_player.play("cannon_shoot")
 		
-		projectile_instance = projectiles_scenes.pick_random().instantiate()
-		projectile_instance = projectiles_scenes[1].instantiate()
-		get_tree().root.add_child(projectile_instance)
-		
+
 		projectile_instance.playerID = device_ID
+		projectile_instance.reparent(get_tree().current_scene)
+		projectile_instance = null
+		return true
+
+	return false
+	
+	
+func select_rnd_projectile() -> void:
+	#todo should be-> projectiles_scenes.pick_random().instantiate()
+	projectile_instance = projectiles_scenes[1].instantiate()
+	projectile_instance.position = Vector3(0,3,0)
+	projectile_instance.set_disable_scale(true)
+	add_child(projectile_instance)

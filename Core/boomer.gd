@@ -11,6 +11,12 @@ var boomer_heads : Array[PackedScene] = [
 var player_idx : int
 
 @onready var head_node : Node3D = $RigidBody_head/boomer_head
+@onready var body_parts : Array[RigidBody3D] = [
+	$RigidBody_lefthand,
+	$RigidBody_righthand,
+	$RigidBody_rightfeet,
+	$RigidBody_leftfeet
+	]
 
 func set_boomer_head(player_idx : int):
 	
@@ -28,4 +34,6 @@ func set_boomer_head(player_idx : int):
 	boomer_head.global_rotation = head_node.global_rotation
 	
 	head_node.queue_free()
-	
+
+func random_body_part() -> RigidBody3D:
+	return body_parts.pick_random()

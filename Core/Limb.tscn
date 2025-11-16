@@ -42,20 +42,17 @@ material_override = ExtResource("1_ixj1m")
 mesh = SubResource("CapsuleMesh_ixj1m")
 
 [node name="HingeJoint3D0" type="HingeJoint3D" parent="." unique_id=914954941]
-unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.30290717, 0)
 node_b = NodePath("../RigidBody3D")
 angular_limit/enable = true
-angular_limit/upper = 1.3962634
-angular_limit/lower = -1.3962634
+angular_limit/upper = 1.7453293
+angular_limit/lower = -1.7453293
 
 [node name="HingeJoint3D1" type="HingeJoint3D" parent="." unique_id=42422812]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.30772412, 0)
 node_a = NodePath("../RigidBody3D")
 node_b = NodePath("../RigidBody3D2")
 angular_limit/enable = true
-angular_limit/upper = 1.3962634
-angular_limit/lower = -1.3962634
 
 [node name="HingeJoint3D2" type="HingeJoint3D" parent="." unique_id=460293214]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.92007065, 0)
@@ -66,9 +63,8 @@ angular_limit/upper = 1.3962634
 angular_limit/lower = -1.3962634
 
 [node name="HingeJoint3D3" type="HingeJoint3D" parent="." unique_id=1160985785]
-unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5151178, 0)
 node_a = NodePath("../RigidBody3D3")
 angular_limit/enable = true
-angular_limit/upper = 1.3962634
-angular_limit/lower = -1.3962634
+angular_limit/upper = 1.7453293
+angular_limit/lower = -1.7453293

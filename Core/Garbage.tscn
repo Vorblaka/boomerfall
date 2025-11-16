@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://ngop5g8khst6"]
+[gd_scene load_steps=4 format=3 uid="uid://ngop5g8khst6"]
 
 [ext_resource type="Texture2D" uid="uid://csx47v2mjrl02" path="res://Art/Images/Garbage.jpg" id="1_5uyaj"]
 
@@ -6,7 +6,12 @@
 albedo_texture = ExtResource("1_5uyaj")
 uv1_scale = Vector3(0.25, 0.25, 0.25)
 
+[sub_resource type="SphereMesh" id="SphereMesh_5uyaj"]
+material = SubResource("StandardMaterial3D_f78aw")
+radius = 1.0
+height = 2.0
+
 [node name="Garbage" type="Node3D" unique_id=1237138368]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1925109854]
-material = SubResource("StandardMaterial3D_f78aw")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=103858882]
+mesh = SubResource("SphereMesh_5uyaj")
