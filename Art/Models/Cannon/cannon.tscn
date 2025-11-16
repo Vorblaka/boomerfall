@@ -8,5 +8,6 @@
 script = ExtResource("2_c0noa")
 
 [node name="Sphere" parent="." index="0" unique_id=515366377]
+[node name="Sphere" parent="." index="0" unique_id=525901926]
 material_override = ExtResource("2_yqhyn")
 surface_material_override/0 = ExtResource("2_yqhyn")

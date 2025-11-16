@@ -20,6 +20,13 @@ var shoot_action_string : String
 
 var projectile_instance : Shootable
 
+var timer_threshold : float = 1
+var timer_counter : float = 1
+
+func _process(delta : float) -> void:
+	if timer_counter < timer_threshold:
+		timer_counter += delta
+
 func _ready() -> void:
 	move_left_action_string = "Player_MoveLeft_%d" % device_ID
 	move_right_action_string = "Player_MoveRight_%d" % device_ID	
@@ -28,8 +35,9 @@ func _ready() -> void:
 	cannon.set_material_for_player_index(device_ID)
 	
 	projectile_instance = projectiles_scenes.pick_random().instantiate()
-	get_tree().root.add_child(projectile_instance)
+	
 	projectile_instance.playerID = device_ID
+	get_tree().root.add_child(projectile_instance)
 	
 	var marker_nodes = get_tree().get_current_scene().find_children("*", "Marker3D", true)
 	for marker in marker_nodes:
@@ -89,6 +97,14 @@ func shoot() -> void:
 	animation_player.play("cannon_shoot")
 	
 	if (projectile_instance.on_shoot(global_position + Vector3(0,muzzle_offset,0))):
+	if (timer_counter >= timer_threshold and
+		projectile_instance.on_shoot(global_position + Vector3(0,muzzle_offset,0))):
+		
+		timer_counter = 0
+		
+		if animation_player.is_playing() :
+			animation_player.stop()
+		animation_player.play("cannon_shoot")
 		
 
 		projectile_instance.playerID = device_ID
