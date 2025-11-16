@@ -8,6 +8,7 @@ var attached_to : RigidBody3D
 
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("Boomer"):
+		%AudioStreamPlayer.play()
 		body.apply_central_impulse(Vector3(0,impulse_scale,0))
 		%Timer.start()
 		attached_to = body.random_body_part()

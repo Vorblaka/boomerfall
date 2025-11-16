@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://d1avguqyivyu5"]
+[gd_scene load_steps=15 format=3 uid="uid://d1avguqyivyu5"]
 
 [ext_resource type="Script" uid="uid://boi4jnb41bkja" path="res://Core/level.gd" id="1_3rhfs"]
 [ext_resource type="PackedScene" uid="uid://dkhmbewkcu8xi" path="res://Core/Shooter.tscn" id="2_h7iwn"]
 [ext_resource type="PackedScene" uid="uid://dajmu12uautl7" path="res://Core/Boomer.tscn" id="2_t83br"]
 [ext_resource type="PackedScene" uid="uid://ddcbjpa207x6p" path="res://Core/GameSystems/player_manager.tscn" id="3_sf6xb"]
+[ext_resource type="AudioStream" uid="uid://dcu74i4ewagam" path="res://Art/Sound/Music/FallBoomer_LoopSong.mp3" id="4_b8wnr"]
 [ext_resource type="PackedScene" uid="uid://dg8q7a6t1ygwl" path="res://LevelIngredients/WallOfDeath.tscn" id="5_h7iwn"]
 [ext_resource type="PackedScene" uid="uid://db51ul3mew3rq" path="res://Core/UI/main_menu.tscn" id="6_sf6xb"]
 [ext_resource type="Script" uid="uid://b8trii6n5mjbc" path="res://Core/UI/main_menu.gd" id="7_bqa1j"]
@@ -21,12 +22,18 @@ sky_material = SubResource("ProceduralSkyMaterial_jfla8")
 background_mode = 2
 sky = SubResource("Sky_6s6ic")
 
-[node name="Level" type="Node3D" unique_id=1992575775 node_paths=PackedStringArray("player_spawn_pos", "boomer_spawn_pos")]
+[node name="Level2" type="Node3D" unique_id=1992575775 node_paths=PackedStringArray("player_spawn_pos", "boomer_spawn_pos")]
 script = ExtResource("1_3rhfs")
 player_spawn_pos = [NodePath("PlayerLane1"), NodePath("PlayerLane2"), NodePath("PlayerLane3"), NodePath("PlayerLane4")]
 boomer_spawn_pos = [NodePath("BoomerSpawnPositionGCo"), NodePath("BoomerSpawnPositionMF"), NodePath("BoomerSpawnPositionLD"), NodePath("BoomerSpawnPositionGC")]
 shooter_scene = ExtResource("2_h7iwn")
 boomer_scene = ExtResource("2_t83br")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1680302371]
+stream = ExtResource("4_b8wnr")
+volume_db = -8.679
+autoplay = true
+bus = &"Music"
 
 [node name="PlayerManager" parent="." unique_id=320525641 instance=ExtResource("3_sf6xb")]
 

@@ -8,6 +8,7 @@ func attach(body : PhysicsBody3D) -> void:
 	joint.node_b = body.get_path()
 	delay.start()
 	body.add_to_group("Connected")
+	%AudioStreamPlayer.play()
 	if get_tree().get_nodes_in_group("Connected").size() == GameInstance.active_players_in_lobby:
 		GameInstance.game_win.emit()
 

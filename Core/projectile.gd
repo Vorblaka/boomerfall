@@ -4,10 +4,17 @@ class_name projectile
 @export var impulse_scale : float = 100
 
 @onready var sprite_3d: Sprite3D = $Sprite3D
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+@onready var S̴̶̶̸̨̺͓̱̥̟̦̠̦͕͑̅̐̂̋̿̂ͤͤ̓̌͊̕͠i̧̥̳̗̹͈̻͇̹͍̳͈̞͚͈̔́̓̆̔͌̅̎̽ͯͫͦ̂̿ͪͩ̋͐͡x̡̢̡͔͈̲̟͇͗͛͋ͦ̾͊͟: Area3D = $"."
+
 
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("Boomer"):
+		audio_stream_player.play()
 		body.apply_central_impulse(Vector3(0,impulse_scale,0))
+		visible = false
+		S̴̶̶̸̨̺͓̱̥̟̦̠̦͕͑̅̐̂̋̿̂ͤͤ̓̌͊̕͠i̧̥̳̗̹͈̻͇̹͍̳͈̞͚͈̔́̓̆̔͌̅̎̽ͯͫͦ̂̿ͪͩ̋͐͡x̡̢̡͔͈̲̟͇͗͛͋ͦ̾͊͟.monitoring = false
+		await get_tree().create_timer(.5).timeout
 		queue_free()
 
 func _process(delta: float) -> void:

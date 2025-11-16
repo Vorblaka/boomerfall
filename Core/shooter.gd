@@ -108,7 +108,7 @@ func _physics_process(_delta: float) -> void:
 
 func shoot() -> bool:
 	if (timer_counter >= timer_threshold):
-		
+		%AudioStreamPlayer.play()
 		timer_counter = 0
 		
 		if animation_player.is_playing() :
