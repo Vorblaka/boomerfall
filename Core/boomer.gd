@@ -18,7 +18,12 @@ var player_idx : int
 	$RigidBody_rightfeet,
 	$RigidBody_leftfeet
 	]
+func _process(delta : float) -> void:
 	
+	if global_position.y > 42:
+		#linear_velocity.y = -1.5
+		apply_central_impulse(Vector3.DOWN * 10)
+		
 func set_color(new_color: Color) -> void:
 	if body_node and body_node.get_surface_override_material(0):
 		var new_material = body_node.get_surface_override_material(0).duplicate()
@@ -43,7 +48,7 @@ func set_boomer_head(player_idx : int):
 
 func random_body_part() -> RigidBody3D:
 	var b = body_parts.pick_random()
-	if(!b.is_queued_for_deletion()):
+	if(b != null and !b.is_queued_for_deletion()):
 		return b
 	else:
 		return null

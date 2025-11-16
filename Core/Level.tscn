@@ -57,9 +57,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -18, 0)
 [node name="PlayerLane4" type="Marker3D" parent="." unique_id=812138364]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -18, 0)
 
-[node name="WallOfDeath2" parent="." unique_id=544016448 instance=ExtResource("5_h7iwn")]
-transform = Transform3D(-1, -8.742278e-08, 0, 8.742278e-08, -1, 0, 0, 0, 1, 0, 43.616825, 0)
-
 [node name="WallOfDeath" parent="." unique_id=1685400373 instance=ExtResource("5_h7iwn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
 

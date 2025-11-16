@@ -37,9 +37,10 @@ unique_name_in_owner = true
 stream = ExtResource("3_2cf5b")
 
 [node name="DeactivateTimer" type="Timer" parent="." unique_id=1574034293]
-wait_time = 0.25
+wait_time = 0.5
 one_shot = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
 [connection signal="timeout" from="DeactivateTimer" to="." method="_on_deactivate_timer_timeout"]

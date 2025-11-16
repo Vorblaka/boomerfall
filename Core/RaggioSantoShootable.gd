@@ -44,6 +44,7 @@ func on_shoot(position: Vector3) -> bool:
 	# or the look_at alignment.
 
 	raggio_santo.visible = true
+	%AudioStreamPlayer.play()
 
 	return true
 

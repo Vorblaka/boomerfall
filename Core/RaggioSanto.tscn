@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://uhbovppa6wmj"]
+[gd_scene load_steps=7 format=3 uid="uid://uhbovppa6wmj"]
 
 [ext_resource type="Script" uid="uid://dfcdjjex1mxgi" path="res://Core/RaggioSantoShootable.gd" id="1_6xlog"]
 [ext_resource type="Shader" path="res://Core/RaggioSanto.gdshader" id="1_ybj67"]
+[ext_resource type="AudioStream" uid="uid://dpitp5bff5sej" path="res://Art/Sound/SFX/finish_ilprof.mp3" id="3_7uuk3"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_6xlog"]
 top_radius = 6.0
@@ -37,3 +38,9 @@ surface_material_override/0 = SubResource("ShaderMaterial_7uuk3")
 [node name="impact" type="CollisionShape3D" parent="Area3D" unique_id=1136881127 groups=["Shootable"]]
 shape = SubResource("CylinderShape3D_6xlog")
 debug_color = Color(0.92156863, 0, 0.6862745, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=251791008]
+unique_name_in_owner = true
+stream = ExtResource("3_7uuk3")
+volume_db = 2.0
+pitch_scale = 1.55

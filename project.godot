@@ -132,6 +132,7 @@ Cheat_AutoWin_All={
 
 [physics]
 
+common/physics_ticks_per_second=120
 3d/physics_engine="GodotPhysics3D"
 3d/default_gravity=1.0
 
