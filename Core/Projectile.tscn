@@ -1,15 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://bh51y6atw8mxh"]
+[gd_scene load_steps=5 format=3 uid="uid://bh51y6atw8mxh"]
 
 [ext_resource type="Script" uid="uid://b76g0c852u1w7" path="res://Core/projectile.gd" id="1_13ccr"]
-[ext_resource type="Shader" uid="uid://dq47gaa2oawkx" path="res://Core/Shaders/Projectile.gdshader" id="2_0yyd7"]
-[ext_resource type="Texture2D" uid="uid://rj15wn2r7bgq" path="res://Art/Prompts/kenney_input-prompts_1.4/Flairs/Vector/controller_generic.svg" id="2_2h8om"]
+[ext_resource type="Texture2D" uid="uid://c1yrt0tr148cx" path="res://Art/Images/Explosive.jpg" id="2_2h8om"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_f3wkg"]
 size = Vector3(8, 8, 8)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0yyd7"]
-render_priority = 0
-shader = ExtResource("2_0yyd7")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0yyd7"]
+albedo_texture = ExtResource("2_2h8om")
 
 [node name="Projectile2" type="Area3D" unique_id=1453670748]
 script = ExtResource("1_13ccr")
@@ -18,9 +16,8 @@ script = ExtResource("1_13ccr")
 shape = SubResource("BoxShape3D_f3wkg")
 debug_color = Color(0.92156863, 0, 0.6862745, 1)
 
-[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1640627776]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
-material_overlay = SubResource("ShaderMaterial_0yyd7")
-texture = ExtResource("2_2h8om")
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1686927676]
+size = Vector3(7.9, 7.9, 7.9)
+material = SubResource("StandardMaterial3D_0yyd7")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,10 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://pn3wnx0eq8q1"]
+[gd_scene load_steps=4 format=3 uid="uid://pn3wnx0eq8q1"]
 
 [ext_resource type="PackedScene" uid="uid://dnfc5oo0rpqpp" path="res://Art/Models/Cannon/cannon.fbx" id="1_106ly"]
+[ext_resource type="Script" uid="uid://c013n67oe0i0y" path="res://Core/cannon.gd" id="2_c0noa"]
 [ext_resource type="Material" uid="uid://mh6vdb4pbm2m" path="res://Art/Materials/cannon1_material_3d.tres" id="2_yqhyn"]
 
 [node name="cannon3" unique_id=704767505 instance=ExtResource("1_106ly")]
+script = ExtResource("2_c0noa")
 
-[node name="Sphere" parent="." index="0" unique_id=525901926]
+[node name="Sphere" parent="." index="0" unique_id=1045973858]
 material_override = ExtResource("2_yqhyn")
 surface_material_override/0 = ExtResource("2_yqhyn")

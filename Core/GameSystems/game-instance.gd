@@ -23,10 +23,17 @@ var active_players_in_lobby : int
 var player_states : Array[PlayerState]
 
 const player_color : Array[Color] = [
-	Color(1.0, 0.0, 0.0, 1.0),
+	Color(0.997, 0.0, 0.159, 1.0),
 	Color(0.415, 0.604, 0.0, 1.0),
 	Color(0.0, 0.555, 0.903, 1.0),
 	Color(0.857, 0.001, 0.879, 1.0)
+]
+
+const player_cannon_materials : Array[StandardMaterial3D] = [
+	preload("uid://mh6vdb4pbm2m"),
+	preload("uid://dbxot52cr03d8"),
+	preload("uid://0tb5x04pdtua"),
+	preload("uid://cjgmygb470j7d")
 ]
 
 enum EGameStates { PLAYER_SELECTION, GAMEPLAY, GAME_OVER }

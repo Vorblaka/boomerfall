@@ -5,6 +5,7 @@ class_name shooter
 
 @export var joint_scene: PackedScene
 @export var animation_player: AnimationPlayer
+@onready var cannon: cannon = $cannon
 
 var device_ID : int = -1
 var active_projectile : PackedScene
@@ -23,6 +24,8 @@ func _ready() -> void:
 	move_left_action_string = "Player_MoveLeft_%d" % device_ID
 	move_right_action_string = "Player_MoveRight_%d" % device_ID	
 	shoot_action_string = "Player_Shoot_%d" % device_ID
+	
+	cannon.set_material_for_player_index(device_ID)
 	
 	projectile_instance = projectiles_scenes.pick_random().instantiate()
 	
