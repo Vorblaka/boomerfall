@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://fs8flhl440a4"]
+
+[ext_resource type="PackedScene" uid="uid://bct5eon2ow66d" path="res://Art/Models/Spike/spike.fbx" id="1_in0sp"]
+[ext_resource type="Material" uid="uid://ch3u8e27puaae" path="res://Art/Materials/spike_material_3d.tres" id="2_hrq0e"]
+
+[node name="spike" unique_id=1428844973 instance=ExtResource("1_in0sp")]
+
+[node name="Cone" parent="." index="0" unique_id=1008700537]
+material_override = ExtResource("2_hrq0e")
+
+[node name="Cone_003" parent="." index="1" unique_id=973893935]
+material_override = ExtResource("2_hrq0e")
