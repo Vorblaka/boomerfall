@@ -19,7 +19,7 @@ func _on_timer_timeout() -> void:
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Shootable"):
 		return
-	if body.is_in_group("Boomer"):
+	if body.is_in_group("Boomer") and !body.is_queued_for_deletion():
 		var b = body.random_body_part()
 		b.global_position = global_position
 		attach(b)

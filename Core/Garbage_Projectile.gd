@@ -10,7 +10,8 @@ func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("Boomer"):
 		body.apply_central_impulse(Vector3(0,impulse_scale,0))
 		%Timer.start()
-		attached_to = body.random_body_part()
+		if !body.is_queued_for_deletion():
+			attached_to = body.random_body_part()
 
 func _process(delta: float) -> void:
 	if attached_to:
