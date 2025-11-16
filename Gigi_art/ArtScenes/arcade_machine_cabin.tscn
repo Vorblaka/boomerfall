@@ -1,9 +1,13 @@
-[gd_scene load_steps=23 format=4 uid="uid://bbxnh4km5s0rl"]
+[gd_scene load_steps=30 format=4 uid="uid://bbxnh4km5s0rl"]
 
-[ext_resource type="PackedScene" uid="uid://c5glo6ikodf8i" path="res://Gigi_art/art/Arcade_Machine_back.glb" id="1_cp04u"]
+[ext_resource type="PackedScene" uid="uid://c5glo6ikodf8i" path="res://Gigi_art/art/Arcade_Machine_Walls/Arcade_Machine_back.glb" id="1_cp04u"]
 [ext_resource type="Shader" uid="uid://c125mfwqbxius" path="res://Gigi_art/shaders/ArcadeMachine_Walls_Effect.gdshader" id="2_p4sv4"]
 [ext_resource type="PackedScene" uid="uid://bs5ob7o573avh" path="res://Gigi_art/art/Arcade_Machine_Base/Arcade_Machine_base.glb" id="3_8nglx"]
 [ext_resource type="Shader" uid="uid://bvfk4bs24n1cv" path="res://Gigi_art/shaders/arcade_machine_screen_Effect.gdshader" id="4_8nglx"]
+[ext_resource type="Script" uid="uid://cpe6k6gv0wuyl" path="res://Gigi_art/scripts/meteor.gd" id="6_7gqho"]
+[ext_resource type="PackedScene" uid="uid://bjm3cnyqw6rvn" path="res://Gigi_art/ArtScenes/meteor.tscn" id="6_twvbf"]
+[ext_resource type="PackedScene" uid="uid://djyterx2kapmh" path="res://Gigi_art/art/SpaceStuff/sun.glb" id="6_u3dpj"]
+[ext_resource type="Texture2D" uid="uid://807qwscn3lgc" path="res://Gigi_art/art/SpaceStuff/SpacePanoramas/panorama2.jpg" id="7_twvbf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6ckdj"]
 render_priority = 0
@@ -191,8 +195,14 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_63whv")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fgi1y"]
+render_priority = 0
 shader = ExtResource("4_8nglx")
-shader_parameter/scroll_speed = 0.08
+shader_parameter/curve_amount = 0.05
+shader_parameter/vignette_intensity = 1.0
+shader_parameter/scanline_intensity = 0.1
+shader_parameter/noise_amount = 0.04
+shader_parameter/aberration_amount = 0.005
+shader_parameter/glass_opacity = 0.1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n0v53"]
 resource_name = "AtariMachine"
@@ -253,18 +263,31 @@ shader_parameter/pixelate_enabled = false
 shader_parameter/pixelate_count = 1000.0
 shader_parameter/texture_scale = 0.1
 
-[node name="Arcade_Machine_cabin2" unique_id=1945819704 instance=ExtResource("1_cp04u")]
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_7gqho"]
+panorama = ExtResource("7_twvbf")
 
-[node name="Arcade_Machine_back_001" parent="." index="0" unique_id=304567102]
+[sub_resource type="Sky" id="Sky_bdfve"]
+sky_material = SubResource("PanoramaSkyMaterial_7gqho")
+
+[sub_resource type="Environment" id="Environment_5ji1x"]
+background_mode = 2
+sky = SubResource("Sky_bdfve")
+ambient_light_source = 3
+adjustment_enabled = true
+adjustment_saturation = 1.3
+
+[node name="Arcade_Machine_cabin3" unique_id=1945819704 instance=ExtResource("1_cp04u")]
+
+[node name="Arcade_Machine_back_001" parent="." index="0" unique_id=22943312]
 material_override = SubResource("ShaderMaterial_6ckdj")
 
 [node name="Arcade_Machine_Bottom_003" type="MeshInstance3D" parent="." index="1" unique_id=327389293]
-transform = Transform3D(19.70797, 0, 0, 0, -7.611086e-06, 20.363491, 0, -21.282137, -7.2825524e-06, 0, 0, 0)
+transform = Transform3D(19.70793, 0.04173821, -0.006254013, 0.006041169, 0.0063117743, 20.36349, 0.03865278, -21.282093, 0.0060269968, 0, 0, 0)
 material_override = SubResource("ShaderMaterial_6ckdj")
 mesh = SubResource("ArrayMesh_unqri")
 
 [node name="Arcade_Machine_left_003" type="MeshInstance3D" parent="." index="2" unique_id=1869160748]
-transform = Transform3D(19.70797, 0, 0, 0, -7.611086e-06, 20.363491, 0, -21.282137, -7.2825524e-06, 0, 0, 0)
+transform = Transform3D(19.70797, 0, 0, 0, -7.611086e-06, 20.363491, 0, -21.282137, -7.2825524e-06, -0.029212952, 1.9073486e-06, -0.016262054)
 material_override = SubResource("ShaderMaterial_6ckdj")
 mesh = SubResource("ArrayMesh_ioob5")
 
@@ -281,7 +304,44 @@ mesh = SubResource("ArrayMesh_14o36")
 [node name="Arcade_Machine_base" parent="." index="5" unique_id=974707275 instance=ExtResource("3_8nglx")]
 
 [node name="Arcade_Machine_screen" type="MeshInstance3D" parent="." index="6" unique_id=422879031]
-transform = Transform3D(19.707972, 0, 0, 0, 0, 20.36349, 0, -21.282135, 0, 0, 0, -48.38086)
+transform = Transform3D(19.58538, 0, -2.2677772, 2.1947753, 0, 20.236818, 0, -21.282133, 0, 5.2857723, 0.36886215, -0.036995173)
 material_override = SubResource("ShaderMaterial_fgi1y")
 mesh = SubResource("ArrayMesh_fgi1y")
 surface_material_override/0 = SubResource("ShaderMaterial_u3dpj")
+
+[node name="Sketchfab_Scene15" parent="." index="7" unique_id=1606904052 instance=ExtResource("6_twvbf")]
+transform = Transform3D(0.6652043, 0, -0.7466614, 0, 1, 0, 0.7466614, 0, 0.6652043, -9.6445675, 11.725097, 9.601282)
+script = ExtResource("6_7gqho")
+
+[node name="Sketchfab_Scene14" parent="." index="8" unique_id=238750837 instance=ExtResource("6_twvbf")]
+transform = Transform3D(0.6652043, 0, -0.7466614, 0, 1, 0, 0.7466614, 0, 0.6652043, -14.636512, 13.463094, -9.921774)
+script = ExtResource("6_7gqho")
+
+[node name="Sketchfab_Scene13" parent="." index="9" unique_id=377730479 instance=ExtResource("6_twvbf")]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -15.976427, 19.986158, 10.448287)
+script = ExtResource("6_7gqho")
+
+[node name="Sketchfab_Scene12" parent="." index="10" unique_id=1016357002 instance=ExtResource("6_twvbf")]
+transform = Transform3D(0.10117778, 0, -0.9948683, 0, 1, 0, 0.9948683, 0, 0.10117778, -9.053454, 18.832785, -8.780789)
+script = ExtResource("6_7gqho")
+
+[node name="Sketchfab_Scene11" parent="." index="11" unique_id=1592724419 instance=ExtResource("6_twvbf")]
+transform = Transform3D(0.10117779, 0, -0.99486834, 0, 1, 0, 0.99486834, 0, 0.10117779, -14.954962, 14.387613, 13.82412)
+script = ExtResource("6_7gqho")
+
+[node name="Sketchfab_Scene10" parent="." index="12" unique_id=1699848884 instance=ExtResource("6_twvbf")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -10.927924, 10.197107, -5.7846565)
+script = ExtResource("6_7gqho")
+
+[node name="Sketchfab_Scene9" parent="." index="13" unique_id=956100437 instance=ExtResource("6_twvbf")]
+transform = Transform3D(0.38918823, 0, 0.92115843, 0, 1, 0, -0.92115843, 0, 0.38918823, -16.189606, 23.584663, -5.6549253)
+script = ExtResource("6_7gqho")
+
+[node name="Sun" parent="." index="14" unique_id=1265223255 instance=ExtResource("6_u3dpj")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -13.525334, 15.66308, 0.1617369)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Sun" index="2" unique_id=11814753]
+environment = SubResource("Environment_5ji1x")
+
+[node name="Camera3D" type="Camera3D" parent="." index="15" unique_id=1794057377]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 28, 15, 0)

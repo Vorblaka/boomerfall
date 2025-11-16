@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjm3cnyqw6rvn"]
+
+[ext_resource type="PackedScene" uid="uid://bkp0xkepn77xj" path="res://Gigi_art/art/SpaceStuff/ultima_thule_-_concept_vision.glb" id="1_fkfnp"]
+
+[node name="Sketchfab_Scene" unique_id=1606904052 instance=ExtResource("1_fkfnp")]

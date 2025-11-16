@@ -35,7 +35,7 @@ func _show_standard_win():
 	
 	%AudioStreamPlayer.stream = stream_array[winner_idx]
 	%AudioStreamPlayer.play()
-	standard_win_label.text = GameInstance.boomer_names[winner_idx] + "NON HA VINTO"
+	standard_win_label.text = GameInstance.boomer_names[winner_idx] + " NON ha vinto"
 	standard_win_label.show()
 	secret_win_label.hide()
 
