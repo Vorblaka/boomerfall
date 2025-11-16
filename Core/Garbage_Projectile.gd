@@ -18,9 +18,7 @@ func _process(delta: float) -> void:
 		position.y += delta * movement_speed
 
 func _ready() -> void:
-	if sprite_3d:
-		assert(playerID >= 0 and playerID < GameInstance.player_color.size())
-		sprite_3d.set_instance_shader_parameter("player_color", GameInstance.player_color[playerID])
+	pass
 
 func on_shoot(inPosition: Vector3) -> bool:
 	print("Projectile shoot\n")
