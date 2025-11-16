@@ -1,24 +1,26 @@
 [gd_scene load_steps=23 format=4 uid="uid://bbxnh4km5s0rl"]
 
-[ext_resource type="PackedScene" uid="uid://djecoeg4vrtd8" path="res://Gigi_art/art/Arcade_Machine_back.glb" id="1_cp04u"]
-[ext_resource type="Shader" uid="uid://c125mfwqbxius" path="res://Gigi_art/art/ArcadeMachine_screen_Effect.gdshader" id="2_p4sv4"]
+[ext_resource type="PackedScene" uid="uid://c5glo6ikodf8i" path="res://Gigi_art/art/Arcade_Machine_back.glb" id="1_cp04u"]
+[ext_resource type="Shader" uid="uid://c125mfwqbxius" path="res://Gigi_art/shaders/ArcadeMachine_Walls_Effect.gdshader" id="2_p4sv4"]
 [ext_resource type="PackedScene" uid="uid://bs5ob7o573avh" path="res://Gigi_art/art/Arcade_Machine_Base/Arcade_Machine_base.glb" id="3_8nglx"]
+[ext_resource type="Shader" uid="uid://bvfk4bs24n1cv" path="res://Gigi_art/shaders/arcade_machine_screen_Effect.gdshader" id="4_8nglx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6ckdj"]
 render_priority = 0
 shader = ExtResource("2_p4sv4")
 shader_parameter/background_color = Color(0.02, 0.04, 0.12, 1)
 shader_parameter/aspect_ratio = 1.0
-shader_parameter/density = 1.3
+shader_parameter/density = 0.49999998735
 shader_parameter/layer_parascale = 4
 shader_parameter/star_speed = Vector2(0, 0)
 shader_parameter/star_wave = Vector2(0, 0)
-shader_parameter/star_size = 3.0
+shader_parameter/star_size = 4.18999990634512
 shader_parameter/star_rotate_speed = 0.5
 shader_parameter/twinkle_effect = 0.6
 shader_parameter/twinkle_speed = 0.3
 shader_parameter/pixelate_enabled = false
 shader_parameter/pixelate_count = 1000.0
+shader_parameter/texture_scale = 0.1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1pflp"]
 resource_name = "AtariMachine.001"
@@ -188,23 +190,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_63whv")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_p4jjq"]
-render_priority = 0
-shader = ExtResource("2_p4sv4")
-shader_parameter/background_color = Color(0.02, 0.04, 0.12, 1)
-shader_parameter/aspect_ratio = 1.0
-shader_parameter/density = 1.3
-shader_parameter/layer_parascale = 4
-shader_parameter/star_speed = Vector2(0, 0)
-shader_parameter/star_wave = Vector2(0, 0)
-shader_parameter/star_size = 3.0
-shader_parameter/star_rotate_speed = 0.5
-shader_parameter/twinkle_effect = 0.6
-shader_parameter/twinkle_speed = 0.3
-shader_parameter/pixelate_enabled = false
-shader_parameter/pixelate_count = 1000.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8nglx"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fgi1y"]
+shader = ExtResource("4_8nglx")
+shader_parameter/scroll_speed = 0.08
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n0v53"]
 resource_name = "AtariMachine"
@@ -263,10 +251,11 @@ shader_parameter/twinkle_effect = 0.6
 shader_parameter/twinkle_speed = 0.3
 shader_parameter/pixelate_enabled = false
 shader_parameter/pixelate_count = 1000.0
+shader_parameter/texture_scale = 0.1
 
-[node name="Arcade_Machine_cabin" unique_id=1945819704 instance=ExtResource("1_cp04u")]
+[node name="Arcade_Machine_cabin2" unique_id=1945819704 instance=ExtResource("1_cp04u")]
 
-[node name="Arcade_Machine_back_001" parent="." index="0" unique_id=2070254539]
+[node name="Arcade_Machine_back_001" parent="." index="0" unique_id=304567102]
 material_override = SubResource("ShaderMaterial_6ckdj")
 
 [node name="Arcade_Machine_Bottom_003" type="MeshInstance3D" parent="." index="1" unique_id=327389293]
@@ -292,8 +281,7 @@ mesh = SubResource("ArrayMesh_14o36")
 [node name="Arcade_Machine_base" parent="." index="5" unique_id=974707275 instance=ExtResource("3_8nglx")]
 
 [node name="Arcade_Machine_screen" type="MeshInstance3D" parent="." index="6" unique_id=422879031]
-transform = Transform3D(19.707972, 0, 0, 0, 0, 20.36349, 0, -21.282135, 0, 0, 0, 42.470234)
-material_override = SubResource("ShaderMaterial_p4jjq")
-material_overlay = SubResource("ShaderMaterial_8nglx")
+transform = Transform3D(19.707972, 0, 0, 0, 0, 20.36349, 0, -21.282135, 0, 0, 0, -48.38086)
+material_override = SubResource("ShaderMaterial_fgi1y")
 mesh = SubResource("ArrayMesh_fgi1y")
 surface_material_override/0 = SubResource("ShaderMaterial_u3dpj")
