@@ -96,9 +96,7 @@ func shoot() -> void:
 		animation_player.stop()
 	animation_player.play("cannon_shoot")
 	
-	if (projectile_instance.on_shoot(global_position + Vector3(0,muzzle_offset,0))):
-	if (timer_counter >= timer_threshold and
-		projectile_instance.on_shoot(global_position + Vector3(0,muzzle_offset,0))):
+	if (timer_counter >= timer_threshold and projectile_instance.on_shoot(global_position + Vector3(0,muzzle_offset,0))):
 		
 		timer_counter = 0
 		
