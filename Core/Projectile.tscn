@@ -9,7 +9,7 @@ size = Vector3(8, 8, 8)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0yyd7"]
 albedo_texture = ExtResource("2_2h8om")
 
-[node name="Projectile2" type="Area3D" unique_id=1453670748]
+[node name="Projectile2" type="Area3D" unique_id=1453670748 groups=["Shootable"]]
 script = ExtResource("1_13ccr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=797240168]

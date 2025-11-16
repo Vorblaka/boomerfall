@@ -11,6 +11,7 @@ var boomer_heads : Array[PackedScene] = [
 var player_idx : int
 
 @onready var head_node : Node3D = $RigidBody_head/boomer_head
+@onready var hand_node : RigidBody3D = $RigidBody_lefthand
 
 func set_boomer_head(player_idx : int):
 	
