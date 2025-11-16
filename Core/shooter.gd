@@ -88,12 +88,7 @@ func _physics_process(_delta: float) -> void:
 			Input.action_release(move_right_action_string)
 
 func shoot() -> bool:
-	#cannon animation
-	if animation_player.is_playing() :
-		animation_player.stop()
-	animation_player.play("cannon_shoot")
-	
-	if (timer_counter >= timer_threshold and projectile_instance.on_shoot(global_position + Vector3(0,muzzle_offset,0))):
+	if (timer_counter >= timer_threshold):
 		
 		timer_counter = 0
 		
@@ -101,11 +96,10 @@ func shoot() -> bool:
 			animation_player.stop()
 		animation_player.play("cannon_shoot")
 		
-
-		projectile_instance.playerID = device_ID
-		projectile_instance.reparent(get_tree().current_scene)
-		projectile_instance = null
-		return true
+		if(projectile_instance.on_shoot(global_position + Vector3(0,muzzle_offset,0))):
+			projectile_instance.playerID = device_ID
+			projectile_instance.reparent(get_tree().current_scene)
+			return true
 
 	return false
 	
