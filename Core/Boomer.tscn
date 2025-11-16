@@ -206,6 +206,7 @@ node_b = NodePath("../../RigidBody_rightfeet")
 angular_limit/upper = 3.1415927
 angular_limit/lower = -3.1415927
 
+[editable path="boomer_body"]
 [editable path="Limb"]
 [editable path="Limb2"]
 [editable path="Limb3"]

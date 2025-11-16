@@ -6,7 +6,7 @@ extends Shootable
 var ray_material: ShaderMaterial
 
 @onready var impact = $Area3D
-
+@export var impulse : float = 20
 # Time control for animation in the shader
 var ray_active_time: float = 0.0
 const RAY_FADE_SPEED: float = 8.0 # How fast the ray fades out after release
@@ -14,7 +14,7 @@ const RAY_FADE_SPEED: float = 8.0 # How fast the ray fades out after release
 var shoot : bool = false
 
 func _on_impact(body : Node3D):
-	body.apply_central_impulse(Vector3(0,20,0))
+	body.apply_central_impulse(Vector3(0,impulse,0))
 
 func _ready():
 	# It's good practice to hide the ray on startup

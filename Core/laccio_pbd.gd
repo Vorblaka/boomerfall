@@ -32,6 +32,8 @@ enum State {Inactive, Boomer1, Boomer2, Active}
 
 var curr_state : State = State.Inactive
 
+@export var impulse : float = 10
+
 # You can use a dedicated sphere/cube scene for visuals
 const VISUAL_SCENE = preload("res://Core/LaccioSfera.tscn")
 
@@ -44,7 +46,7 @@ func _on_start_particle_body_entered(body: Node3D):
 		start_body = b.random_body_part()
 		if (start_body != null):
 			positions[0] = start_body.global_position
-		b.apply_central_impulse(Vector3(0,200,0))
+		b.apply_central_impulse(Vector3(0,impulse,0))
 		start_body_velocity = Vector3(0,0,0)
 
 
@@ -58,7 +60,7 @@ func _on_end_particle_body_entered(body: Node3D):
 			end_body = b.random_body_part()
 			if (end_body != null):
 				positions[total_points-1] = end_body.global_position
-			b.apply_central_impulse(Vector3(0,200,0))
+			b.apply_central_impulse(Vector3(0,impulse,0))
 			end_body_velocity = Vector3(0,0,0)
 
 func _ready():
@@ -102,6 +104,13 @@ func _initialize_particles():
 
 
 func _physics_process(delta):
+	if start_body == null or end_body == null:
+		queue_free()
+		return
+		
+	if start_body.is_queued_for_deletion() or end_body.is_queued_for_deletion():
+		return
+
 	if(curr_state == State.Inactive):
 		return
 		
