@@ -38,19 +38,19 @@ size = 100.0
 environment = SubResource("Environment_rs3y6")
 
 [node name="PlayerLane1" type="Marker3D" parent="." unique_id=544717405]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, -15, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, -18, 0)
 
 [node name="PlayerLane2" type="Marker3D" parent="." unique_id=458517793]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -15, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -18, 0)
 
 [node name="PlayerLane3" type="Marker3D" parent="." unique_id=628521829]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -15, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -18, 0)
 
 [node name="PlayerLane4" type="Marker3D" parent="." unique_id=812138364]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -15, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -18, 0)
 
 [node name="WallOfDeath" parent="." unique_id=544016448 instance=ExtResource("5_h7iwn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
 
 [node name="WorldEnvironment2" type="WorldEnvironment" parent="." unique_id=976409435]
 environment = SubResource("Environment_rs3y6")
@@ -81,17 +81,11 @@ script = ExtResource("7_bqa1j")
 [node name="GameOver" parent="." unique_id=1425105468 instance=ExtResource("9_o1d26")]
 visible = false
 
-[node name="UpperWall" parent="." unique_id=325169204 node_paths=PackedStringArray("pin_points") instance=ExtResource("9_f0br3")]
+[node name="UpperWall" parent="." unique_id=325169204 instance=ExtResource("9_f0br3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 42, 0)
-pin_points = {
-NodePath("PinPoint1"): null,
-NodePath("PinPoint2"): null,
-NodePath("PinPoint3"): null,
-NodePath("PinPoint4"): null
-}
 
 [node name="ArtLevel2" parent="." unique_id=450559254 instance=ExtResource("10_o1d26")]
-transform = Transform3D(-1.42062e-07, 0, -3.25, 0, 4.75, 0, 3.25, 0, -1.42062e-07, 0, -33, 14)
+transform = Transform3D(-1.42062e-07, 0, -3.25, 0, 4.75, 0, 3.25, 0, -1.42062e-07, 0, -54, 14)
 
 [connection signal="on_timer_started" from="." to="MainMenu" method="_on_level_on_timer_started"]
 [connection signal="on_timer_stopped" from="." to="MainMenu" method="_on_level_on_timer_stopped"]

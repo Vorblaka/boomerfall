@@ -20,7 +20,7 @@ var shoot_action_string : String
 
 var projectile_instance : Shootable
 
-var timer_threshold : float = 1
+@export var timer_threshold : float = 1
 var timer_counter : float = 1
 
 func _process(delta : float) -> void:
@@ -32,12 +32,9 @@ func _ready() -> void:
 	move_right_action_string = "Player_MoveRight_%d" % device_ID	
 	shoot_action_string = "Player_Shoot_%d" % device_ID
 	
+	timer_counter = timer_threshold
+	
 	cannon.set_material_for_player_index(device_ID)
-	
-	projectile_instance = projectiles_scenes.pick_random().instantiate()
-	
-	projectile_instance.playerID = device_ID
-	get_tree().root.add_child(projectile_instance)
 	
 	var marker_nodes = get_tree().get_current_scene().find_children("*", "Marker3D", true)
 	for marker in marker_nodes:
@@ -112,6 +109,6 @@ func shoot() -> void:
 func select_rnd_projectile() -> void:
 	#todo should be-> projectiles_scenes.pick_random().instantiate()
 	projectile_instance = projectiles_scenes[0].instantiate()
-	projectile_instance.position = Vector3(0,muzzle_offset/2,0)
+	projectile_instance.position = Vector3(0,3,0)
 	projectile_instance.set_disable_scale(true)
 	add_child(projectile_instance)

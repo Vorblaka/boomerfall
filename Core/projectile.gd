@@ -1,7 +1,7 @@
 extends Shootable
 class_name projectile
 
-var impulse_scale : float = 100
+@export var impulse_scale : float = 100
 
 @onready var sprite_3d: Sprite3D = $Sprite3D
 
