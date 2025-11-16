@@ -42,6 +42,8 @@ func _ready() -> void:
 	else:
 		lane_index = device_ID
 		global_position = lane_positions[device_ID]
+	
+	select_rnd_projectile()
 
 func _input(_event: InputEvent) -> void:
 	# Do nothing if this is notregistered or the input is pressed on a different device
@@ -54,6 +56,7 @@ func _input(_event: InputEvent) -> void:
 		# Shooting input
 		if Input.is_action_just_released(shoot_action_string):
 			shoot()
+			select_rnd_projectile()
 
 func _physics_process(_delta: float) -> void:
 	
@@ -80,13 +83,21 @@ func _physics_process(_delta: float) -> void:
 			Input.action_release(move_right_action_string)
 
 func shoot() -> void:
+	#cannon animation
 	if animation_player.is_playing() :
 		animation_player.stop()
 	animation_player.play("cannon_shoot")
+	
 	if (projectile_instance.on_shoot(global_position + Vector3(0,muzzle_offset,0))):
 		
-		projectile_instance = projectiles_scenes.pick_random().instantiate()
-		projectile_instance = projectiles_scenes[1].instantiate()
-		get_tree().root.add_child(projectile_instance)
-		
+
 		projectile_instance.playerID = device_ID
+		projectile_instance.reparent(get_tree().current_scene)
+		projectile_instance = null
+
+func select_rnd_projectile() -> void:
+	#todo should be-> projectiles_scenes.pick_random().instantiate()
+	projectile_instance = projectiles_scenes[0].instantiate()
+	projectile_instance.position = Vector3(0,muzzle_offset/2,0)
+	projectile_instance.set_disable_scale(true)
+	add_child(projectile_instance)
