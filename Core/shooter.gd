@@ -20,6 +20,13 @@ var shoot_action_string : String
 
 var projectile_instance : Shootable
 
+var timer_threshold : float = 1
+var timer_counter : float = 1
+
+func _process(delta : float) -> void:
+	if timer_counter < timer_threshold:
+		timer_counter += delta
+
 func _ready() -> void:
 	move_left_action_string = "Player_MoveLeft_%d" % device_ID
 	move_right_action_string = "Player_MoveRight_%d" % device_ID	
@@ -80,10 +87,14 @@ func _physics_process(_delta: float) -> void:
 			Input.action_release(move_right_action_string)
 
 func shoot() -> void:
-	if animation_player.is_playing() :
-		animation_player.stop()
-	animation_player.play("cannon_shoot")
-	if (projectile_instance.on_shoot(global_position + Vector3(0,muzzle_offset,0))):
+	if (timer_counter >= timer_threshold and
+		projectile_instance.on_shoot(global_position + Vector3(0,muzzle_offset,0))):
+		
+		timer_counter = 0
+		
+		if animation_player.is_playing() :
+			animation_player.stop()
+		animation_player.play("cannon_shoot")
 		
 		projectile_instance = projectiles_scenes.pick_random().instantiate()
 		projectile_instance = projectiles_scenes[1].instantiate()

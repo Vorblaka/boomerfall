@@ -7,6 +7,6 @@
 [node name="cannon3" unique_id=704767505 instance=ExtResource("1_106ly")]
 script = ExtResource("2_c0noa")
 
-[node name="Sphere" parent="." index="0" unique_id=1045973858]
+[node name="Sphere" parent="." index="0" unique_id=525901926]
 material_override = ExtResource("2_yqhyn")
 surface_material_override/0 = ExtResource("2_yqhyn")

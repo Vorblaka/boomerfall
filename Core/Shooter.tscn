@@ -69,9 +69,9 @@ projectiles_scenes = Array[PackedScene]([ExtResource("2_vmq0h"), ExtResource("2_
 animation_player = NodePath("cannon/AnimationPlayer")
 
 [node name="cannon" parent="." unique_id=704767505 instance=ExtResource("4_vmq0h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="cannon" unique_id=240547341]
-root_node = NodePath("")
 libraries = {
 &"": SubResource("AnimationLibrary_o7p4r")
 }
