@@ -36,4 +36,8 @@ func set_boomer_head(player_idx : int):
 	head_node.queue_free()
 
 func random_body_part() -> RigidBody3D:
-	return body_parts.pick_random()
+	var b = body_parts.pick_random()
+	if(!b.is_queued_for_deletion()):
+		return b
+	else:
+		return null

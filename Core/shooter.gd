@@ -72,7 +72,7 @@ func move_tweened(target_position : Vector3):
 	is_moving = true
 	print("is moving true")
 	tween_movement = create_tween()
-	tween_movement.set_ease(Tween.EASE_IN_OUT)
+	tween_movement.set_ease(Tween.EASE_OUT)
 	tween_movement.set_trans(Tween.TRANS_SPRING)
 	tween_movement.tween_property(self, "position", target_position, .5)
 	tween_movement.tween_callback(func() : 
@@ -107,7 +107,7 @@ func _physics_process(_delta: float) -> void:
 			Input.action_release(move_right_action_string)
 
 func shoot() -> bool:
-	if (timer_counter >= timer_threshold):
+	if (timer_counter >= timer_threshold && !is_moving):
 		
 		timer_counter = 0
 		
@@ -115,8 +115,10 @@ func shoot() -> bool:
 			animation_player.stop()
 		animation_player.play("cannon_shoot")
 		
+		if(!projectile_instance):
+			select_rnd_projectile()
+		
 		if(projectile_instance.on_shoot(global_position + Vector3(0,muzzle_offset,0))):
-			projectile_instance.playerID = device_ID
 			projectile_instance.reparent(get_tree().current_scene)
 			return true
 
@@ -124,8 +126,9 @@ func shoot() -> bool:
 	
 	
 func select_rnd_projectile() -> void:
-	#todo should be-> projectiles_scenes.pick_random().instantiate()
-	projectile_instance = projectiles_scenes[1].instantiate()
+	projectile_instance = projectiles_scenes.pick_random().instantiate()
+	#projectile_instance = projectiles_scenes[1].instantiate()
 	projectile_instance.position = Vector3(0,3,0)
 	projectile_instance.set_disable_scale(true)
 	add_child(projectile_instance)
+	projectile_instance.playerID = device_ID

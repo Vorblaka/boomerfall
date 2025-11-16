@@ -1,6 +1,13 @@
-[gd_scene format=3 uid="uid://ds4o1kvsw2r3c"]
+[gd_scene load_steps=2 format=3 uid="uid://ds4o1kvsw2r3c"]
 
-[node name="LaccioSfera" type="Node3D" unique_id=792454606]
+[sub_resource type="BoxShape3D" id="BoxShape3D_vx2ca"]
+size = Vector3(3, 3, 3)
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=1243429396]
-radius = 0.205
+[node name="Area3D" type="Area3D" unique_id=822093201 groups=["Shootable"]]
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=185278524]
+radius = 0.2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=624884970 groups=["Shootable"]]
+shape = SubResource("BoxShape3D_vx2ca")
+debug_color = Color(0.92156863, 0, 0.6862745, 1)
