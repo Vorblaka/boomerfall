@@ -13,11 +13,11 @@
 [ext_resource type="AudioStream" uid="uid://t3ufbyavwx5k" path="res://Art/Sound/SFX/voice-message.mp3" id="10_2dtv2"]
 [ext_resource type="PackedScene" uid="uid://c05vqrqly1mjx" path="res://Gigi_art/TestLevel/ArtLevel.tscn" id="10_o1d26"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jfla8"]
-ground_horizon_color = Color(0.19607843, 0.16470589, 0.1254902, 1)
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2dtv2"]
 
 [sub_resource type="Sky" id="Sky_6s6ic"]
-sky_material = SubResource("ProceduralSkyMaterial_jfla8")
+sky_material = SubResource("ProceduralSkyMaterial_2dtv2")
+radiance_size = 6
 
 [sub_resource type="Environment" id="Environment_rs3y6"]
 background_mode = 2
@@ -60,9 +60,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -18, 0)
 [node name="WallOfDeath" parent="." unique_id=544016448 instance=ExtResource("5_h7iwn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
 
-[node name="WorldEnvironment2" type="WorldEnvironment" parent="." unique_id=976409435]
-environment = SubResource("Environment_rs3y6")
-
 [node name="GameOverTimer" type="Timer" parent="." unique_id=1891831369]
 wait_time = 5.0
 one_shot = true
@@ -94,7 +91,19 @@ secrect_stream = ExtResource("10_2dtv2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 42, 0)
 
 [node name="ArtLevel2" parent="." unique_id=450559254 instance=ExtResource("10_o1d26")]
-transform = Transform3D(-1.42062e-07, 0, -3.25, 0, 3.25, 0, 3.25, 0, -1.42062e-07, 5.24, -30.22, 27.67)
+transform = Transform3D(-1.42062e-07, 0, -3.25, 0, 3.25, 0, 3.25, 0, -1.42062e-07, 0.625, -33.845, 26.745)
+
+[node name="Pipe3" parent="ArtLevel2" index="2" unique_id=1293356905]
+visible = false
+
+[node name="Pipe4" parent="ArtLevel2" index="3" unique_id=1432171520]
+visible = false
+
+[node name="Pipe5" parent="ArtLevel2" index="4" unique_id=1720048915]
+visible = false
+
+[node name="Pipe6" parent="ArtLevel2" index="5" unique_id=390601508]
+visible = false
 
 [connection signal="on_timer_started" from="." to="MainMenu" method="_on_level_on_timer_started"]
 [connection signal="on_timer_stopped" from="." to="MainMenu" method="_on_level_on_timer_stopped"]
@@ -105,3 +114,4 @@ transform = Transform3D(-1.42062e-07, 0, -3.25, 0, 3.25, 0, 3.25, 0, -1.42062e-0
 [connection signal="timeout" from="StartGameTimer" to="MainMenu" method="_on_start_game_timer_timeout"]
 
 [editable path="UpperWall"]
+[editable path="ArtLevel2"]

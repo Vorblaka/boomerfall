@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://bbxnh4km5s0rl"]
+[gd_scene load_steps=26 format=4 uid="uid://bbxnh4km5s0rl"]
 
 [ext_resource type="PackedScene" uid="uid://c5glo6ikodf8i" path="res://Gigi_art/art/Arcade_Machine_Walls/Arcade_Machine_back.glb" id="1_cp04u"]
 [ext_resource type="Shader" uid="uid://c125mfwqbxius" path="res://Gigi_art/shaders/ArcadeMachine_Walls_Effect.gdshader" id="2_p4sv4"]
@@ -7,7 +7,6 @@
 [ext_resource type="Script" uid="uid://cpe6k6gv0wuyl" path="res://Gigi_art/scripts/meteor.gd" id="6_7gqho"]
 [ext_resource type="PackedScene" uid="uid://bjm3cnyqw6rvn" path="res://Gigi_art/ArtScenes/meteor.tscn" id="6_twvbf"]
 [ext_resource type="PackedScene" uid="uid://djyterx2kapmh" path="res://Gigi_art/art/SpaceStuff/sun.glb" id="6_u3dpj"]
-[ext_resource type="Texture2D" uid="uid://807qwscn3lgc" path="res://Gigi_art/art/SpaceStuff/SpacePanoramas/panorama2.jpg" id="7_twvbf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6ckdj"]
 render_priority = 0
@@ -263,22 +262,9 @@ shader_parameter/pixelate_enabled = false
 shader_parameter/pixelate_count = 1000.0
 shader_parameter/texture_scale = 0.1
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_7gqho"]
-panorama = ExtResource("7_twvbf")
-
-[sub_resource type="Sky" id="Sky_bdfve"]
-sky_material = SubResource("PanoramaSkyMaterial_7gqho")
-
-[sub_resource type="Environment" id="Environment_5ji1x"]
-background_mode = 2
-sky = SubResource("Sky_bdfve")
-ambient_light_source = 3
-adjustment_enabled = true
-adjustment_saturation = 1.3
-
 [node name="Arcade_Machine_cabin3" unique_id=1945819704 instance=ExtResource("1_cp04u")]
 
-[node name="Arcade_Machine_back_001" parent="." index="0" unique_id=22943312]
+[node name="Arcade_Machine_back_001" parent="." index="0" unique_id=1773068614]
 material_override = SubResource("ShaderMaterial_6ckdj")
 
 [node name="Arcade_Machine_Bottom_003" type="MeshInstance3D" parent="." index="1" unique_id=327389293]
@@ -339,9 +325,6 @@ script = ExtResource("6_7gqho")
 
 [node name="Sun" parent="." index="14" unique_id=1265223255 instance=ExtResource("6_u3dpj")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -13.525334, 15.66308, 0.1617369)
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Sun" index="2" unique_id=11814753]
-environment = SubResource("Environment_5ji1x")
 
 [node name="Camera3D" type="Camera3D" parent="." index="15" unique_id=1794057377]
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 28, 15, 0)
