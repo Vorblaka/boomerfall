@@ -4,8 +4,9 @@
 
 [node name="LaccioPbd" type="Node3D" unique_id=1462087526]
 script = ExtResource("1_ewpkn")
-segment_length = 0.1
-stiffness = 0.9
+segment_length = 0.05
+num_segments = 50
+stiffness = 0.99
 damping = 0.0
 start_body_path = NodePath("Bind1")
 end_body_path = NodePath("Bind2")

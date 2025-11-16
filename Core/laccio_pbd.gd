@@ -45,16 +45,11 @@ func _ready():
 		set_process(false)
 		return
 		
-	# 2. Initialize particle positions and visuals
-	_initialize_particles()
 	
-	# Optional: Connect the visuals to the physics system
-	# This ensures the PBD script handles physics, but the visuals are separate
-	set_physics_process(true)
 
 func _initialize_particles():
 	var start_pos = start_body.global_position
-	var end_pos = end_body.global_position
+	var end_pos = end_body.global_position + Vector3(1,1,1)
 	var direction = (end_pos - start_pos).normalized()
 	
 	for i in range(total_points):
@@ -177,8 +172,17 @@ func next_state() -> bool:
 		return true
 
 
+func init() -> void:
+	start_body = get_parent_node_3d()
+	end_body = get_parent_node_3d()
+	
+	# 2. Initialize particle positions and visuals
+	_initialize_particles()
+
+
 func on_shoot(position: Vector3) -> bool:
 	if curr_state == State.Inactive:
+		init()
 		positions[0] = position
 		start_body_velocity = Vector3(0,20,0)
 		next_state()
