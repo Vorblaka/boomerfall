@@ -10,7 +10,7 @@ class_name shooter
 var device_ID : int = -1
 var active_projectile : PackedScene
 var movement_speed : float = 25
-var muzzle_offset : float = 1.0
+var muzzle_offset : float = 10.0
 var lane_positions : Array[Vector3]
 var lane_index : int = -1
 
@@ -125,7 +125,7 @@ func shoot() -> bool:
 	
 func select_rnd_projectile() -> void:
 	#todo should be-> projectiles_scenes.pick_random().instantiate()
-	projectile_instance = projectiles_scenes[1].instantiate()
+	projectile_instance = projectiles_scenes.pick_random().instantiate()
 	projectile_instance.position = Vector3(0,3,0)
 	projectile_instance.set_disable_scale(true)
 	add_child(projectile_instance)

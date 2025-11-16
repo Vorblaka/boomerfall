@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bv5m8nyprir2l" path="res://Core/shooter.gd" id="1_fkil7"]
 [ext_resource type="PackedScene" uid="uid://bh51y6atw8mxh" path="res://Core/Projectile.tscn" id="2_vmq0h"]
-[ext_resource type="PackedScene" uid="uid://c3p2daks3g08n" path="res://Core/LaccioPBD.tscn" id="3_vmq0h"]
+[ext_resource type="PackedScene" uid="uid://depu7vx5xrrvs" path="res://Core/Garbage_Projectile.tscn" id="3_vmq0h"]
 [ext_resource type="PackedScene" uid="uid://pn3wnx0eq8q1" path="res://Art/Models/Cannon/cannon.tscn" id="4_vmq0h"]
 
 [sub_resource type="Animation" id="Animation_o7p4r"]
