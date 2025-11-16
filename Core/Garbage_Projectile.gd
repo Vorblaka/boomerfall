@@ -1,7 +1,7 @@
 extends Shootable
 class_name projectile_garbage
 
-var impulse_scale : float = -100
+@export var impulse_scale : float = -50
 var attached_to : RigidBody3D
 
 func _on_body_entered(body: Node) -> void:

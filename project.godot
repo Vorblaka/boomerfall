@@ -133,7 +133,7 @@ Cheat_AutoWin_All={
 [physics]
 
 3d/physics_engine="GodotPhysics3D"
-3d/default_gravity=4.0
+3d/default_gravity=2.0
 
 [rendering]
 
