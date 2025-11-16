@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3p2daks3g08n"]
+
+[ext_resource type="Script" uid="uid://mmupaxtfcygy" path="res://Core/laccio_pbd.gd" id="1_ewpkn"]
+
+[node name="LaccioPbd" type="Node3D" unique_id=1462087526]
+script = ExtResource("1_ewpkn")
+segment_length = 0.1
+stiffness = 0.9
+damping = 0.0
+start_body_path = NodePath("Bind1")
+end_body_path = NodePath("Bind2")
+
+[node name="Bind1" type="StaticBody3D" parent="." unique_id=1718947151]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7014236, 0, 0)
+
+[node name="Bind2" type="StaticBody3D" parent="." unique_id=1438800084]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -0.033, 0)
