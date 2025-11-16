@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://f5vjj4j5p6uq"]
 
 [ext_resource type="PackedScene" uid="uid://b0fe2nmaxhxll" path="res://Art/Models/BoomerCharacter/boomer_body.fbx" id="1_wmwbd"]
-[ext_resource type="Material" uid="uid://mh6vdb4pbm2m" path="res://Art/Materials/cannon1_material_3d.tres" id="2_1pfl3"]
+[ext_resource type="Material" uid="uid://da7yc7v8867j6" path="res://Art/Materials/boomer_body_material.tres" id="2_1pfl3"]
 
 [node name="boomer_body" unique_id=1238547949 instance=ExtResource("1_wmwbd")]
 
-[node name="Body" parent="." index="0" unique_id=161474723]
+[node name="Body" parent="." index="0" unique_id=764497612]
 material_override = ExtResource("2_1pfl3")
