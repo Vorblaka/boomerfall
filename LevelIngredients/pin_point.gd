@@ -20,6 +20,6 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Shootable"):
 		return
 	if body.is_in_group("Boomer"):
-		var b := body as boomer
-		b.hand_node.global_position = global_position
-		attach(b.hand_node)
+		var b = body.random_body_part()
+		b.global_position = global_position
+		attach(b)
