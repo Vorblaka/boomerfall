@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://yjk2d45c21xd"]
+
+[ext_resource type="PackedScene" uid="uid://dya01ihtqjiad" path="res://Art/Models/PinPoint/pin_point.fbx" id="1_uqx11"]
+[ext_resource type="Material" uid="uid://bnfghu2rgbwgy" path="res://Art/Materials/pinpoint_material_3d.tres" id="2_21tky"]
+
+[node name="pin_point" unique_id=296237753 instance=ExtResource("1_uqx11")]
+
+[node name="Torus" parent="." index="0" unique_id=413640931]
+material_override = ExtResource("2_21tky")
