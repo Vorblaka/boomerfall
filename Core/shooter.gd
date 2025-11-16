@@ -10,7 +10,7 @@ class_name shooter
 var device_ID : int = -1
 var active_projectile : PackedScene
 var movement_speed : float = 25
-var muzzle_offset : float = 1.0
+var muzzle_offset : float = 10.0
 var lane_positions : Array[Vector3]
 var lane_index : int = -1
 
@@ -107,8 +107,8 @@ func _physics_process(_delta: float) -> void:
 			Input.action_release(move_right_action_string)
 
 func shoot() -> bool:
-	if (timer_counter >= timer_threshold && !is_moving):
-		
+	if (timer_counter >= timer_threshold):
+		%AudioStreamPlayer.play()
 		timer_counter = 0
 		
 		if animation_player.is_playing() :
@@ -132,3 +132,10 @@ func select_rnd_projectile() -> void:
 	projectile_instance.set_disable_scale(true)
 	add_child(projectile_instance)
 	projectile_instance.playerID = device_ID
+	
+	
+	
+func get_color() -> Color:
+	if cannon and cannon.sphere and cannon.sphere.material_override:
+		return cannon.sphere.material_override.albedo_color
+	return Color.WHITE

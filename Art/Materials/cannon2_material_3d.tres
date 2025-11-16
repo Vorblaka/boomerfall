@@ -4,9 +4,9 @@
 
 [resource]
 albedo_color = Color(2.117753e-06, 0.5521896, 0.6336565, 1)
-metallic = 0.4
-metallic_specular = 0.45
-roughness = 0.12
+metallic = 0.3
+metallic_specular = 0.15
+roughness = 0.25
 normal_enabled = true
 normal_scale = -0.4
 normal_texture = ExtResource("1_vddfi")

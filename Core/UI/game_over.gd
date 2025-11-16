@@ -4,6 +4,9 @@ extends CanvasLayer
 @onready var secret_win_label: Label = $PanelContainer/SecretWin
 @onready var standard_win_label: Label = $PanelContainer/GameOverLabel
 
+@export var stream_array : Array[AudioStreamMP3]
+@export var secrect_stream : AudioStreamMP3
+
 #func show_winner() -> void:
 	#var idx: int = 0
 	#for state: GameInstance.PlayerState in GameInstance.player_states:
@@ -23,6 +26,10 @@ extends CanvasLayer
 func _show_secret_win():
 	standard_win_label.hide()
 	secret_win_label.show()
+	%AudioStreamPlayer.stream = secrect_stream
+	%AudioStreamPlayer.seek(1)
+	%AudioStreamPlayer.pitch_scale = 0.9
+	%AudioStreamPlayer.play()
 
 func _show_standard_win():
 	var winner_idx = 0
@@ -30,7 +37,10 @@ func _show_standard_win():
 		if !ps.bDead:
 			break
 		winner_idx += 1
-	standard_win_label.text = GameInstance.boomer_names[winner_idx]
+	
+	%AudioStreamPlayer.stream = stream_array[winner_idx]
+	%AudioStreamPlayer.play()
+	standard_win_label.text = GameInstance.boomer_names[winner_idx] + " NON ha vinto"
 	standard_win_label.show()
 	secret_win_label.hide()
 

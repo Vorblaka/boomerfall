@@ -11,27 +11,33 @@ var boomer_heads : Array[PackedScene] = [
 var player_idx : int
 
 @onready var head_node : Node3D = $RigidBody_head/boomer_head
+@onready var body_node : MeshInstance3D = $RigidBody_head/boomer_body
 @onready var body_parts : Array[RigidBody3D] = [
 	$RigidBody_lefthand,
 	$RigidBody_righthand,
 	$RigidBody_rightfeet,
 	$RigidBody_leftfeet
 	]
+	
+func set_color(new_color: Color) -> void:
+	if body_node and body_node.get_surface_override_material(0):
+		var new_material = body_node.get_surface_override_material(0).duplicate()
+		new_material.albedo_color = new_color
+		body_node.set_surface_override_material(0, new_material)
 
 func set_boomer_head(player_idx : int):
-	
 	if player_idx >= boomer_heads.size():
 		return
 	
-	var boomer_head = boomer_heads[player_idx].instantiate()
+	var boomer_head_instance = boomer_heads[player_idx].instantiate()
 	
-	if not boomer_head:
+	if not boomer_head_instance:
 		return
 	
-	head_node.add_sibling(boomer_head)
+	head_node.add_sibling(boomer_head_instance)
 	
-	boomer_head.global_position = head_node.global_position
-	boomer_head.global_rotation = head_node.global_rotation
+	boomer_head_instance.global_position = head_node.global_position
+	boomer_head_instance.global_rotation = head_node.global_rotation
 	
 	head_node.queue_free()
 

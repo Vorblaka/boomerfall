@@ -1,7 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://bh51y6atw8mxh"]
+[gd_scene load_steps=11 format=3 uid="uid://bh51y6atw8mxh"]
 
 [ext_resource type="Script" uid="uid://b76g0c852u1w7" path="res://Core/projectile.gd" id="1_13ccr"]
 [ext_resource type="Texture2D" uid="uid://c1yrt0tr148cx" path="res://Art/Images/Explosive.jpg" id="2_2h8om"]
+[ext_resource type="AudioStream" uid="uid://nbubvqnftt0v" path="res://Art/Sound/SFX/Hurt1.mp3" id="3_0yyd7"]
+[ext_resource type="AudioStream" uid="uid://btow113y68uv6" path="res://Art/Sound/SFX/Hurt2.mp3" id="4_loq0r"]
+[ext_resource type="AudioStream" uid="uid://be826gavx1044" path="res://Art/Sound/SFX/Hurt3.mp3" id="5_dg683"]
+[ext_resource type="AudioStream" uid="uid://dtyi0ucmb2txm" path="res://Art/Sound/SFX/Hurt4.mp3" id="6_wc0c4"]
+[ext_resource type="AudioStream" uid="uid://coqd55ir2m3n7" path="res://Art/Sound/SFX/Hurt5.mp3" id="7_pgu88"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_f3wkg"]
 size = Vector3(3, 3, 3)
@@ -9,9 +14,18 @@ size = Vector3(3, 3, 3)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0yyd7"]
 albedo_texture = ExtResource("2_2h8om")
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_loq0r"]
+playback_mode = 1
+random_pitch = 1.0145453
+streams_count = 5
+stream_0/stream = ExtResource("3_0yyd7")
+stream_1/stream = ExtResource("4_loq0r")
+stream_2/stream = ExtResource("5_dg683")
+stream_3/stream = ExtResource("6_wc0c4")
+stream_4/stream = ExtResource("7_pgu88")
+
 [node name="Projectile2" type="Area3D" unique_id=1453670748 groups=["Shootable"]]
 script = ExtResource("1_13ccr")
-impulse_scale = 200.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=797240168]
 shape = SubResource("BoxShape3D_f3wkg")
@@ -20,5 +34,11 @@ debug_color = Color(0.92156863, 0, 0.6862745, 1)
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1686927676]
 size = Vector3(2.9, 2.9, 2.9)
 material = SubResource("StandardMaterial3D_0yyd7")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=275329878]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamRandomizer_loq0r")
+max_polyphony = 10
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

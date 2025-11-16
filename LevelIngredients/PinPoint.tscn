@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://djitd2uwxugfp"]
+[gd_scene load_steps=6 format=3 uid="uid://djitd2uwxugfp"]
 
 [ext_resource type="Script" uid="uid://033ixcrjajen" path="res://LevelIngredients/pin_point.gd" id="1_illkc"]
-[ext_resource type="PackedScene" uid="uid://dya01ihtqjiad" path="res://Art/Models/PinPoint/pin_point.fbx" id="2_m68q5"]
+[ext_resource type="PackedScene" uid="uid://yjk2d45c21xd" path="res://Art/Models/PinPoint/pin_point.tscn" id="2_m68q5"]
+[ext_resource type="AudioStream" uid="uid://dqwiixgmf7txe" path="res://Art/Sound/SFX/Belin.mp3" id="3_2cf5b"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_g546f"]
 radius = 1.0
@@ -25,12 +26,16 @@ wait_time = 3.0
 one_shot = true
 
 [node name="pin_point" parent="." unique_id=296237753 instance=ExtResource("2_m68q5")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1281306255]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1732971253]
 shape = SubResource("SphereShape3D_m68q5")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2021023588]
+unique_name_in_owner = true
+stream = ExtResource("3_2cf5b")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

@@ -1,32 +1,40 @@
-[gd_scene load_steps=14 format=3 uid="uid://d1avguqyivyu5"]
+[gd_scene load_steps=16 format=3 uid="uid://d1avguqyivyu5"]
 
 [ext_resource type="Script" uid="uid://boi4jnb41bkja" path="res://Core/level.gd" id="1_3rhfs"]
 [ext_resource type="PackedScene" uid="uid://dkhmbewkcu8xi" path="res://Core/Shooter.tscn" id="2_h7iwn"]
 [ext_resource type="PackedScene" uid="uid://dajmu12uautl7" path="res://Core/Boomer.tscn" id="2_t83br"]
 [ext_resource type="PackedScene" uid="uid://ddcbjpa207x6p" path="res://Core/GameSystems/player_manager.tscn" id="3_sf6xb"]
+[ext_resource type="AudioStream" uid="uid://dcu74i4ewagam" path="res://Art/Sound/Music/FallBoomer_LoopSong.mp3" id="4_b8wnr"]
 [ext_resource type="PackedScene" uid="uid://dg8q7a6t1ygwl" path="res://LevelIngredients/WallOfDeath.tscn" id="5_h7iwn"]
 [ext_resource type="PackedScene" uid="uid://db51ul3mew3rq" path="res://Core/UI/main_menu.tscn" id="6_sf6xb"]
 [ext_resource type="Script" uid="uid://b8trii6n5mjbc" path="res://Core/UI/main_menu.gd" id="7_bqa1j"]
 [ext_resource type="PackedScene" uid="uid://cfivpmaoah05x" path="res://LevelIngredients/UpperWall.tscn" id="9_f0br3"]
 [ext_resource type="PackedScene" uid="uid://drg3ce7a7n3j" path="res://Core/UI/game_over.tscn" id="9_o1d26"]
+[ext_resource type="AudioStream" uid="uid://t3ufbyavwx5k" path="res://Art/Sound/SFX/voice-message.mp3" id="10_2dtv2"]
 [ext_resource type="PackedScene" uid="uid://c05vqrqly1mjx" path="res://Gigi_art/TestLevel/ArtLevel.tscn" id="10_o1d26"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jfla8"]
-ground_horizon_color = Color(0.19607843, 0.16470589, 0.1254902, 1)
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2dtv2"]
 
 [sub_resource type="Sky" id="Sky_6s6ic"]
-sky_material = SubResource("ProceduralSkyMaterial_jfla8")
+sky_material = SubResource("ProceduralSkyMaterial_2dtv2")
+radiance_size = 6
 
 [sub_resource type="Environment" id="Environment_rs3y6"]
 background_mode = 2
 sky = SubResource("Sky_6s6ic")
 
-[node name="Level" type="Node3D" unique_id=1992575775 node_paths=PackedStringArray("player_spawn_pos", "boomer_spawn_pos")]
+[node name="Level2" type="Node3D" unique_id=1992575775 node_paths=PackedStringArray("player_spawn_pos", "boomer_spawn_pos")]
 script = ExtResource("1_3rhfs")
 player_spawn_pos = [NodePath("PlayerLane1"), NodePath("PlayerLane2"), NodePath("PlayerLane3"), NodePath("PlayerLane4")]
 boomer_spawn_pos = [NodePath("BoomerSpawnPositionGCo"), NodePath("BoomerSpawnPositionMF"), NodePath("BoomerSpawnPositionLD"), NodePath("BoomerSpawnPositionGC")]
 shooter_scene = ExtResource("2_h7iwn")
 boomer_scene = ExtResource("2_t83br")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1680302371]
+stream = ExtResource("4_b8wnr")
+volume_db = -6.0
+autoplay = true
+bus = &"Music"
 
 [node name="PlayerManager" parent="." unique_id=320525641 instance=ExtResource("3_sf6xb")]
 
@@ -51,9 +59,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -18, 0)
 
 [node name="WallOfDeath" parent="." unique_id=544016448 instance=ExtResource("5_h7iwn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
-
-[node name="WorldEnvironment2" type="WorldEnvironment" parent="." unique_id=976409435]
-environment = SubResource("Environment_rs3y6")
 
 [node name="GameOverTimer" type="Timer" parent="." unique_id=1891831369]
 wait_time = 5.0
@@ -80,12 +85,25 @@ script = ExtResource("7_bqa1j")
 
 [node name="GameOver" parent="." unique_id=1425105468 instance=ExtResource("9_o1d26")]
 visible = false
+secrect_stream = ExtResource("10_2dtv2")
 
 [node name="UpperWall" parent="." unique_id=325169204 instance=ExtResource("9_f0br3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 42, 0)
 
 [node name="ArtLevel2" parent="." unique_id=450559254 instance=ExtResource("10_o1d26")]
-transform = Transform3D(-1.42062e-07, 0, -3.25, 0, 4.75, 0, 3.25, 0, -1.42062e-07, 0, -54, 14)
+transform = Transform3D(-1.42062e-07, 0, -3.25, 0, 3.25, 0, 3.25, 0, -1.42062e-07, 0.625, -33.845, 26.745)
+
+[node name="Pipe3" parent="ArtLevel2" index="2" unique_id=1293356905]
+visible = false
+
+[node name="Pipe4" parent="ArtLevel2" index="3" unique_id=1432171520]
+visible = false
+
+[node name="Pipe5" parent="ArtLevel2" index="4" unique_id=1720048915]
+visible = false
+
+[node name="Pipe6" parent="ArtLevel2" index="5" unique_id=390601508]
+visible = false
 
 [connection signal="on_timer_started" from="." to="MainMenu" method="_on_level_on_timer_started"]
 [connection signal="on_timer_stopped" from="." to="MainMenu" method="_on_level_on_timer_stopped"]
@@ -96,3 +114,4 @@ transform = Transform3D(-1.42062e-07, 0, -3.25, 0, 4.75, 0, 3.25, 0, -1.42062e-0
 [connection signal="timeout" from="StartGameTimer" to="MainMenu" method="_on_start_game_timer_timeout"]
 
 [editable path="UpperWall"]
+[editable path="ArtLevel2"]

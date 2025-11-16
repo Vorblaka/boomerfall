@@ -1,10 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://dg8q7a6t1ygwl"]
+[gd_scene load_steps=6 format=3 uid="uid://dg8q7a6t1ygwl"]
 
 [ext_resource type="Script" uid="uid://bf2nwxic5um41" path="res://LevelIngredients/wall_of_death.gd" id="1_x4dck"]
-[ext_resource type="PackedScene" uid="uid://bct5eon2ow66d" path="res://Art/Models/Spike/spike.fbx" id="2_s6ll0"]
+[ext_resource type="PackedScene" uid="uid://fs8flhl440a4" path="res://Art/Models/Spike/spike.tscn" id="2_u3say"]
+[ext_resource type="AudioStream" uid="uid://c1u30hx38a8u8" path="res://Art/Sound/SFX/Death.mp3" id="3_u3say"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7x2li"]
 size = Vector3(100, 1, 1)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hvd41"]
+random_pitch = 1.122462
+streams_count = 1
+stream_0/stream = ExtResource("3_u3say")
 
 [node name="WallOfDeath" type="Area3D" unique_id=544016448]
 script = ExtResource("1_x4dck")
@@ -13,16 +19,21 @@ script = ExtResource("1_x4dck")
 shape = SubResource("BoxShape3D_7x2li")
 debug_color = Color(0.6627451, 0, 0.19215687, 1)
 
-[node name="spike" parent="." unique_id=1844953689 instance=ExtResource("2_s6ll0")]
+[node name="spike5" parent="." unique_id=1428844973 instance=ExtResource("2_u3say")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -4, 0)
 
-[node name="spike2" parent="." unique_id=1120912196 instance=ExtResource("2_s6ll0")]
+[node name="spike" parent="." unique_id=2015324444 instance=ExtResource("2_u3say")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -4, 0)
 
-[node name="spike3" parent="." unique_id=578541365 instance=ExtResource("2_s6ll0")]
+[node name="spike2" parent="." unique_id=1002425439 instance=ExtResource("2_u3say")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -4, 0)
 
-[node name="spike4" parent="." unique_id=586450631 instance=ExtResource("2_s6ll0")]
+[node name="spike3" parent="." unique_id=544569911 instance=ExtResource("2_u3say")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, -4, 0)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=232195890]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamRandomizer_hvd41")
+max_polyphony = 4
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

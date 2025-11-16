@@ -1,9 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://drg3ce7a7n3j"]
+[gd_scene load_steps=7 format=3 uid="uid://drg3ce7a7n3j"]
 
 [ext_resource type="Script" uid="uid://d1nerhw72c36p" path="res://Core/UI/game_over.gd" id="1_jawqf"]
+[ext_resource type="AudioStream" uid="uid://dpitp5bff5sej" path="res://Art/Sound/SFX/finish_ilprof.mp3" id="2_lkis1"]
+[ext_resource type="AudioStream" uid="uid://005ycvrbd61s" path="res://Art/Sound/SFX/finish_loretta.mp3" id="3_tykct"]
+[ext_resource type="AudioStream" uid="uid://bf4vk1dlb854o" path="res://Art/Sound/SFX/finish_marco.mp3" id="4_dmese"]
+[ext_resource type="AudioStream" uid="uid://bt8b6woxkpjvf" path="res://Art/Sound/SFX/finish_gianni.mp3" id="5_xi7xf"]
+
+[sub_resource type="AudioStreamMP3" id="AudioStreamMP3_btx3e"]
 
 [node name="GameOver" type="CanvasLayer" unique_id=1425105468]
 script = ExtResource("1_jawqf")
+stream_array = Array[AudioStreamMP3]([ExtResource("2_lkis1"), ExtResource("3_tykct"), ExtResource("4_dmese"), ExtResource("5_xi7xf")])
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=294633677]
 anchors_preset = 15
@@ -26,5 +33,10 @@ visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 48
-text = "Secret win"
+text = "HA VINTO L'AMICIZIA"
 metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1075057331]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamMP3_btx3e")
+bus = &"Win"

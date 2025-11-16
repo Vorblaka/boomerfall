@@ -1,0 +1,51 @@
+[gd_resource type="AudioBusLayout" load_steps=5 format=3 uid="uid://uun8i78ntxl7"]
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_j3pel"]
+resource_name = "Reverb"
+room_size = 0.9
+damping = 0.18
+hipass = 0.15
+wet = 0.77
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_g28q7"]
+resource_name = "Reverb"
+room_size = 0.4
+damping = 0.7
+
+[sub_resource type="AudioEffectDelay" id="AudioEffectDelay_j3pel"]
+resource_name = "Delay"
+
+[sub_resource type="AudioEffectEQ" id="AudioEffectEQ_j3pel"]
+resource_name = "EQ"
+band_db/32_hz = -21.0
+band_db/100_hz = -13.0
+band_db/320_hz = -10.5
+band_db/1000_hz = -9.0
+
+[resource]
+bus/1/name = &"Music"
+bus/1/solo = false
+bus/1/mute = false
+bus/1/bypass_fx = false
+bus/1/volume_db = -3.2818434
+bus/1/send = &"Master"
+bus/2/name = &"SFX"
+bus/2/solo = false
+bus/2/mute = false
+bus/2/bypass_fx = false
+bus/2/volume_db = -3.4544535
+bus/2/send = &"Master"
+bus/2/effect/0/effect = SubResource("AudioEffectReverb_j3pel")
+bus/2/effect/0/enabled = true
+bus/3/name = &"Win"
+bus/3/solo = false
+bus/3/mute = false
+bus/3/bypass_fx = false
+bus/3/volume_db = -0.09049988
+bus/3/send = &"Master"
+bus/3/effect/0/effect = SubResource("AudioEffectReverb_g28q7")
+bus/3/effect/0/enabled = true
+bus/3/effect/1/effect = SubResource("AudioEffectDelay_j3pel")
+bus/3/effect/1/enabled = true
+bus/3/effect/2/effect = SubResource("AudioEffectEQ_j3pel")
+bus/3/effect/2/enabled = true
