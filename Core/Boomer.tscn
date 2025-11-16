@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://dajmu12uautl7"]
 
 [ext_resource type="Script" uid="uid://bhx2l6xtkkve0" path="res://Core/boomer.gd" id="1_gldpe"]
-[ext_resource type="PackedScene" uid="uid://usfpfp6vfav4" path="res://Art/Models/BoomerCharacter/boomer_head.fbx" id="2_t3kdh"]
-[ext_resource type="PackedScene" uid="uid://b0fe2nmaxhxll" path="res://Art/Models/BoomerCharacter/boomer_body.fbx" id="3_8ucla"]
-[ext_resource type="PackedScene" uid="uid://5u6oaqp3d11k" path="res://Art/Models/BoomerCharacter/boomer_hand.fbx" id="4_j7ani"]
+[ext_resource type="PackedScene" uid="uid://f5vjj4j5p6uq" path="res://Art/Models/BoomerCharacter/boomer_body.tscn" id="2_8ucla"]
+[ext_resource type="PackedScene" uid="uid://y2v3eoxx2amw" path="res://Art/Models/BoomerCharacter/boomer_head.tscn" id="3_j7ani"]
+[ext_resource type="PackedScene" uid="uid://b72tal82bx1y5" path="res://Art/Models/BoomerCharacter/boomer_hand.tscn" id="4_j7ani"]
 [ext_resource type="PackedScene" uid="uid://dfgpvgufqswob" path="res://Core/Limb.tscn" id="5_8ucla"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_y14eq"]
@@ -27,7 +27,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.103090346, 0, 0)
 shape = SubResource("CapsuleShape3D_y14eq")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
-[node name="boomer_body" parent="." unique_id=638826202 groups=["Boomer"] instance=ExtResource("3_8ucla")]
+[node name="boomer_body" parent="." unique_id=1238547949 instance=ExtResource("2_8ucla")]
 
 [node name="HingeJoint3D" type="HingeJoint3D" parent="." unique_id=1804379946]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5016382, 0)
@@ -42,8 +42,8 @@ angular_limit/lower = -1.2217305
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.18882638, 0)
 axis_lock_linear_z = true
 
-[node name="boomer_head" parent="RigidBody_head" unique_id=1018768463 instance=ExtResource("2_t3kdh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6828868, 0)
+[node name="boomer_head" parent="RigidBody_head" unique_id=832092937 instance=ExtResource("3_j7ani")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0182948, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody_head" unique_id=542070143]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7421272, 0)
@@ -56,7 +56,7 @@ axis_lock_linear_z = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody_lefthand" unique_id=1976960135]
 shape = SubResource("SphereShape3D_8ucla")
 
-[node name="boomer_left_hand" parent="RigidBody_lefthand" unique_id=698843989 instance=ExtResource("4_j7ani")]
+[node name="boomer_hand" parent="RigidBody_lefthand" unique_id=815376459 instance=ExtResource("4_j7ani")]
 
 [node name="RigidBody_righthand" type="RigidBody3D" parent="." unique_id=167933227]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4163287)
@@ -65,7 +65,7 @@ axis_lock_linear_z = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody_righthand" unique_id=2080319033]
 shape = SubResource("SphereShape3D_8ucla")
 
-[node name="boomer_right_hand" parent="RigidBody_righthand" unique_id=1389569438 instance=ExtResource("4_j7ani")]
+[node name="boomer_hand" parent="RigidBody_righthand" unique_id=1656530552 instance=ExtResource("4_j7ani")]
 
 [node name="RigidBody_rightfeet" type="RigidBody3D" parent="." unique_id=1308188921]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.3329403, -1.4247432)
@@ -74,7 +74,7 @@ axis_lock_linear_z = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody_rightfeet" unique_id=512622207]
 shape = SubResource("SphereShape3D_8ucla")
 
-[node name="boomer_right_feet" parent="RigidBody_rightfeet" unique_id=392283071 instance=ExtResource("4_j7ani")]
+[node name="boomer_hand" parent="RigidBody_rightfeet" unique_id=1349578134 instance=ExtResource("4_j7ani")]
 
 [node name="RigidBody_leftfeet" type="RigidBody3D" parent="." unique_id=1955613517]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.3595085, 1.3444687)
@@ -83,7 +83,7 @@ axis_lock_linear_z = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody_leftfeet" unique_id=1166307568]
 shape = SubResource("SphereShape3D_8ucla")
 
-[node name="boomer_left_feet" parent="RigidBody_leftfeet" unique_id=709667208 instance=ExtResource("4_j7ani")]
+[node name="boomer_hand" parent="RigidBody_leftfeet" unique_id=566364754 instance=ExtResource("4_j7ani")]
 
 [node name="Limb" parent="." unique_id=511996077 instance=ExtResource("5_8ucla")]
 transform = Transform3D(1, 0, 0, 0, 0.42048162, 0.907301, 0, -0.907301, 0.42048162, -2.3841858e-07, 1.1240399, 1.056168)

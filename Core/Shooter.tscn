@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dkhmbewkcu8xi"]
+[gd_scene load_steps=12 format=3 uid="uid://dkhmbewkcu8xi"]
 
 [ext_resource type="Script" uid="uid://bv5m8nyprir2l" path="res://Core/shooter.gd" id="1_fkil7"]
 [ext_resource type="PackedScene" uid="uid://bh51y6atw8mxh" path="res://Core/Projectile.tscn" id="2_vmq0h"]
+[ext_resource type="PackedScene" uid="uid://tdimqyvn2wpb" path="res://Core/Laccio.tscn" id="3_4b55a"]
 [ext_resource type="AudioStream" uid="uid://bx52vyv50khv4" path="res://Art/Sound/SFX/Explosion1.mp3" id="4_o7p4r"]
+[ext_resource type="PackedScene" uid="uid://depu7vx5xrrvs" path="res://Core/Garbage_Projectile.tscn" id="4_q8xcr"]
 [ext_resource type="PackedScene" uid="uid://pn3wnx0eq8q1" path="res://Art/Models/Cannon/cannon.tscn" id="4_vmq0h"]
 [ext_resource type="AudioStream" uid="uid://di3am1o2iielg" path="res://Art/Sound/SFX/Explosion2.mp3" id="5_x11jy"]
 
@@ -72,7 +74,7 @@ stream_1/stream = ExtResource("5_x11jy")
 [node name="Shooter3" type="Node3D" unique_id=1728028125 node_paths=PackedStringArray("animation_player")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 script = ExtResource("1_fkil7")
-projectiles_scenes = Array[PackedScene]([ExtResource("2_vmq0h")])
+projectiles_scenes = Array[PackedScene]([ExtResource("2_vmq0h"), ExtResource("3_4b55a"), ExtResource("4_q8xcr"), ExtResource("2_vmq0h"), ExtResource("2_vmq0h"), ExtResource("2_vmq0h"), ExtResource("4_q8xcr")])
 animation_player = NodePath("cannon/AnimationPlayer")
 timer_threshold = 0.5
 
