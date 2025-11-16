@@ -14,6 +14,7 @@ extends Shootable
 var start_body_velocity : Vector3 = Vector3(0,0,0)
 var end_body_velocity : Vector3 = Vector3(0,0,0)
 
+@onready var timer : Timer = $Timer
 # --- Internal State ---
 var positions: Array[Vector3] = []    # Current position of each particle
 var prev_positions: Array[Vector3] = [] # Position in the previous frame (used for velocity)
@@ -53,11 +54,12 @@ func _on_end_particle_body_entered(body: Node3D):
 	# Only attach if we aren't already attached
 	if(!bEndAttached):
 		bEndAttached = true
-		end_body = b.random_body_part()
-		if (end_body != null):
-			positions[total_points-1] = end_body.global_position
-		b.apply_central_impulse(Vector3(0,200,0))
-		end_body_velocity = Vector3(0,0,0)
+		if !b.is_queued_for_deletion():
+			end_body = b.random_body_part()
+			if (end_body != null):
+				positions[total_points-1] = end_body.global_position
+			b.apply_central_impulse(Vector3(0,200,0))
+			end_body_velocity = Vector3(0,0,0)
 
 func _ready():
 	total_points = num_segments + 1
@@ -216,13 +218,14 @@ func on_shoot(position: Vector3) -> bool:
 		positions[total_points-1] = position
 		end_body_velocity = Vector3(0,30,0)
 		next_state()
+		timer.start()
 		return true
 	return true
 		
 
 func _process(delta : float) -> void:
 	if(start_body == null) || (end_body == null):
-		queue_free()
+		return
 	
 	if(curr_state == State.Inactive):
 		for i in range(total_points):
@@ -232,3 +235,7 @@ func _process(delta : float) -> void:
 	elif(curr_state == State.Active):
 		positions[0] = start_body.global_position
 		positions[total_points-1] = end_body.global_position
+
+
+func _on_timer_timeout() -> void:
+	queue_free()

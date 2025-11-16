@@ -17,3 +17,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7014236, 0, 0)
 
 [node name="Bind2" type="StaticBody3D" parent="." unique_id=1438800084]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -0.033, 0)
+
+[node name="Timer" type="Timer" parent="." unique_id=1110600853]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
