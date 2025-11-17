@@ -34,6 +34,11 @@ size_flags_vertical = 3
 alignment = 1
 script = ExtResource("1_to7gi")
 
+[node name="PlayerName" type="Label" parent="." unique_id=884138117]
+layout_mode = 2
+text = "Character Name"
+horizontal_alignment = 1
+
 [node name="OuterColor" type="ColorRect" parent="." unique_id=825968135]
 layout_mode = 2
 size_flags_vertical = 3
@@ -69,7 +74,7 @@ grow_horizontal = 2
 modulate = Color(0.48235294, 0.48235294, 0.48235294, 1)
 layout_mode = 2
 texture = ExtResource("1_iixtp")
-stretch_mode = 3
+stretch_mode = 1
 
 [node name="PlayerIconConfirmed" type="TextureRect" parent="OuterColor/InnerColor/CenterContainer" unique_id=1578501104]
 visible = false

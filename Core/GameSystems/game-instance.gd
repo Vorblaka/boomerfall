@@ -40,14 +40,14 @@ enum EGameStates { PLAYER_SELECTION, GAMEPLAY, GAME_OVER }
 var game_state: EGameStates = EGameStates.PLAYER_SELECTION
 
 var player_sprites : Array[CompressedTexture2D] = [
-	preload("uid://dlmprelqy8cad"),
+	preload("uid://v60o2v3c745f"),
 	preload("uid://xm6siffpy16s"),
 	preload("uid://bd0f2ysxe6bdc"),
 	preload("uid://dece2nlcq8il2")
 ]
 
 var boomer_names : Array[String] = [
-	"Giuseppi_Cicala",
+	"Prof. Tony_Scontrosi",
 	"Loretta_Dipausa",
 	"Marco_Di_Fabbrica",
 	"Gianni_Collaterali"

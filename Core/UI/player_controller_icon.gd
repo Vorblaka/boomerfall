@@ -9,7 +9,7 @@ extends Control
 @onready var join: HBoxContainer = $OuterColor/InnerColor/VBoxContainer/Join
 @onready var cancel: HBoxContainer = $OuterColor/InnerColor/VBoxContainer/Cancel
 @onready var ready_container: HBoxContainer = $OuterColor/InnerColor/VBoxContainer/Ready
-
+@onready var player_name : Label = $PlayerName
 
 
 func _setup_player_joined():
@@ -55,4 +55,5 @@ func _ready():
 	assert(player_index >= 0 and player_index < GameInstance.player_sprites.size())
 	player_icon.texture = GameInstance.player_sprites[player_index]
 	player_icon.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+	player_name.text = GameInstance.boomer_names[player_index]
 	_on_player_ready_status_changed(player_index)
